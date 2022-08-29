@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/fly_well/static/css/main.a114a460.css",
-    "main.js": "/fly_well/static/js/main.c7b73b6b.js",
+    "main.js": "/fly_well/static/js/main.d0b0965a.js",
     "static/js/787.0f06af18.chunk.js": "/fly_well/static/js/787.0f06af18.chunk.js",
     "static/media/logo.svg": "/fly_well/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/fly_well/index.html",
     "main.a114a460.css.map": "/fly_well/static/css/main.a114a460.css.map",
-    "main.c7b73b6b.js.map": "/fly_well/static/js/main.c7b73b6b.js.map",
+    "main.d0b0965a.js.map": "/fly_well/static/js/main.d0b0965a.js.map",
     "787.0f06af18.chunk.js.map": "/fly_well/static/js/787.0f06af18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a114a460.css",
-    "static/js/main.c7b73b6b.js"
+    "static/js/main.d0b0965a.js"
   ]
 }
