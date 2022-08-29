@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -14,7 +14,7 @@ import MenuBar from './components/MenuBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
      <header >
         <MenuBar></MenuBar>
       </header> 
@@ -22,7 +22,7 @@ root.render(
     <Route path="/" element={<App />} />
     <Route path="question" element={<Question />} /> 
   </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
