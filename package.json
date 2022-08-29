@@ -2,7 +2,7 @@
   "name": "fly_well",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/home",
+  "homepage": "/fly_well",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
