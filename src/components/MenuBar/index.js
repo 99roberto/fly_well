@@ -13,7 +13,7 @@ function MenuBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"> 
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="question">Questionário</Nav.Link>
+            <Nav.Link href="/#/question">Questionário</Nav.Link>
             <Nav.Link href="#link">Termos de uso</Nav.Link>
             <Nav.Link href="#link">Política de Privacidade</Nav.Link>
           
