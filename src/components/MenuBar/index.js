@@ -12,10 +12,10 @@ function MenuBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"> 
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/#/question">Questionário</Nav.Link>
-            <Nav.Link href="#link">Termos de uso</Nav.Link>
-            <Nav.Link href="#link">Política de Privacidade</Nav.Link>
+            <Link to={`/`} className="btn">Home</Link>
+            <Link to={`/question`} className="btn">Questionário</Link>
+            <Link to={`/`} className="btn">Termos de uso</Link>
+            <Link to={`/`} className="btn">Política de Privacidade</Link>
           
           </Nav>
         </Navbar.Collapse>
@@ -25,3 +25,5 @@ function MenuBar() {
 }
 
 export default MenuBar;
+
+ 
