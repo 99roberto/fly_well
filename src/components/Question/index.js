@@ -37,7 +37,7 @@ class Question extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container className={this.state.question.style}>
         {/* <div><p>{JSON.stringify(this.state.question.question)}</p></div> */}
         {this.state.question && (
           <div className="question">

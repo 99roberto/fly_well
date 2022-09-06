@@ -1,18 +1,20 @@
 const mapaMental = {
   home: {
+    style: 'intro',
     question:
-      '<h2>Questionário</h2></br>' +
-      '<p>As perguntas a seguir são fornecidas como' +
-      'um guia para o período de tempo que deve' +
-      'decorrer entre um evento médico e o voo' +
-      'pretendido. Os prazos podem ser alterados' +
-      'após considerados por médicos.' +
-      'Conte o dia do evento de saúde e o dia da' +
+      '<h2>Questionário A</h2></br>' +
+      '<p>As perguntas a seguir são fornecidas como ' +
+      'um guia para o período de tempo que deve ' +
+      'decorrer entre um evento médico e o voo ' +
+      'pretendido. Os prazos podem ser alterados ' +
+      'após considerados por médicos. ' +
+      'Conte o dia do evento de saúde e o dia da ' +
       'viagem para calcular o número de dias após o incidente.',
     options: [{ label: 'Start', goto: 'inicial1' }],
     type: 'html',
   },
   inicial1: {
+    style: 'inicial',
     question:
       'Você está doente ou está com doença que acredita ser ativamente contagiosa e transmissível pelo ar ou contato?',
     options: [
@@ -21,6 +23,7 @@ const mapaMental = {
     ],
   },
   inicial2: {
+    style: 'inicial',
     question: 'Você entende que pode prejudicar outros passageiros por conta de sua condição física ou comportamental?',
     options: [
       { label: 'Sim/Não sei', goto: 'inicialFimMedico2' },
@@ -28,6 +31,7 @@ const mapaMental = {
     ],
   },
   inicial3: {
+    style: 'inicial',
     question:
       'Você tem alguma condição de saúde  que precise de acompanhante ou alguma necessidade especial ou que possa comprometer a dinâmica e segurança do voo?',
     options: [
@@ -36,6 +40,7 @@ const mapaMental = {
     ],
   },
   inicialFimMedico3: {
+    style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
@@ -44,26 +49,27 @@ const mapaMental = {
     ],
   },
   inicialFimMedico1: {
+    style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
       { label: 'Mais informações', goto: 'inicialMaisInfo' },
       { label: 'Entendi, quero continuar', goto: 'inicial2' },
     ],
-	
   },
   inicialFimMedico2: {
+    style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
       { label: 'Mais informações', goto: 'inicialMaisInfo' },
       { label: 'Entendi, quero continuar', goto: 'inicial3' },
     ],
-	
   },
   inicialMaisInfo: { question: 'Informações pertinentes' },
 
   gravidez1: {
+    style: 'cabecalho',
     question: 'Você é mulher E está grávida?',
     options: [
       { label: 'Sim', goto: 'gravidez2' },
@@ -99,6 +105,7 @@ const mapaMental = {
     ],
   },
   gravidezFimMedico: {
+    style: 'fimMedico',
     question: 'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.',
     options: [
       { label: 'Entendi, quero continuar questionário', goto: 'recemnascido1' },
@@ -106,12 +113,13 @@ const mapaMental = {
     ],
   },
   gravidezFimMedico2: {
+    style: 'fimMedico',
     question:
       'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.' +
-      'A maioria das companhias aéreas exige atestado médico a partir da 28ª semana para gestações simples ' +
-      'e a partir da 26ª ou 28 ª semana para gestações múltiplas. ' +
-      'A partir da 32ª semana, é exigido o preenchimento de um formulário específico fornecido pelas companhias aéreas (MEDIF).' +
-      'O formulário deve ser enviado com antecedência mínima de 72 horas do horário previsto de partida do voo.' +
+      ' A maioria das companhias aéreas exige atestado médico a partir da 28ª semana para gestações simples ' +
+      ' e a partir da 26ª ou 28 ª semana para gestações múltiplas. ' +
+      ' A partir da 32ª semana, é exigido o preenchimento de um formulário específico fornecido pelas companhias aéreas (MEDIF).' +
+      ' O formulário deve ser enviado com antecedência mínima de 72 horas do horário previsto de partida do voo.' +
       ' A partir da 38ª semana, o embarque é permitido apenas em casos de extrema necessidade com acompanhamento médico.',
     options: [
       { label: 'Entendi, quero continuar questionário', goto: 'recemnascido1' },
@@ -120,6 +128,7 @@ const mapaMental = {
   },
 
   recemnascido1: {
+    style: 'cabecalho',
     question: 'Você vai viajar na companhia de uma criança recém-nascida (menos de uma semana de vida)?',
     options: [
       { label: 'Sim', goto: 'recemnascido2' },
@@ -146,11 +155,13 @@ const mapaMental = {
     options: [{ label: 'Continuar', goto: 'oncologico1' }],
   },
   recemnascidoFimMedico: {
+    style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida. ',
   },
 
   oncologico1: {
+    style: 'cabecalho',
     question: 'Você está em tratamento oncológico?',
     options: [
       { label: 'Sim', goto: 'oncologico2' },
@@ -165,13 +176,15 @@ const mapaMental = {
     ],
   },
   oncologicoFim: {
+    style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.\n' +
-      'Pessoas em tratamento por quimioterapia podem voar, mas não durante a administração ativa de medicamentos citotóxicos medicamento, especialmente quando envolve tratamento endovenoso.\n' +
-      'Pessoas em radioterapia precisam de avaliação médica para análise do risco individual e coletivo. ',
+      ' Pessoas em tratamento por quimioterapia podem voar, mas não durante a administração ativa de medicamentos citotóxicos medicamento, especialmente quando envolve tratamento endovenoso.\n' +
+      ' Pessoas em radioterapia precisam de avaliação médica para análise do risco individual e coletivo. ',
   },
 
   cardiovasculares1: {
+    style: 'cabecalho',
     type: 'html',
     question:
       '<h2>Você tem diagnóstico das seguintes doenças abaixo?</h2>' +
@@ -182,6 +195,368 @@ const mapaMental = {
       '<li>Anemia (de qualquer origem)</li>' +
       '<li>Anemia falciforme</li>' +
       '</ul>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim1' },
+      { label: 'Não', goto: 'cardiovasculares2' },
+    ],
+  },
+
+  cardiovascularesFim1: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. \n' +
+      'É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. \n' +
+      '\nSe você é médico(a) e está avaliando um paciente, consulte este material para a sua tomada de decisão (LINK PARA LADO B)',
+  },
+  cardiovasculares2: {
+    type: 'html',
+    question:
+      '<h2>Você já teve algum dos diagnósticos abaixo?</h2>' +
+      '<ul>' +
+      '<li>Infarto agudo do miocárdio</li>' +
+      '<li>Trombose venosa profunda</li>' +
+      '<li>Edema pulmonar </li>' +
+      '<li>Embolia pulmonar</li>' +
+      '</ul>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim1' },
+      { label: 'Não', goto: 'cardiovasculares3' },
+    ],
+  },
+  cardiovasculares3: {
+    type: 'html',
+    question:
+      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 10 dias?</h2>' +
+      '<ul>' +
+      '<li>Cirurgia cardíaca</li>' +
+      '<li>Angiografia</li>' +
+      '<li>Angioplastia</li>' +
+      '<li>Inserção de marcapasso</li>' +
+      '<li>Terapia cardíaca de ablação</li>' +
+      '</ul>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim2' },
+      { label: 'Não', goto: 'pulmonares1' },
+    ],
+  },
+
+  cardiovascularesFim2: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3>' +
+      '<br/>' +
+      'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
+      'e sem complicações relacionadas ao procedimento. ' +
+      '<br/><ul>' +
+      '<li>Cirurgia cardíaca: viagens possíveis após 10 dias do procedimento, se clinicamente estável e assintomática</li>' +
+      '<li>Angiografia: viagens possíveis após 24 horas do procedimento, se clinicamente estável e assintomática</li>' +
+      '<li>Angioplastia: viagens possíveis após 03 dias, se clinicamnte estável e assintomática</li>' +
+      '<li>Inserção de marcapasso: viagens possíveis após 02 dias do procedimento, se ritmo estável e sem pneumotórax</li>' +
+      '<li>Terapia cardíaca de ablação: viagens possíveis após 02 dias do procedimento. ' +
+      'Risco aumentado de trombose venosa profunda se viagem realizada em menos de uma semana do procedimento.</li>' +
+      '</ul>',
+  },
+  // 6
+  pulmonares1: {
+    style: 'cabecalho',
+    type: 'html',
+    question:
+      '<h2>Você tem diagnóstico das seguintes doenças abaixo?</h2>' +
+      '<lu>' +
+      '<li>Tuberculose</li>' +
+      '<li>Doença pulmonar obstrutiva crônica</li>' +
+      '<li>Hipertensão pulmonar</li>' +
+      '<li>Fibrose cística</li>' +
+      '<li>Asma</li>' +
+      '<li>Câncer de pulmão</li>' +
+      '<li>Bronquiectasias</li>' +
+      '<li>Doença neuromuscular pulmonar</li>' +
+      '<li>Malformação arteriovenosa pulmonar</li>' +
+      '<li>Qualquer doença pulmonar que exija respirador</li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'pulmonaresFim1' },
+      { label: 'Não', goto: 'pulmonares2' },
+    ],
+  },
+  pulmonaresFim1: {
+    style: 'fimMedico',
+    question:
+      'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.\n ' +
+      'É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. ',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  pulmonares2: {
+    type: 'html',
+    question:
+      '<h2>Você teve algum dos diagnósticos abaixo nos últimos 30 dias?</h2>' +
+      '<lu>' +
+      '<li>Pneumotórax</li>' +
+      '<li>Pneumonia</li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'pulmonaresFim2' },
+      { label: 'Não', goto: 'pulmonares3' },
+    ],
+  },
+
+  pulmonaresFim2: {
+    type: 'html',
+    style: 'fimMedico',
+    question:
+      '<h2>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.</h2> ' +
+      'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
+      'e sem complicações relacionadas às doenças. ' +
+      '<ul>' +
+      '<li>Pneumotórax: viagens possíveis após 14 dias de recuperação pulmonar completa após pneumotórax ' +
+      'causado por trauma e 07 dias após recuperação pulmonar completa em pneumotórax por outras causas. </li>' +
+      '<li>Pneumonia: resolução completa em pessoa clinicamente estável e assintomática.  </li>' +
+      '</ul>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  pulmonares3: {
+    type: 'html',
+    question:
+      '<h2>Você já fez algum dos procedimentos abaixo nos últmos 15 dias?</h2> ' +
+      '<ul>' +
+      '<li>Cirurgia pulmonar</li>' +
+      '<li>Biópsia de pulmão</li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'pulmonaresFim3' },
+      { label: 'Não', goto: 'neuroPsiq1' },
+    ],
+  },
+
+  pulmonaresFim3: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.</h3> ' +
+      'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
+      'e sem complicações relacionadas aos procedimentos. ' +
+      '<ul>' +
+      '<li>Cirurgia pulmonar e biópsia: viagens possíveis após 11 dias do procedimento com recuperação pulmonar completa, ' +
+      'em pessoa clinicamente estável e assintomática. </li>' +
+      '</ul>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  // 7
+
+  neuroPsiq1: {
+    style: 'cabecalho',
+    type: 'html',
+    question:
+      '<h2>Você tem diagnóstico das seguintes doenças abaixo?</h2> ' +
+      '<ul>' +
+      '<li>Epilepsia </li>' +
+      '<li>Demência </li>' +
+      '<li>Qualquer doença que apresente déficit cognitivo </li>' +
+      '<li>Qualquer diagnóstico de doença ou condição de saúde mental ' +
+      '(depressão, ansiedade, transtorno de humor bipolar, outros) </li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'neuroPsiqFim1' },
+      { label: 'Não', goto: 'neuroPsiq2' },
+    ],
+  },
+
+  neuroPsiqFim1: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. </p>' +
+      '<br/>' +
+      '<p>Se devidamente controlado por medicação e estável (ou seja, vivendo na comunidade cuidando de todas as próprias necessidades incluindo medicamentos)</p>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  neuroPsiq2: {
+    type: 'html',
+    question:
+      '<h2>Você teve algum dos diagnósticos abaixo nos últmos 30 dias?</h2> ' +
+      '<ul>' +
+      '<li>Acidente isquêmico transitório (AIT) </li>' +
+      '<li>Acidente vascular cerebral (AVC)  </li>' +
+      '<li>Psicose aguda (perda de contato com a realidade: delírios, alucinações e pensamento desordenado)  </li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'neuroPsiqFim2' },
+      { label: 'Não', goto: 'neuroPsiq3' },
+    ],
+  },
+
+  neuroPsiqFim2: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
+      'e sem complicações relacionadas às doenças. </p>' +
+      '<ul>' +
+      '<li><b>Acidente vascular cerebral (AVC):</b> viagens possíveis após 05 a14 dias, conforme avaliação médica ' +
+      'e estabilidade clínica com necessidade de acompanhante profissional de saúde. Pessoas que tiveram AVC a menos ' +
+      'de 02 semanas com liberação médica para voar devem receber oxigenioterapia suplementar durante o voo. </li>' +
+      '<li><b>Acidente isquêmico transitório (AIT):</b> viagens possíveis após 02 dias do evento, com investigação da causa completa, ' +
+      'em pessoa clinicamente estável e assintomática. </li>' +
+      '<li><b>Psicose aguda:</b> viagens possíveis após 30 dias do evento, em pessoa clinicamente estável, com indicação ' +
+      'de acompanhante profissional de saúde conforme avaliação médica.  </li>' +
+      '</ul>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  neuroPsiq3: {
+    type: 'html',
+    question:
+      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 30 dias?</h2> ' +
+      '<ul>' +
+      '<li>Cirurgia craniana ou cerebral</li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'neuroPsiqFim3' },
+      { label: 'Não', goto: 'olhosNarizGarganta1' },
+    ],
+  },
+
+  neuroPsiqFim3: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
+      'e sem complicações relacionadas ao procedimento. </p>' +
+      '<ul>' +
+      '<li><b>Cirurgia de crânio ou cerebral:</b> viagens possíveis a partir de 10 dias do procedimento, ' +
+      'se pessoa clinicamente estável e assintomática, após avaliação médica sem evidência de ar na cavidade craniana. </li>' +
+      '</ul>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  // 8
+  olhosNarizGarganta1: {
+    style: 'cabecalho',
+    type: 'html',
+    question:
+      '<h2>Você teve algum dos diagnósticos abaixo nos últimos 14 ias?</h2> ' +
+      '<ul>' +
+      '<li>Sangramento gastrointestinal </li>' +
+      '<li>Otite média </li>' +
+      '<li>Sinusite </li>' +
+      '<li>Lesão perfurante dos olhos </li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim1' },
+      { label: 'Não', goto: 'olhosNarizGarganta2' },
+    ],
+  },
+
+  olhosNarizGargantaFim1: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática  e sem complicações relacionadas às doenças. </p>' +
+      '<ul>' +
+      '<li><b>Sangramento gastrointestinal:</b> viagens possíveis após 10 dias do evento, em pessoa clinicamente estável e assintomática.  </li>' +
+      '<li><b>Otite média:</b> viagens possíveis em pessoa clinicamente estável e assintomática.  </li>' +
+      '<li><b>Sinusite:</b> viagens possíveis em pessoa clinicamente estável e assintomática.  </li>' +
+      '<li><b>Lesão perfurante nos olhos:</b> viagens possíveis após 07 dias do evento, após avaliação médica em pessoa clinicamente estável.  </li>' +
+      '</ul>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  olhosNarizGarganta2: {
+    type: 'html',
+    question:
+      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 10 dias?</h2> ' +
+      '<ul>' +
+      '<li>Mandíbula fechada por fio de metal </li>' +
+      '<li>Cirurgia realizada no abdome </li>' +
+      '<li>Cirurgia do ouvido </li>' +
+      '<li>Amidalectomia </li>' +
+      '<li>Cirurgia dos olhos (penetrante ou intraocular) </li>' +
+      '<li>Cirrugia dos olhos (catarata ou de córnea) </li>' +
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim2' },
+      { label: 'Não', goto: 'ortopedicas1' },
+    ],
+  },
+
+  olhosNarizGargantaFim2: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas aos procedimentos. </p>' +
+      '<ul>' +
+      '<li><b>Mandíbula fechada por fio de metal:</b>viagens possíveis após avaliação do profissional de saúde que indicou o procedimento se ' +
+      'possibilidade de abertura da boca ou por liberação manual dos fios ou se possibilidade de cortar os fios </li>' +
+      '<li><b>Cirurgia realizada no abdome:</b> viagens possíveis após 10 dias da cirurgia, em pessoa clinicamente estável e assintomática.</li>' +
+      '<li><b>Cirurgia do ouvido:</b> viagens possíveis após 10 dias da cirurgia, em pessoa clinicamente estável e assintomática com atestado ' +
+      'médico referindo tratamento de ouvido com especificação.</li>' +
+      '<li><b>Amidalectomia:</b>  viagens possíveis após 10 dias da cirurgia, em pessoa clinicamente estável e assintomática. </li>' +
+      '<li><b>Cirurgia dos olhos (penetrante ou intraocular):</b> viagens possíveis após 07 dias da cirurgia, em pessoa clinicamente estável e assintomática.  </li>' +
+      '<li><b>Cirrugia dos olhos (catarata ou de córnea):</b> viagens possíveis após 24 horas da cirurgia, em pessoa clinicamente estável e assintomática. </li>' +
+      '</ul>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+// 9
+
+
+  ortopedicas1: {
+    style: 'cabecalho',
+    type: 'html',
+    question:
+      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 07 dias?</h2> ' +
+      '<ul>' +
+      '<li>Cirurgia de quadril, joelho ou tornozelo </li>' + 
+      '<li>Cirurgia de coluna </li>' + 
+      '<li>Cirurgia plástica </li>' + 
+      '<li>Artroscopia de articulações </li>' + 
+      '<li>Colocação de gesso </li>' + 
+      '<li>Terapia de recompressão por descompressão de mergulho </li>' + 
+      '<li>Tratamento de queimadura com infecção generalizada </li>' + 
+      '</lu>',
+    options: [
+      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim2' },
+      { label: 'Não', goto: 'ortopedicasFim2' },
+    ],
+  },
+
+  ortopedicasFim1: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas às doenças.</p>' +
+      '<ul>' +
+      '<li><b>Cirurgia de quadril, joelho ou tornozelo:</b> </li>' + 
+      '<li><b>Cirurgia de coluna:</b> </li>' + 
+      '<li><b>Cirurgia plástica:</b> </li>' + 
+      '<li><b>Artroscopia de articulações:</b> </li>' + 
+      '<li><b>Colocação de gesso:</b> </li>' + 
+      '<li><b>Terapia de recompressão por descompressão de mergulho:</b> </li>' + 
+      '<li><b>Tratamento de queimadura com infecção generalizada:</b> </li>' + 
+      '</ul>',
+    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+  },
+
+  ortopedicasFim2: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      '<h2>Ausência de obrigatoriedade de consulta médica para voar. </h2> ' +
+      '<p>Avaliar próximo sistema. </p>' + 
+      '</lu>',
+      options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
   },
 };
 
