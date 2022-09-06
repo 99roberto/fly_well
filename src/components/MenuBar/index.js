@@ -14,8 +14,8 @@ function MenuBar() {
           <Nav className="me-auto"> 
             <Link to={`/`} className="btn">Home</Link>
             <Link to={`/question`} className="btn">Questionário</Link>
-            <Link to={`/`} className="btn">Termos de uso</Link>
-            <Link to={`/`} className="btn">Política de Privacidade</Link>
+            <Link to={`/TermosUso`} className="btn">Termos de uso</Link>
+            <Link to={`/PoliticaPricacidade`} className="btn">Política de Privacidade</Link>
           
           </Nav>
         </Navbar.Collapse>

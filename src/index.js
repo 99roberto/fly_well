@@ -9,7 +9,8 @@ import {
   Route,
 } from "react-router-dom";
 import Question from './components/Question';
-import Invoices from './routes/invoices';
+import TermosUso from './components/TermosUso';
+import PoliticaPricacidade from './components/PoliticaPrivacidade';
 import MenuBar from './components/MenuBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,6 +22,8 @@ root.render(
   <Routes>
     <Route path="/" element={<App />} />
     <Route path="question" element={<Question />} /> 
+    <Route path="TermosUso" element={<TermosUso />} /> 
+    <Route path="PoliticaPricacidade" element={<PoliticaPricacidade />} /> 
   </Routes>
   </HashRouter>
 );
