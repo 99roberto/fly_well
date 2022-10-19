@@ -1,7 +1,7 @@
 import getMapaMental from '../../model/mapamental';
 import './index.css';
 import React from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import ReactToPdf from 'react-to-pdf';
 import { AppName } from '../../constantes';
 import Nav from 'react-bootstrap/Nav';
@@ -116,19 +116,18 @@ class Question extends React.Component {
             <ReactToPdf>
               {({ toPdf, targetRef }) => (
                 <>
-                 
                   <div style={{ maxWidth: 750, padding: '10px' }} ref={targetRef}>
-                  <Navbar.Brand href="#">
-                    {' '}
-                    <img
-                      alt=""
-                      src="https://99roberto.github.io/fly_well/logo192.png"
-                      width="30"
-                      height="30"
-                      className="d-inline-block align-top"
-                    />{' '}
-                  </Navbar.Brand>
-                  <Navbar.Brand href="#">{AppName}</Navbar.Brand>
+                    <Navbar.Brand href="#">
+                      {' '}
+                      <img
+                        alt=""
+                        src="https://99roberto.github.io/fly_well/logo192.png"
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                      />{' '}
+                    </Navbar.Brand>
+                    <Navbar.Brand href="#">{AppName}</Navbar.Brand>
                     <div className="question" ref={this.state.ref} style={{ margin: '10px' }}>
                       {this.state.evaluation.length == 0 && (
                         <h2>Ausência de obrigatoriedade de consulta médica para voar. </h2>
@@ -138,7 +137,10 @@ class Question extends React.Component {
                           <h2>
                             {'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. '}
                           </h2>
-                          <h3>Segue os motivos: </h3>
+                          <h3>
+                            Querido médico, esta pessoa respondeu o questionário e foi identificado o seguinte fator de
+                            risco:{' '}
+                          </h3>
                         </div>
                       )}
                       {this.state.evaluation.map(ev => {
@@ -171,13 +173,19 @@ class Question extends React.Component {
                       })}
                     </div>
                   </div>
-                  <div className={'g2'}>
-                    <Button onClick={toPdf}>Gerar PDF</Button>
-                    {this.state.stackKey.length > 1 && (
-                      <Button variant="secondary" onClick={() => this.back()}>
-                        Voltar
-                      </Button>
-                    )}
+                  <div className={'acoes'}>
+                    <Row className={'acoes'}>
+                      <Col xs={12} lg="12" sm={12}>
+                        <Button onClick={toPdf}>Gerar PDF</Button>
+                        <Col xs={12} lg="12" sm={12}>
+                          {this.state.stackKey.length > 1 && (
+                            <Button variant="secondary" onClick={() => this.back()}>
+                              Voltar
+                            </Button>
+                          )}
+                        </Col>
+                      </Col>
+                    </Row>
                   </div>
                 </>
               )}
@@ -213,35 +221,45 @@ class Question extends React.Component {
             </div>
             <div className="respostas">
               {this.state.question.options && (
-                <div className={'g' + this.state.question.options.length}>
-                  {this.state.question.options.map((op, idx) => {
-                    return (
-                      <Button
-                        variant={op.variant ? op.variant : 'primary'}
-                        onClick={() => this.goto(op)}
-                        key={idx}
-                        disabled={
-                          !(
-                            !this.state.question.checkboxs ||
-                            this.state.question.checkboxs.length == 0 ||
-                            (op.select && this.state.selects_responses.length > 0) ||
-                            (!op.select && this.state.selects_responses.length == 0)
-                          )
-                        }
-                      >
-                        {op.label}
-                      </Button>
-                    );
-                  })}
+                <div className={'acoes'}>
+                  <Row className={''}>
+                    {this.state.question.options.map((op, idx) => {
+                      return (
+                        <Col xs={12} lg="12" sm={12}>
+                          <Button
+                            variant={op.variant ? op.variant : 'primary'}
+                            onClick={() => this.goto(op)}
+                            key={idx}
+                            disabled={
+                              !(
+                                !this.state.question.checkboxs ||
+                                this.state.question.checkboxs.length == 0 ||
+                                (op.select && this.state.selects_responses.length > 0) ||
+                                (!op.select && this.state.selects_responses.length == 0)
+                              ) ||
+                              (this.state.question.mandatory &&
+                                this.state.selects_responses.length != this.state.question.checkboxs.length)
+                            }
+                          >
+                            {op.label}
+                          </Button>
+                        </Col>
+                      );
+                    })}
+                  </Row>
                 </div>
               )}
             </div>
-            <div className={'g1'}>
-              {this.state.stackKey.length > 1 && (
-                <Button variant="secondary" onClick={() => this.back()}>
-                  Voltar
-                </Button>
-              )}
+            <div className={'acoes'}>
+              <Row className={'acoes'}>
+                <Col xs={12} lg="12" sm={12}>
+                  {this.state.stackKey.length > 1 && (
+                    <Button variant="secondary" onClick={() => this.back()}>
+                      Voltar
+                    </Button>
+                  )}
+                </Col>
+              </Row>
             </div>
           </div>
         )}
