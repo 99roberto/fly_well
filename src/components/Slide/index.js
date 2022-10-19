@@ -38,7 +38,7 @@ function Slide() {
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-              <img src="/logo512.png" className="img-fluid animated" alt="" />
+              <img src="https://99roberto.github.io/fly_well/logo512.png" className="img-fluid animated" alt="" />
             </div>
           </div>
         </div>

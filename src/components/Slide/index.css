@@ -24,7 +24,7 @@ w-100 {
   /* background: #ececed; */
   
   /* Center and scale the image nicely */
-  background-image: url("/capa.jpg");
+  background-image: url("https://99roberto.github.io/fly_well/capa.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
