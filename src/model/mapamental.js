@@ -10,7 +10,14 @@ const mapaMental = {
       'após considerados por médicos. ' +
       'Conte o dia do evento de saúde e o dia da ' +
       'viagem para calcular o número de dias após o incidente.',
-    options: [{ label: 'Start', goto: 'inicial1' }],
+    checkboxs: [
+      'Estou ciente de que o questionário pode ser autoaplicado ou por um profissional da saúde',
+      'Estou ciente que nenhum dado meu será registrado',
+      'Estou ciente dos Termos de Uso ',
+      'Estou ciente das Políticas de Privacidade',
+    ],
+    mandatory: true,
+    options: [{ label: 'Iniciar', goto: 'inicial1', select: true }],
     type: 'html',
   },
 
@@ -29,7 +36,7 @@ const mapaMental = {
       { label: 'Sim/Não sei', goto: 'teste2', select: true },
       { label: 'Não', goto: 'FINISHED' },
     ],
-  },  
+  },
   teste2: {
     question_type: 'evaluation',
     style: 'fimMedico',
@@ -37,25 +44,62 @@ const mapaMental = {
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'FINISHED' },
+      { label: 'Continuar', variant: 'info', goto: 'FINISHED' },
     ],
   },
 
   inicial1: {
+    type: 'html',
     style: 'inicial',
     question:
-      'Você está doente ou está com doença que acredita ser ativamente contagiosa e transmissível pelo ar ou contato?',
+      '<div>' +
+      '<p>Você está doente ou está com doença que acredita ser ' +
+      '<span class="mtooltip">ativamente contagiosa ' +
+      '<span class="mtooltiptext">' +
+      'Doença ativamento contagiosa é uma doença que se transmite pelo contato próximo pelo ar ou por contato direto' +
+      '</span>' +
+      '</span> ' +
+      'e transmissível pelo ar ou ' +
+      '<span class="mtooltip">contato direto ou próximo' +
+      '<span class="mtooltiptext">' +
+      'Contato direto se define toque (aperto de mão, abraço) ' +
+      'ou troca de fluidos (beijo, por exemplo).<br/>' +
+      'Contato próximo pelo ar se define estar a menos de um metro de distância, por um periodo de 15 minutos ' +
+      'sem uso de máscara ou com seu uso inadequado.' +
+      '</span>' +
+      '</span> ' +
+      '?</p>' +
+      '</div>',
     options: [
       { label: 'Sim/Não sei', goto: 'inicialFimMedico1' },
       { label: 'Não', goto: 'inicial2' },
     ],
   },
   inicial2: {
+    type: 'html',
     style: 'inicial',
-    question: 'Você entende que pode prejudicar outros passageiros por conta de sua condição física ou comportamental?',
+    question:
+      '<div>' +
+      '<p>Você é uma  ' +
+      '<span class="mtooltip">pessoa com deficiêcia (PCD) ' +
+      '<span class="mtooltiptext">' +
+      'Pessoas com deficiência (PCD) são aquelas que têm impedimentos de longo prazo de natureza física,' +
+      ' mental, intelectual ou sensorial, os quais, em interação com diversas barreiras, podem obstruir sua participação ' +
+      'plena e efetiva na sociedade em igualdades de condições com as demais pessoas.' +
+      '</span>' +
+      '</span> ' +
+      'que necessita da presença de um(a) acompanhante ou de ' +
+      '<span class="mtooltip">suporte de saúde ' +
+      '<span class="mtooltiptext">' +
+      'Oxigênio, medicação administrada por outra pessoa, cadeira de rodas ou maca, por exemplo. ' +
+      '</span>' +
+      '</span> ' +
+      ' abordo?</p>' +
+      '</div>',
+
     options: [
       { label: 'Sim/Não sei', goto: 'inicialFimMedico2' },
-      { label: 'Não', goto: 'inicial3' },
+      { label: 'Não', goto: 'gravidez1' },
     ],
   },
   inicial3: {
@@ -74,7 +118,7 @@ const mapaMental = {
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'gravidez1' },
+      { label: 'Continuar', variant: 'info', goto: 'gravidez1' },
     ],
   },
   inicialFimMedico1: {
@@ -84,7 +128,7 @@ const mapaMental = {
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'inicial2' },
+      { label: 'Continuar', variant: 'info', goto: 'inicial2' },
     ],
   },
   inicialFimMedico2: {
@@ -94,7 +138,7 @@ const mapaMental = {
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'inicial3' },
+      { label: 'Continuar', variant: 'info', goto: 'inicial3' },
     ],
   },
   inicialMaisInfo: { question: 'Informações pertinentes' },
@@ -107,11 +151,19 @@ const mapaMental = {
       { label: 'Não', goto: 'recemnascido1' },
     ],
   },
+  // depreciado
+  // gravidez2: {
+  //   question: 'Você está apresentando qualquer sangramento vaginal no momento?',
+  //   options: [
+  //     { label: 'Sim', goto: 'gravidezFimMedico' },
+  //     { label: 'Não', goto: 'gravidez3' },
+  //   ],
+  // },
   gravidez2: {
-    question: 'Você está apresentando qualquer sangramento vaginal no momento?',
+    question: 'Qual é o risco atribuído à sua gestação?',
     options: [
-      { label: 'Sim', goto: 'gravidezFimMedico' },
-      { label: 'Não', goto: 'gravidez3' },
+      { label: 'Alto risco/Não sei', goto: 'gravidezFimMedico' },
+      { label: 'Baixo Risco ou Risco Habitual', goto: 'gravidez3' },
     ],
   },
   gravidez3: {
@@ -122,26 +174,35 @@ const mapaMental = {
     ],
   },
   gravidez4: {
-    question: 'Qual é o risco atribuído à sua gestação?',
-    options: [
-      { label: 'Alto risco/Não sei', goto: 'gravidezFimMedico' },
-      { label: 'Baixo Risco ou Risco Habitual', goto: 'gravidez5' },
-    ],
-  },
-  gravidez5: {
     question: 'Qual é a sua idade gestacional?',
     options: [
-      { label: '< 28 semanas', goto: 'gravidezFimMedico' },
-      { label: '> 28 Semanas', goto: 'recemnascido1' },
+      { label: '< 28 semanas', goto: 'gravidez5' },
+      { label: '> 28 Semanas', goto: 'gravidezFimMedico' },
     ],
   },
+
+  gravidez5: {
+    question: 'Você apresenta algum sintoma relacionado à sua gestação?',
+    checkboxs: [
+      'Dor abdominal ou vaginal',
+      'Sangramento',
+      'Perda de líquido',
+      'Diminuição ou ausência da movimentação fetal a partir da 28a semana',
+      'outro',
+    ],
+    options: [
+      { label: 'sim', goto: 'gravidezFimMedico' },
+      { label: 'Não', goto: 'recemnascido1' },
+    ],
+  },
+
   gravidezFimMedico: {
     question_type: 'evaluation',
     style: 'fimMedico',
     question: 'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
     ],
   },
   gravidezFimMedico2: {
@@ -156,7 +217,7 @@ const mapaMental = {
       ' A partir da 38ª semana, o embarque é permitido apenas em casos de extrema necessidade com acompanhamento médico.',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
     ],
   },
 
@@ -195,7 +256,7 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares1' },
+      { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
     ],
   },
 
@@ -223,7 +284,7 @@ const mapaMental = {
     question_type: 'evaluation',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares1' },
+      { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
     ],
   },
 
@@ -254,22 +315,16 @@ const mapaMental = {
     question_type: 'evaluation',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares2' },
+      { label: 'Continuar', variant: 'info', goto: 'cardiovasculares2' },
     ],
   },
 
   cardiovasculares2: {
-    type: 'html',
-    question:
-      '<h2>Você já teve algum dos diagnósticos abaixo?</h2>' +
-      '<ul>' +
-      '<li>Infarto agudo do miocárdio</li>' +
-      '<li>Trombose venosa profunda</li>' +
-      '<li>Edema pulmonar </li>' +
-      '<li>Embolia pulmonar</li>' +
-      '</ul>',
+    question: 'Você já teve algum dos diagnósticos abaixo?',
+
+    checkboxs: ['Infarto agudo do miocárdio', 'Trombose venosa profunda', 'Edema pulmonar ', 'Embolia pulmonar'],
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim2' },
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim2', select: true },
       { label: 'Não', goto: 'cardiovasculares3' },
     ],
   },
@@ -284,22 +339,21 @@ const mapaMental = {
     question_type: 'evaluation',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares3' },
+      { label: 'Continuar', variant: 'info', goto: 'cardiovasculares3' },
     ],
   },
   cardiovasculares3: {
-    type: 'html',
-    question:
-      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 10 dias?</h2>' +
-      '<ul>' +
-      '<li>Cirurgia cardíaca</li>' +
-      '<li>Angiografia</li>' +
-      '<li>Angioplastia</li>' +
-      '<li>Inserção de marcapasso</li>' +
-      '<li>Terapia cardíaca de ablação</li>' +
-      '</ul>',
+    question: 'Você já fez algum dos procedimentos abaixo nos últimos 10 dias?',
+
+    checkboxs: [
+      'Cirurgia cardíaca',
+      'Angiografia',
+      'Angioplastia',
+      'Inserção de marcapasso',
+      'Terapia cardíaca de ablação',
+    ],
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim3' },
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim3', select: true },
       { label: 'Não', goto: 'pulmonares1' },
     ],
   },
@@ -323,29 +377,29 @@ const mapaMental = {
     question_type: 'evaluation',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'pulmonares1' },
+      { label: 'Continuar', variant: 'info', goto: 'pulmonares1' },
     ],
   },
   // 6
   pulmonares1: {
     style: 'cabecalho',
-    type: 'html',
-    question:
-      '<h2>Você tem diagnóstico das seguintes doenças abaixo?</h2>' +
-      '<lu>' +
-      '<li>Tuberculose</li>' +
-      '<li>Doença pulmonar obstrutiva crônica</li>' +
-      '<li>Hipertensão pulmonar</li>' +
-      '<li>Fibrose cística</li>' +
-      '<li>Asma</li>' +
-      '<li>Câncer de pulmão</li>' +
-      '<li>Bronquiectasias</li>' +
-      '<li>Doença neuromuscular pulmonar</li>' +
-      '<li>Malformação arteriovenosa pulmonar</li>' +
-      '<li>Qualquer doença pulmonar que exija respirador</li>' +
-      '</lu>',
+
+    question: 'Você tem diagnóstico das seguintes doenças abaixo?',
+
+    checkboxs: [
+      'Tuberculose',
+      'Doença pulmonar obstrutiva crônica',
+      'Hipertensão pulmonar',
+      'Fibrose cística',
+      'Asma',
+      'Câncer de pulmão',
+      'Bronquiectasias',
+      'Doença neuromuscular pulmonar',
+      'Malformação arteriovenosa pulmonar',
+      'Qualquer doença pulmonar que exija respirador',
+    ],
     options: [
-      { label: 'Sim/Não sei', goto: 'pulmonaresFim1' },
+      { label: 'Sim/Não sei', goto: 'pulmonaresFim1', select: true },
       { label: 'Não', goto: 'pulmonares2' },
     ],
   },
@@ -358,20 +412,16 @@ const mapaMental = {
     question_type: 'evaluation',
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'pulmonares2' },
+      { label: 'Continuar', variant: 'info', goto: 'pulmonares2' },
     ],
   },
 
   pulmonares2: {
-    type: 'html',
-    question:
-      '<h2>Você teve algum dos diagnósticos abaixo nos últimos 30 dias?</h2>' +
-      '<lu>' +
-      '<li>Pneumotórax</li>' +
-      '<li>Pneumonia</li>' +
-      '</lu>',
+    question: 'Você teve algum dos diagnósticos abaixo nos últimos 30 dias?',
+
+    checkboxs: ['Pneumotórax', 'Pneumonia'],
     options: [
-      { label: 'Sim/Não sei', goto: 'pulmonaresFim2' },
+      { label: 'Sim/Não sei', goto: 'pulmonaresFim2', select: true },
       { label: 'Não', goto: 'pulmonares3' },
     ],
   },
@@ -392,20 +442,16 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'pulmonares3' },
+      { label: 'Continuar', variant: 'info', goto: 'pulmonares3' },
     ],
   },
 
   pulmonares3: {
-    type: 'html',
-    question:
-      '<h2>Você já fez algum dos procedimentos abaixo nos últmos 15 dias?</h2> ' +
-      '<ul>' +
-      '<li>Cirurgia pulmonar</li>' +
-      '<li>Biópsia de pulmão</li>' +
-      '</lu>',
+    question: 'Você já fez algum dos procedimentos abaixo nos últmos 15 dias?',
+
+    checkboxs: ['Cirurgia pulmonar', 'Biópsia de pulmão'],
     options: [
-      { label: 'Sim/Não sei', goto: 'pulmonaresFim3' },
+      { label: 'Sim/Não sei', goto: 'pulmonaresFim3', select: true },
       { label: 'Não', goto: 'neuroPsiq1' },
     ],
   },
@@ -425,7 +471,7 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'neuroPsiq1' },
+      { label: 'Continuar', variant: 'info', goto: 'neuroPsiq1' },
     ],
   },
 
@@ -434,17 +480,17 @@ const mapaMental = {
   neuroPsiq1: {
     style: 'cabecalho',
     type: 'html',
-    question:
-      '<h2>Você tem diagnóstico das seguintes doenças abaixo?</h2> ' +
-      '<ul>' +
-      '<li>Epilepsia </li>' +
-      '<li>Demência </li>' +
-      '<li>Qualquer doença que apresente déficit cognitivo </li>' +
-      '<li>Qualquer diagnóstico de doença ou condição de saúde mental ' +
-      '(depressão, ansiedade, transtorno de humor bipolar, outros) </li>' +
-      '</lu>',
+    question: 'Você tem diagnóstico das seguintes doenças abaixo?',
+
+    checkboxs: [
+      'Epilepsia ',
+      'Demência ',
+      'Qualquer doença que apresente déficit cognitivo ',
+      'Qualquer diagnóstico de doença ou condição de saúde mental ' +
+        '(depressão, ansiedade, transtorno de humor bipolar, outros) ',
+    ],
     options: [
-      { label: 'Sim/Não sei', goto: 'neuroPsiqFim1' },
+      { label: 'Sim/Não sei', goto: 'neuroPsiqFim1', select: true },
       { label: 'Não', goto: 'neuroPsiq2' },
     ],
   },
@@ -461,21 +507,20 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'neuroPsiq2' },
+      { label: 'Continuar', variant: 'info', goto: 'neuroPsiq2' },
     ],
   },
 
   neuroPsiq2: {
-    type: 'html',
-    question:
-      '<h2>Você teve algum dos diagnósticos abaixo nos últmos 30 dias?</h2> ' +
-      '<ul>' +
-      '<li>Acidente isquêmico transitório (AIT) </li>' +
-      '<li>Acidente vascular cerebral (AVC)  </li>' +
-      '<li>Psicose aguda (perda de contato com a realidade: delírios, alucinações e pensamento desordenado)  </li>' +
-      '</lu>',
+    question: 'Você teve algum dos diagnósticos abaixo nos últmos 30 dias?',
+
+    checkboxs: [
+      'Acidente isquêmico transitório (AIT) ',
+      'Acidente vascular cerebral (AVC)  ',
+      'Psicose aguda (perda de contato com a realidade: delírios, alucinações e pensamento desordenado)  ',
+    ],
     options: [
-      { label: 'Sim/Não sei', goto: 'neuroPsiqFim2' },
+      { label: 'Sim/Não sei', goto: 'neuroPsiqFim2', select: true },
       { label: 'Não', goto: 'neuroPsiq3' },
     ],
   },
@@ -500,19 +545,16 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'neuroPsiq3' },
+      { label: 'Continuar', variant: 'info', goto: 'neuroPsiq3' },
     ],
   },
 
   neuroPsiq3: {
-    type: 'html',
-    question:
-      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 30 dias?</h2> ' +
-      '<ul>' +
-      '<li>Cirurgia craniana ou cerebral</li>' +
-      '</lu>',
+    question: 'Você já fez algum dos procedimentos abaixo nos últimos 30 dias?',
+
+    checkboxs: ['Cirurgia craniana ou cerebral'],
     options: [
-      { label: 'Sim/Não sei', goto: 'neuroPsiqFim3' },
+      { label: 'Sim/Não sei', goto: 'neuroPsiqFim3', select: true },
       { label: 'Não', goto: 'olhosNarizGarganta1' },
     ],
   },
@@ -532,24 +574,18 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'olhosNarizGarganta1' },
+      { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta1' },
     ],
   },
 
   // 8
   olhosNarizGarganta1: {
     style: 'cabecalho',
-    type: 'html',
-    question:
-      '<h2>Você teve algum dos diagnósticos abaixo nos últimos 14 ias?</h2> ' +
-      '<ul>' +
-      '<li>Sangramento gastrointestinal </li>' +
-      '<li>Otite média </li>' +
-      '<li>Sinusite </li>' +
-      '<li>Lesão perfurante dos olhos </li>' +
-      '</lu>',
+    question: 'Você teve algum dos diagnósticos abaixo nos últimos 14 ias?',
+
+    checkboxs: ['Sangramento gastrointestinal ', 'Otite média ', 'Sinusite ', 'Lesão perfurante dos olhos '],
     options: [
-      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim1' },
+      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim1', select: true },
       { label: 'Não', goto: 'olhosNarizGarganta2' },
     ],
   },
@@ -570,24 +606,23 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'olhosNarizGarganta2' },
+      { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta2' },
     ],
   },
 
   olhosNarizGarganta2: {
-    type: 'html',
-    question:
-      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 10 dias?</h2> ' +
-      '<ul>' +
-      '<li>Mandíbula fechada por fio de metal </li>' +
-      '<li>Cirurgia realizada no abdome </li>' +
-      '<li>Cirurgia do ouvido </li>' +
-      '<li>Amidalectomia </li>' +
-      '<li>Cirurgia dos olhos (penetrante ou intraocular) </li>' +
-      '<li>Cirrugia dos olhos (catarata ou de córnea) </li>' +
-      '</lu>',
+    question: 'Você já fez algum dos procedimentos abaixo nos últimos 10 dias?',
+
+    checkboxs: [
+      'Mandíbula fechada por fio de metal ',
+      'Cirurgia realizada no abdome ',
+      'Cirurgia do ouvido ',
+      'Amidalectomia ',
+      'Cirurgia dos olhos (penetrante ou intraocular) ',
+      'Cirrugia dos olhos (catarata ou de córnea) ',
+    ],
     options: [
-      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim2' },
+      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim2', select: true },
       { label: 'Não', goto: 'ortopedicas1' },
     ],
   },
@@ -612,7 +647,7 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'ortopedicas1' },
+      { label: 'Continuar', variant: 'info', goto: 'ortopedicas1' },
     ],
   },
 
@@ -632,7 +667,7 @@ const mapaMental = {
       'Tratamento de queimadura com infecção generalizada ',
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'ortopedicasFim1' },
+      { label: 'Sim/Não sei', goto: 'ortopedicasFim1', select: true },
       { label: 'Não', goto: 'FINISHED' },
     ],
   },
@@ -656,7 +691,7 @@ const mapaMental = {
 
     options: [
       { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
-      { label: 'Entendi, quero continuar', variant: 'info', goto: 'FINISHED' },
+      { label: 'Continuar', variant: 'info', goto: 'FINISHED' },
     ],
   },
 
@@ -669,7 +704,7 @@ const mapaMental = {
   //     '</lu>',
 
   //     options: [
-  //       { label: 'Entendi, quero continuar', variant:'info', goto: 'recemnascido1' },
+  //       { label: 'Continuar', variant:'info', goto: 'recemnascido1' },
   //       { label: 'Terinar', variant:'dark', goto: 'FINISHED' },
   //     ],
   // },

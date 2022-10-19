@@ -14,12 +14,12 @@ class Home extends React.Component {
         <Container>
           <div className="home">
             <Link to={`/question`} activeClassName="active">
-              <button class="btn btn-default">
+              <button className="btn btn-default">
                 <img src="https://99roberto.github.io/fly_well/av_icon.png" width="20" /> Questionário
               </button>
             </Link>
             <Link to={`/#saibamais`} activeClassName="active">
-              <button class="btn btn-default">
+              <button className="btn btn-default">
                 <img src="https://99roberto.github.io/fly_well/Info.png" width="20" /> Saiba mais
               </button>
             </Link>

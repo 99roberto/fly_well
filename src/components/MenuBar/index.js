@@ -23,7 +23,7 @@ function MenuBar() {
             <Link to={`/question`} className="btn">Questionário</Link>
             <Link to={`/TermosUso`} className="btn">Termos de uso</Link>
             <Link to={`/PoliticaPricacidade`} className="btn">Política de Privacidade</Link>
-          
+          a
           </Nav>
         </Navbar.Collapse>
       </Container>

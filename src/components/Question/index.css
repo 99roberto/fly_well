@@ -8,6 +8,16 @@
   height: 100%;
   font-size: 2rem;
 }
+.g { 
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 5px 8px;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;  
+  justify-content: center;  
+  
+}
+
 .g1 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -55,3 +65,8 @@
 .fimMedico {
   background-color: #f8e384;
 } */
+
+.acoes button.btn {
+  min-width: 200px;
+  margin: 5px;
+}
