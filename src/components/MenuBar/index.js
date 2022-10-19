@@ -3,12 +3,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";
-
+import { AppName } from '../../constantes';
 function MenuBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Flay Well</Navbar.Brand>
+        <Navbar.Brand href="#"> <img
+              alt=""
+              src="/logo192.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}</Navbar.Brand>
+        <Navbar.Brand href="#">{AppName}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"> 
