@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/fly_well/static/css/main.39f43f44.css",
-    "main.js": "/fly_well/static/js/main.06a8c98c.js",
+    "main.css": "/fly_well/static/css/main.92e40eb6.css",
+    "main.js": "/fly_well/static/js/main.a4255f26.js",
     "static/js/498.de6d7645.chunk.js": "/fly_well/static/js/498.de6d7645.chunk.js",
     "static/js/703.460aa154.chunk.js": "/fly_well/static/js/703.460aa154.chunk.js",
     "static/js/541.128cce06.chunk.js": "/fly_well/static/js/541.128cce06.chunk.js",
     "static/js/787.0f06af18.chunk.js": "/fly_well/static/js/787.0f06af18.chunk.js",
-    "static/media/capa.jpg": "/fly_well/static/media/capa.977834fc9ae3448b8eff.jpg",
     "static/media/logo.svg": "/fly_well/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/fly_well/index.html",
-    "main.39f43f44.css.map": "/fly_well/static/css/main.39f43f44.css.map",
-    "main.06a8c98c.js.map": "/fly_well/static/js/main.06a8c98c.js.map",
+    "main.92e40eb6.css.map": "/fly_well/static/css/main.92e40eb6.css.map",
+    "main.a4255f26.js.map": "/fly_well/static/js/main.a4255f26.js.map",
     "498.de6d7645.chunk.js.map": "/fly_well/static/js/498.de6d7645.chunk.js.map",
     "703.460aa154.chunk.js.map": "/fly_well/static/js/703.460aa154.chunk.js.map",
     "541.128cce06.chunk.js.map": "/fly_well/static/js/541.128cce06.chunk.js.map",
     "787.0f06af18.chunk.js.map": "/fly_well/static/js/787.0f06af18.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39f43f44.css",
-    "static/js/main.06a8c98c.js"
+    "static/css/main.92e40eb6.css",
+    "static/js/main.a4255f26.js"
   ]
 }
