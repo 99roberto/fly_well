@@ -10,9 +10,37 @@ const mapaMental = {
       'após considerados por médicos. ' +
       'Conte o dia do evento de saúde e o dia da ' +
       'viagem para calcular o número de dias após o incidente.',
-    options: [{ label: 'Start', goto: 'inicial1' }],
+    options: [{ label: 'Start', goto: 'teste1' }],
     type: 'html',
   },
+
+  teste1: {
+    style: 'cabecalho',
+    question: 'Você tem diagnóstico das seguintes doenças abaixo?',
+
+    checkboxs: [
+      'Angina (dor no peito de origem cardíaca)',
+      'Insuficiência cardíaca',
+      'Doença cardíaca congênita',
+      'Anemia (de qualquer origem)',
+      'Anemia falciforme',
+    ],
+    options: [
+      { label: 'Sim/Não sei', goto: 'teste2', select: true },
+      { label: 'Não', goto: 'FINISHED' },
+    ],
+  },  
+  teste2: {
+    question_type: 'evaluation',
+    style: 'fimMedico',
+    question:
+      'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'FINISHED' },
+    ],
+  },
+
   inicial1: {
     style: 'inicial',
     question:
@@ -40,30 +68,33 @@ const mapaMental = {
     ],
   },
   inicialFimMedico3: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Mais informações', goto: 'inicialMaisInfo' },
-      { label: 'Entendi, quero continuar', goto: 'gravidez1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'gravidez1' },
     ],
   },
   inicialFimMedico1: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Mais informações', goto: 'inicialMaisInfo' },
-      { label: 'Entendi, quero continuar', goto: 'inicial2' },
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'inicial2' },
     ],
   },
   inicialFimMedico2: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Mais informações', goto: 'inicialMaisInfo' },
-      { label: 'Entendi, quero continuar', goto: 'inicial3' },
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'inicial3' },
     ],
   },
   inicialMaisInfo: { question: 'Informações pertinentes' },
@@ -100,19 +131,21 @@ const mapaMental = {
   gravidez5: {
     question: 'Qual é a sua idade gestacional?',
     options: [
-      { label: '< 28 semanas', goto: 'recemnascido1' },
-      { label: '> 28 Semanas', goto: 'gravidezFimMedico' },
+      { label: '< 28 semanas', goto: 'gravidezFimMedico' },
+      { label: '> 28 Semanas', goto: 'recemnascido1' },
     ],
   },
   gravidezFimMedico: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     question: 'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.',
     options: [
-      { label: 'Entendi, quero continuar questionário', goto: 'recemnascido1' },
-      { label: 'Voltar a tela inicial', goto: 'home' },
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'recemnascido1' },
     ],
   },
   gravidezFimMedico2: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     question:
       'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.' +
@@ -122,8 +155,8 @@ const mapaMental = {
       ' O formulário deve ser enviado com antecedência mínima de 72 horas do horário previsto de partida do voo.' +
       ' A partir da 38ª semana, o embarque é permitido apenas em casos de extrema necessidade com acompanhamento médico.',
     options: [
-      { label: 'Entendi, quero continuar questionário', goto: 'recemnascido1' },
-      { label: 'Voltar a tela inicial', goto: 'home' },
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'recemnascido1' },
     ],
   },
 
@@ -155,9 +188,15 @@ const mapaMental = {
     options: [{ label: 'Continuar', goto: 'oncologico1' }],
   },
   recemnascidoFimMedico: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida. ',
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares1' },
+    ],
   },
 
   oncologico1: {
@@ -181,22 +220,26 @@ const mapaMental = {
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.\n' +
       ' Pessoas em tratamento por quimioterapia podem voar, mas não durante a administração ativa de medicamentos citotóxicos medicamento, especialmente quando envolve tratamento endovenoso.\n' +
       ' Pessoas em radioterapia precisam de avaliação médica para análise do risco individual e coletivo. ',
+    question_type: 'evaluation',
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares1' },
+    ],
   },
 
   cardiovasculares1: {
     style: 'cabecalho',
-    type: 'html',
-    question:
-      '<h2>Você tem diagnóstico das seguintes doenças abaixo?</h2>' +
-      '<ul>' +
-      '<li>Angina (dor no peito de origem cardíaca)</li>' +
-      '<li>Insuficiência cardíaca</li>' +
-      '<li>Doença cardíaca congênita</li>' +
-      '<li>Anemia (de qualquer origem)</li>' +
-      '<li>Anemia falciforme</li>' +
-      '</ul>',
+    question: 'Você tem diagnóstico das seguintes doenças abaixo?',
+
+    checkboxs: [
+      'Angina (dor no peito de origem cardíaca)',
+      'Insuficiência cardíaca',
+      'Doença cardíaca congênita',
+      'Anemia (de qualquer origem)',
+      'Anemia falciforme',
+    ],
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim1' },
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim1', select: true },
       { label: 'Não', goto: 'cardiovasculares2' },
     ],
   },
@@ -208,7 +251,13 @@ const mapaMental = {
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. \n' +
       'É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. \n' +
       '\nSe você é médico(a) e está avaliando um paciente, consulte este material para a sua tomada de decisão (LINK PARA LADO B)',
+    question_type: 'evaluation',
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares2' },
+    ],
   },
+
   cardiovasculares2: {
     type: 'html',
     question:
@@ -220,8 +269,22 @@ const mapaMental = {
       '<li>Embolia pulmonar</li>' +
       '</ul>',
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim1' },
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim2' },
       { label: 'Não', goto: 'cardiovasculares3' },
+    ],
+  },
+
+  cardiovascularesFim2: {
+    style: 'fimMedico',
+    type: 'html',
+    question:
+      'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. \n' +
+      'É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. \n' +
+      '\nSe você é médico(a) e está avaliando um paciente, consulte este material para a sua tomada de decisão (LINK PARA LADO B)',
+    question_type: 'evaluation',
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'cardiovasculares3' },
     ],
   },
   cardiovasculares3: {
@@ -236,12 +299,12 @@ const mapaMental = {
       '<li>Terapia cardíaca de ablação</li>' +
       '</ul>',
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim2' },
+      { label: 'Sim/Não sei', goto: 'cardiovascularesFim3' },
       { label: 'Não', goto: 'pulmonares1' },
     ],
   },
 
-  cardiovascularesFim2: {
+  cardiovascularesFim3: {
     style: 'fimMedico',
     type: 'html',
     question:
@@ -257,6 +320,11 @@ const mapaMental = {
       '<li>Terapia cardíaca de ablação: viagens possíveis após 02 dias do procedimento. ' +
       'Risco aumentado de trombose venosa profunda se viagem realizada em menos de uma semana do procedimento.</li>' +
       '</ul>',
+    question_type: 'evaluation',
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'pulmonares1' },
+    ],
   },
   // 6
   pulmonares1: {
@@ -286,7 +354,12 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.\n ' +
       'É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. ',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    question_type: 'evaluation',
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'pulmonares2' },
+    ],
   },
 
   pulmonares2: {
@@ -304,6 +377,7 @@ const mapaMental = {
   },
 
   pulmonaresFim2: {
+    question_type: 'evaluation',
     type: 'html',
     style: 'fimMedico',
     question:
@@ -315,7 +389,11 @@ const mapaMental = {
       'causado por trauma e 07 dias após recuperação pulmonar completa em pneumotórax por outras causas. </li>' +
       '<li>Pneumonia: resolução completa em pessoa clinicamente estável e assintomática.  </li>' +
       '</ul>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'pulmonares3' },
+    ],
   },
 
   pulmonares3: {
@@ -333,6 +411,7 @@ const mapaMental = {
   },
 
   pulmonaresFim3: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
@@ -343,7 +422,11 @@ const mapaMental = {
       '<li>Cirurgia pulmonar e biópsia: viagens possíveis após 11 dias do procedimento com recuperação pulmonar completa, ' +
       'em pessoa clinicamente estável e assintomática. </li>' +
       '</ul>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'neuroPsiq1' },
+    ],
   },
 
   // 7
@@ -367,6 +450,7 @@ const mapaMental = {
   },
 
   neuroPsiqFim1: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
@@ -374,7 +458,11 @@ const mapaMental = {
       '<p>É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. </p>' +
       '<br/>' +
       '<p>Se devidamente controlado por medicação e estável (ou seja, vivendo na comunidade cuidando de todas as próprias necessidades incluindo medicamentos)</p>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'neuroPsiq2' },
+    ],
   },
 
   neuroPsiq2: {
@@ -393,6 +481,7 @@ const mapaMental = {
   },
 
   neuroPsiqFim2: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
@@ -408,7 +497,11 @@ const mapaMental = {
       '<li><b>Psicose aguda:</b> viagens possíveis após 30 dias do evento, em pessoa clinicamente estável, com indicação ' +
       'de acompanhante profissional de saúde conforme avaliação médica.  </li>' +
       '</ul>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'neuroPsiq3' },
+    ],
   },
 
   neuroPsiq3: {
@@ -425,6 +518,7 @@ const mapaMental = {
   },
 
   neuroPsiqFim3: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
@@ -435,7 +529,11 @@ const mapaMental = {
       '<li><b>Cirurgia de crânio ou cerebral:</b> viagens possíveis a partir de 10 dias do procedimento, ' +
       'se pessoa clinicamente estável e assintomática, após avaliação médica sem evidência de ar na cavidade craniana. </li>' +
       '</ul>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'olhosNarizGarganta1' },
+    ],
   },
 
   // 8
@@ -457,6 +555,7 @@ const mapaMental = {
   },
 
   olhosNarizGargantaFim1: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
@@ -468,7 +567,11 @@ const mapaMental = {
       '<li><b>Sinusite:</b> viagens possíveis em pessoa clinicamente estável e assintomática.  </li>' +
       '<li><b>Lesão perfurante nos olhos:</b> viagens possíveis após 07 dias do evento, após avaliação médica em pessoa clinicamente estável.  </li>' +
       '</ul>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'olhosNarizGarganta2' },
+    ],
   },
 
   olhosNarizGarganta2: {
@@ -490,6 +593,7 @@ const mapaMental = {
   },
 
   olhosNarizGargantaFim2: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
@@ -505,59 +609,70 @@ const mapaMental = {
       '<li><b>Cirurgia dos olhos (penetrante ou intraocular):</b> viagens possíveis após 07 dias da cirurgia, em pessoa clinicamente estável e assintomática.  </li>' +
       '<li><b>Cirrugia dos olhos (catarata ou de córnea):</b> viagens possíveis após 24 horas da cirurgia, em pessoa clinicamente estável e assintomática. </li>' +
       '</ul>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'ortopedicas1' },
+    ],
   },
 
-// 9
-
+  // 9
 
   ortopedicas1: {
     style: 'cabecalho',
-    type: 'html',
-    question:
-      '<h2>Você já fez algum dos procedimentos abaixo nos últimos 07 dias?</h2> ' +
-      '<ul>' +
-      '<li>Cirurgia de quadril, joelho ou tornozelo </li>' + 
-      '<li>Cirurgia de coluna </li>' + 
-      '<li>Cirurgia plástica </li>' + 
-      '<li>Artroscopia de articulações </li>' + 
-      '<li>Colocação de gesso </li>' + 
-      '<li>Terapia de recompressão por descompressão de mergulho </li>' + 
-      '<li>Tratamento de queimadura com infecção generalizada </li>' + 
-      '</lu>',
+    question: 'Você já fez algum dos procedimentos abaixo nos últimos 07 dias?',
+
+    checkboxs: [
+      'Cirurgia de quadril, joelho ou tornozelo ',
+      'Cirurgia de coluna ',
+      'Cirurgia plástica ',
+      'Artroscopia de articulações ',
+      'Colocação de gesso ',
+      'Terapia de recompressão por descompressão de mergulho ',
+      'Tratamento de queimadura com infecção generalizada ',
+    ],
     options: [
-      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim2' },
-      { label: 'Não', goto: 'ortopedicasFim2' },
+      { label: 'Sim/Não sei', goto: 'ortopedicasFim1' },
+      { label: 'Não', goto: 'FINISHED' },
     ],
   },
 
   ortopedicasFim1: {
+    question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
       '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas às doenças.</p>' +
       '<ul>' +
-      '<li><b>Cirurgia de quadril, joelho ou tornozelo:</b> </li>' + 
-      '<li><b>Cirurgia de coluna:</b> </li>' + 
-      '<li><b>Cirurgia plástica:</b> </li>' + 
-      '<li><b>Artroscopia de articulações:</b> </li>' + 
-      '<li><b>Colocação de gesso:</b> </li>' + 
-      '<li><b>Terapia de recompressão por descompressão de mergulho:</b> </li>' + 
-      '<li><b>Tratamento de queimadura com infecção generalizada:</b> </li>' + 
+      '<li><b>Cirurgia de quadril, joelho ou tornozelo:</b> </li>' +
+      '<li><b>Cirurgia de coluna:</b> </li>' +
+      '<li><b>Cirurgia plástica:</b> </li>' +
+      '<li><b>Artroscopia de articulações:</b> </li>' +
+      '<li><b>Colocação de gesso:</b> </li>' +
+      '<li><b>Terapia de recompressão por descompressão de mergulho:</b> </li>' +
+      '<li><b>Tratamento de queimadura com infecção generalizada:</b> </li>' +
       '</ul>',
-    options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
+
+    options: [
+      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Entendi, quero continuar', variant: 'info', goto: 'FINISHED' },
+    ],
   },
 
-  ortopedicasFim2: {
-    style: 'fimMedico',
-    type: 'html',
-    question:
-      '<h2>Ausência de obrigatoriedade de consulta médica para voar. </h2> ' +
-      '<p>Avaliar próximo sistema. </p>' + 
-      '</lu>',
-      options: [{ label: 'Voltar a tela inicial', goto: 'home' }],
-  },
+  // ortopedicasFim2: {
+  //   style: 'fimMedico',
+  //   type: 'html',
+  //   question:
+  //     '<h2>Ausência de obrigatoriedade de consulta médica para voar. </h2> ' +
+  //     '<p>Avaliar próximo sistema. </p>' +
+  //     '</lu>',
+
+  //     options: [
+  //       { label: 'Entendi, quero continuar', variant:'info', goto: 'recemnascido1' },
+  //       { label: 'Terinar', variant:'dark', goto: 'FINISHED' },
+  //     ],
+  // },
 };
 
 const getMapaMental = () => {
