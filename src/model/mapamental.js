@@ -10,7 +10,7 @@ const mapaMental = {
       'após considerados por médicos. ' +
       'Conte o dia do evento de saúde e o dia da ' +
       'viagem para calcular o número de dias após o incidente.',
-    options: [{ label: 'Start', goto: 'teste1' }],
+    options: [{ label: 'Start', goto: 'inicial1' }],
     type: 'html',
   },
 

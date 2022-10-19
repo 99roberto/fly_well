@@ -3,21 +3,9 @@ import './index.css';
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import ReactToPdf from 'react-to-pdf';
-
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-
- const _exportPdf = () => {
-
-     html2canvas(document.querySelector("#capture")).then(canvas => {
-        document.body.appendChild(canvas);  // if you want see your screenshot in body.
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, 'PNG', 0, 0);
-        pdf.save("download.pdf"); 
-    });
-
- }
+import { AppName } from '../../constantes';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const options = {
   orientation: 'landscape',
@@ -128,7 +116,19 @@ class Question extends React.Component {
             <ReactToPdf>
               {({ toPdf, targetRef }) => (
                 <>
+                 
                   <div style={{ maxWidth: 750, padding: '10px' }} ref={targetRef}>
+                  <Navbar.Brand href="#">
+                    {' '}
+                    <img
+                      alt=""
+                      src="https://99roberto.github.io/fly_well/logo192.png"
+                      width="30"
+                      height="30"
+                      className="d-inline-block align-top"
+                    />{' '}
+                  </Navbar.Brand>
+                  <Navbar.Brand href="#">{AppName}</Navbar.Brand>
                     <div className="question" ref={this.state.ref} style={{ margin: '10px' }}>
                       {this.state.evaluation.length == 0 && (
                         <h2>Ausência de obrigatoriedade de consulta médica para voar. </h2>
