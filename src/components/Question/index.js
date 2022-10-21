@@ -135,7 +135,7 @@ class Question extends React.Component {
                       )}
                       {this.state.evaluation.length > 0 && (
                         <div>
-                          <img src="/cabecalho.png"/>
+                          <img src="https://99roberto.github.io/fly_well/cabecalho.png"/>
                           <br/> 
                           <br/> 
                           <p style={{textAlign: 'center'}}> Aplicativo Fly Well </p>
