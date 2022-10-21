@@ -365,7 +365,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3>' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </p>' +
       '<br/>' +
       'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
       'e sem complicações relacionadas ao procedimento. ' +
@@ -464,7 +464,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.</h3> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.</p> ' +
       'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
       'e sem complicações relacionadas aos procedimentos. ' +
       '<ul>' +
@@ -503,7 +503,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </p> ' +
       '<p>É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. </p>' +
       '<br/>' +
       '<p>Se devidamente controlado por medicação e estável (ou seja, vivendo na comunidade cuidando de todas as próprias necessidades incluindo medicamentos)</p>',
@@ -533,7 +533,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </p> ' +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
       'e sem complicações relacionadas às doenças. </p>' +
       '<ul>' +
@@ -567,7 +567,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </p> ' +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
       'e sem complicações relacionadas ao procedimento. </p>' +
       '<ul>' +
@@ -598,7 +598,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </p> ' +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática  e sem complicações relacionadas às doenças. </p>' +
       '<ul>' +
       '<li><b>Sangramento gastrointestinal:</b> viagens possíveis após 10 dias do evento, em pessoa clinicamente estável e assintomática.  </li>' +
@@ -635,7 +635,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </p> ' +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas aos procedimentos. </p>' +
       '<ul>' +
       '<li><b>Mandíbula fechada por fio de metal:</b>viagens possíveis após avaliação do profissional de saúde que indicou o procedimento se ' +
@@ -680,7 +680,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h3>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </h3> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. </p> ' +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas às doenças.</p>' +
       '<ul>' +
       '<li><b>Cirurgia de quadril, joelho ou tornozelo:</b> </li>' +
