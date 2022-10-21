@@ -20,7 +20,7 @@ const mapaMental = {
       'Estou ciente das Políticas de Privacidade',
     ],
     mandatory: true,
-    options: [{ label: 'Iniciar', goto: 'teste1', select: true }],
+    options: [{ label: 'Iniciar', goto: 'inicio1', select: true }],
     type: 'html',
   },
 
