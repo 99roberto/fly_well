@@ -2,7 +2,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import { AppName, SubTitulo } from '../../constantes';
 import './index.css';
 import { Link } from 'react-router-dom';
-
+import { Navbar, Nav } from 'react-bootstrap';
+import { NavDropdown } from 'react-bootstrap';
 function Slide() {
   return (
     // <Carousel>
@@ -24,17 +25,30 @@ function Slide() {
               <h1>{AppName}</h1>
               <h2>{SubTitulo}</h2>
               <div className="d-flex justify-content-center justify-content-lg-start">
-                
-                <Link to={`/question`} activeClassName="active" >
+                <Link to={`/question`} activeClassName="active">
                   <button className="btn-get-started scrollto">
                     <img src="https://99roberto.github.io/fly_well/av_icon.png" width="20" /> Questionário
                   </button>
                 </Link>
-                <Link to={`/#saibamais`} activeClassName="active">
-                  <button className="btn-get-started scrollto">
-                    <img src="https://99roberto.github.io/fly_well/Info.png" width="20" /> Saiba mais
-                  </button>
-                </Link>
+
+                <NavDropdown title="Saiba mais" id="navbarScrollingDropdown" className="btn-get-started scrollto">
+                  <NavDropdown.Item>
+                    <Link to={`/bemEstar`} activeClassName="active">
+                      <p>Bem Estar</p>
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to={`/vacinas`} activeClassName="active">
+                      <p>Vacinas</p>
+                    </Link>
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item>
+                    <Link to={`/linksuteis`} activeClassName="active">
+                      <p>Links Úteis</p>
+                    </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -44,6 +58,7 @@ function Slide() {
         </div>
       </section>
       {/* <!-- End Hero --> */}
+      <div></div>
     </>
   );
 }

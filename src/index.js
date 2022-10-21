@@ -12,6 +12,9 @@ import Question from './components/Question';
 import TermosUso from './components/TermosUso';
 import PoliticaPricacidade from './components/PoliticaPrivacidade';
 import MenuBar from './components/MenuBar';
+import BemEstar from './components/bemEstar';
+import Vacinas from './components/vacinas';
+import Linksuteis from './components/linksUteis';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +27,13 @@ root.render(
     <Route path="question" element={<Question />} /> 
     <Route path="TermosUso" element={<TermosUso />} /> 
     <Route path="PoliticaPricacidade" element={<PoliticaPricacidade />} /> 
+
+
+    <Route path="bemEstar" element={<BemEstar />} /> 
+
+    <Route path="vacinas" element={<Vacinas />} /> 
+
+    <Route path="linksuteis" element={<Linksuteis />} /> 
   </Routes>
   </HashRouter>
 );
