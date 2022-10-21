@@ -13,11 +13,14 @@ const mapaMental = {
     checkboxs: [
       'Estou ciente de que o questionário pode ser autoaplicado ou por um profissional da saúde',
       'Estou ciente que nenhum dado meu será registrado',
+      'Sempre que não estiver me sentindo bem, devo considerar consultar antes de voar',
+      'É recomendável seguir todo o questionário para avaliação completa',
+      'O design do aplicativo, assim como os blocos de perguntas, foram agrupados conforme critério dos autores',
       'Estou ciente dos Termos de Uso ',
       'Estou ciente das Políticas de Privacidade',
     ],
     mandatory: true,
-    options: [{ label: 'Iniciar', goto: 'inicial1', select: true }],
+    options: [{ label: 'Iniciar', goto: 'teste1', select: true }],
     type: 'html',
   },
 
@@ -43,7 +46,7 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'FINISHED' },
     ],
   },
@@ -127,7 +130,7 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'inicial2' },
     ],
   },
@@ -137,7 +140,7 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'inicial3' },
     ],
   },
@@ -201,7 +204,7 @@ const mapaMental = {
     style: 'fimMedico',
     question: 'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
     ],
   },
@@ -216,7 +219,7 @@ const mapaMental = {
       ' O formulário deve ser enviado com antecedência mínima de 72 horas do horário previsto de partida do voo.' +
       ' A partir da 38ª semana, o embarque é permitido apenas em casos de extrema necessidade com acompanhamento médico.',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
     ],
   },
@@ -255,7 +258,7 @@ const mapaMental = {
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida. ',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
     ],
   },
@@ -283,7 +286,7 @@ const mapaMental = {
       ' Pessoas em radioterapia precisam de avaliação médica para análise do risco individual e coletivo. ',
     question_type: 'evaluation',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
     ],
   },
@@ -311,10 +314,10 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. \n' +
       'É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. \n' +
-      '\nSe você é médico(a) e está avaliando um paciente, consulte este material para a sua tomada de decisão (LINK PARA LADO B)',
+      '\nSe você é médico(a) e está avaliando um paciente, consulte este material para a sua tomada de decisão',
     question_type: 'evaluation',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares2' },
     ],
   },
@@ -335,10 +338,10 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. \n' +
       'É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. \n' +
-      '\nSe você é médico(a) e está avaliando um paciente, consulte este material para a sua tomada de decisão (LINK PARA LADO B)',
+      '\nSe você é médico(a) e está avaliando um paciente, consulte este material para a sua tomada de decisão',
     question_type: 'evaluation',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares3' },
     ],
   },
@@ -376,7 +379,7 @@ const mapaMental = {
       '</ul>',
     question_type: 'evaluation',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'pulmonares1' },
     ],
   },
@@ -411,7 +414,7 @@ const mapaMental = {
 
     question_type: 'evaluation',
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'pulmonares2' },
     ],
   },
@@ -441,7 +444,7 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'pulmonares3' },
     ],
   },
@@ -470,7 +473,7 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'neuroPsiq1' },
     ],
   },
@@ -506,7 +509,7 @@ const mapaMental = {
       '<p>Se devidamente controlado por medicação e estável (ou seja, vivendo na comunidade cuidando de todas as próprias necessidades incluindo medicamentos)</p>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'neuroPsiq2' },
     ],
   },
@@ -544,7 +547,7 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'neuroPsiq3' },
     ],
   },
@@ -573,7 +576,7 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta1' },
     ],
   },
@@ -605,7 +608,7 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta2' },
     ],
   },
@@ -646,7 +649,7 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'ortopedicas1' },
     ],
   },
@@ -690,7 +693,7 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terinar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'FINISHED' },
     ],
   },
@@ -705,7 +708,7 @@ const mapaMental = {
 
   //     options: [
   //       { label: 'Continuar', variant:'info', goto: 'recemnascido1' },
-  //       { label: 'Terinar', variant:'dark', goto: 'FINISHED' },
+  //       { label: 'Terminar', variant:'dark', goto: 'FINISHED' },
   //     ],
   // },
 };

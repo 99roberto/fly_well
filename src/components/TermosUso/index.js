@@ -3,7 +3,7 @@ import './index.css';
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import './index.css';
-
+import { AppName } from '../../constantes';
 class TermosUso extends React.Component {
   render() {
     return (
@@ -13,8 +13,7 @@ class TermosUso extends React.Component {
 		  <meta name="Generator" content="Microsoft Word 15 (filtered)" />
 		  <style dangerouslySetInnerHTML={{__html: "\n<!--\n /* Font Definitions */\n @font-face\n\t{font-family:Helvetica;\n\tpanose-1:2 11 6 4 2 2 2 2 2 4;}\n@font-face\n\t{font-family:\"Cambria Math\";\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\n@font-face\n\t{font-family:Calibri;\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\n@font-face\n\t{font-family:Roboto;}\n /* Style Definitions */\n p.MsoNormal, li.MsoNormal, div.MsoNormal\n\t{margin-top:0in;\n\tmargin-right:0in;\n\tmargin-bottom:8.0pt;\n\tmargin-left:0in;\n\tline-height:107%;\n\tfont-size:11.0pt;\n\tfont-family:\"Calibri\",sans-serif;}\n.MsoChpDefault\n\t{font-family:\"Calibri\",sans-serif;}\n.MsoPapDefault\n\t{margin-bottom:8.0pt;\n\tline-height:107%;}\n@page WordSection1\n\t{size:595.3pt 841.9pt;\n\tmargin:70.85pt 85.05pt 70.85pt 85.05pt;}\ndiv.WordSection1\n\t{page:WordSection1;}\n-->\n" }} />
 		  <div className="WordSection1">
-			<p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '.25in', marginLeft: '0in', textAlign: 'justify', lineHeight: '30.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '25.5pt', fontFamily: 'Roboto', color: 'black'}}>Termos &amp;
-				Condições - Fly Well</span></p>
+			<p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '.25in', marginLeft: '0in', textAlign: 'justify', lineHeight: '30.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '25.5pt', fontFamily: 'Roboto', color: 'black'}}>Termos de Uso - { AppName }</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Ao fazer o download ou usar o aplicativo,
 				esses termos serão aplicados automaticamente a você. Por isso, certifique-se de
 				lê-los com atenção antes de usar o aplicativo. Você não tem permissão para
@@ -29,7 +28,7 @@ class TermosUso extends React.Component {
 				o direito de fazer alterações no aplicativo ou cobrar por seus serviços, a
 				qualquer momento e por qualquer motivo. Nunca cobraremos pelo aplicativo ou
 				pelos serviços sem deixar claro para você exatamente o que você está pagando.</span></p>
-			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>O app Fly Well armazena e processa dados
+			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>O app { AppName } armazena e processa dados
 				pessoais que você nos forneceu, a fim de fornecer o nosso serviço. É sua
 				responsabilidade manter seu telefone e acesso ao aplicativo seguro. Portanto,
 				recomendamos que você não faça o jailbreak ou o root no seu telefone, que é o
@@ -37,7 +36,7 @@ class TermosUso extends React.Component {
 				sistema operacional oficial do seu dispositivo. Poderia tornar seu telefone
 				vulnerável a malware / vírus / programas mal-intencionados, comprometer os
 				recursos de segurança do seu telefone e isso poderia significar que o
-				aplicativo Fly Well não funcionará corretamente ou de maneira alguma.</span></p>
+				aplicativo { AppName } não funcionará corretamente ou de maneira alguma.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Você deve estar ciente de que há certas
 				coisas que não serão responsáveis. Certas funções do aplicativo exigirão que o
 				aplicativo tenha uma conexão ativa com a Internet. A conexão pode ser Wi-Fi ou
@@ -87,7 +86,7 @@ class TermosUso extends React.Component {
 				regem o acesso e uso dos nossos Serviços ("<b>Serviços</b>"),
 				incluindo os nossos vários sites, notificações, APIs, notificações de e-mail,
 				aplicativos, anúncios, serviços de comércio, murais, ou qualquer outro tipo de
-				serviço fornecido pelo app Fly Well e qualquer informação, texto, gráficos,
+				serviço fornecido pelo app { AppName } e qualquer informação, texto, gráficos,
 				fotos ou outros materiais carregados, descarregados ou aparecendo nos serviços
 				(colectivamente referidos como "<b>Conteúdo</b>").</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>O seu acesso e uso dos&nbsp;<b>Serviços</b>&nbsp;está
@@ -103,7 +102,7 @@ class TermosUso extends React.Component {
 				você possa compartilhar de maneira confortável e legal com os outros sob
 				estes&nbsp;<b>Termos</b>.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Você pode usar os&nbsp;<b>Serviços</b>&nbsp;apenas
-				se puder assinar um contrato de vínculo com o app Fly Well e não for uma pessoa
+				se puder assinar um contrato de vínculo com o app { AppName } e não for uma pessoa
 				impedida de receber serviços de acordo com as leis de seu país ou de qualquer
 				outra jurisdição aplicável. Se você está aceitando estes&nbsp;<b>Termos</b>&nbsp;e
 				usar os&nbsp;<b>Serviços</b>&nbsp;em nome de uma empresa, organização, governo
@@ -113,11 +112,11 @@ class TermosUso extends React.Component {
 				internacionais, regras e regulamentos.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Os&nbsp;<b>Serviços</b>&nbsp;que o app Fly
 				Well oferece estão sempre evoluindo e a forma e natureza dos&nbsp;<b>Serviços</b>&nbsp;que
-				o Fly Well presta podem mudar ocasionalmente sem aviso prévio ao usuário. Além
-				disso, o Fly Well pode interromper (permanente ou temporariamente) o
+				o { AppName } presta podem mudar ocasionalmente sem aviso prévio ao usuário. Além
+				disso, o { AppName } pode interromper (permanente ou temporariamente) o
 				fornecimento dos&nbsp;<b>Serviços</b>&nbsp;(ou qualquer funcionalidade
 				dos&nbsp;<b>Serviços</b>) ao utilizador ou aos utilizadores em geral e pode não
-				ser capaz de fornecê-lo com aviso prévio. Fly Well também mantém o direito de
+				ser capaz de fornecê-lo com aviso prévio. { AppName } também mantém o direito de
 				criar limitações de uso e armazenamento, a critério próprio, a qualquer
 				momento, sem aviso prévio ao usuário.</span></p>
 			<p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '12.0pt', marginLeft: '0in', textAlign: 'justify', lineHeight: 'normal', background: 'white'}}><span lang="PT-BR" style={{fontSize: '15.0pt', fontFamily: 'Roboto', color: 'black', letterSpacing: '.25pt'}}>Privacidade</span></p>
@@ -125,7 +124,7 @@ class TermosUso extends React.Component {
 				dos&nbsp;<b>Serviços</b>&nbsp;você concorda com a coleta e utilização (conforme
 				estabelecido na Política de Privacidade) desta informação, incluindo a
 				transferência destas informações para os Estados Unidos e / ou outros países para
-				armazenamento, processamento e utilização pelo Fly Well. Como parte de
+				armazenamento, processamento e utilização pelo { AppName }. Como parte de
 				fornecer-lhe os&nbsp;<b>Serviços</b>, pode ser necessário te entregar certas
 				comunicações, tais como anúncios de serviços e mensagens administrativas. Estas
 				comunicações são consideradas parte dos&nbsp;<b>Serviços</b>&nbsp;e sua conta,
@@ -209,23 +208,23 @@ class TermosUso extends React.Component {
 				você usa para acessar os Serviços e quaisquer atividades ou ações sob sua
 				senha. Nós encorajamos você a usar senhas "fortes" (senhas que usam
 				uma combinação de letras maiúsculas e minúsculas, números e símbolos) com a sua
-				conta. Fly Well não pode e não será responsável por qualquer perda ou dano
+				conta. { AppName } não pode e não será responsável por qualquer perda ou dano
 				decorrente de sua falha em cumprir com o exposto acima.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Conteúdo nos serviços</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Todo o&nbsp;<b>Conteúdo</b>&nbsp;é de
-				exclusiva responsabilidade da pessoa que originou tal conteúdo. Fly Well não
+				exclusiva responsabilidade da pessoa que originou tal conteúdo. { AppName } não
 				pode controlar o conteúdo publicado através dos&nbsp;<b>Serviços</b>&nbsp;nem
 				assumir a responsabilidade por tal&nbsp;<b>Conteúdo</b>. Qualquer uso ou
 				dependência de qualquer&nbsp;<b>Conteúdo</b>&nbsp;ou materiais postados por
 				meio dos&nbsp;<b>Serviços</b>&nbsp;ou obtidos por você através dos&nbsp;<b>Serviços</b>&nbsp;é
 				por seu próprio risco.</span></p>
-			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Fly Well não suporta, representa, endossa
+			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>{ AppName } não suporta, representa, endossa
 				ou garante a integridade, veracidade, exatidão ou confiabilidade de
 				qualquer&nbsp;<b>Conteúdo</b>, comunicação ou opiniões enviadas através
 				dos&nbsp;<b>Serviços</b>. Você entende que ao utilizar os&nbsp;<b>Serviços</b>,
 				pode estar exposto a&nbsp;<b>Conteúdo</b>&nbsp;que possa ser ofensivo,
 				prejudicial, impreciso ou de algum modo impróprio. Sob nenhuma circunstância o
-				Fly Well ser responsabilizada de forma alguma por qualquer&nbsp;<b>Conteúdo</b>,
+				{ AppName } ser responsabilizada de forma alguma por qualquer&nbsp;<b>Conteúdo</b>,
 				incluindo, mas não limitado a, quaisquer erros ou omissões em qualquer conteúdo
 				ou por qualquer perda ou dano de qualquer tipo incorridos como resultado do uso
 				de qualquer&nbsp;<b>Conteúdo</b>&nbsp;publicado, enviado, transmitido ou de
@@ -241,9 +240,9 @@ class TermosUso extends React.Component {
 				distribuir esse conteúdo em toda e qualquer mídia ou métodos de distribuição
 				(agora conhecida ou desenvolvida posteriormente).</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Você concorda que essa licença inclui o
-				direito para o Fly Well para fornecer, promover e melhorar os serviços e fazer
+				direito para o { AppName } para fornecer, promover e melhorar os serviços e fazer
 				conteúdo submetido ou através dos&nbsp;<b>Serviços</b>&nbsp;disponíveis para
-				outras empresas, organizações ou indivíduos que têm uma parceria com o Fly Well
+				outras empresas, organizações ou indivíduos que têm uma parceria com o { AppName }
 				para a distribuição, transmissão, distribuição ou publicação de tal conteúdo em
 				outras mídias e serviços, sujeitas aos nossos termos e condições para tal uso
 				de conteúdo.</span></p>
@@ -259,24 +258,24 @@ class TermosUso extends React.Component {
 				usuários e nossos parceiros de terceiros. Você entende que o seu&nbsp;<b>Conteúdo</b>&nbsp;pode
 				ser distribuído, transmitido, distribuído ou publicado pelos nossos parceiros e
 				se você não possui o direito sobre o conteúdo para tal uso, poderá estar
-				sujeito a essa responsabilidade. Fly Well não será responsável por qualquer uso
-				do seu&nbsp;<b>Conteúdo</b>&nbsp;pelo Fly Well, de acordo com estes&nbsp;<b>Termos</b>.
+				sujeito a essa responsabilidade. { AppName } não será responsável por qualquer uso
+				do seu&nbsp;<b>Conteúdo</b>&nbsp;pelo { AppName }, de acordo com estes&nbsp;<b>Termos</b>.
 				Você declara e garante que tem todos os direitos, poderes e autoridade
 				necessários para conceder os direitos aqui concedidos para qualquer&nbsp;<b>Conteúdo</b>&nbsp;que
 				você submeter.</span></p>
-			<p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '12.0pt', marginLeft: '0in', textAlign: 'justify', lineHeight: 'normal', background: 'white'}}><span lang="PT-BR" style={{fontSize: '15.0pt', fontFamily: 'Roboto', color: 'black', letterSpacing: '.25pt'}}>Direitos do app Fly Well</span></p>
+			<p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '12.0pt', marginLeft: '0in', textAlign: 'justify', lineHeight: 'normal', background: 'white'}}><span lang="PT-BR" style={{fontSize: '15.0pt', fontFamily: 'Roboto', color: 'black', letterSpacing: '.25pt'}}>Direitos do app { AppName }</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Todos os direitos, títulos e interesses
 				relativos aos&nbsp;<b>Serviços</b>&nbsp;(excluindo conteúdo fornecido pelos
-				usuários) são e continuarão sendo de propriedade exclusiva do Fly Well e seus
+				usuários) são e continuarão sendo de propriedade exclusiva do { AppName } e seus
 				licenciadores. Nada nos&nbsp;<b>Termos</b>&nbsp;lhe dá o direito de usar o nome
-				Fly Well ou qualquer uma das marcas registradas do Fly Well, logotipos, nomes
+				{ AppName } ou qualquer uma das marcas registradas do { AppName }, logotipos, nomes
 				de domínio e quaisquer outros sinais distintivos. Qualquer feedback,
-				comentários ou sugestões que você pode fornecer sobre Fly Well, ou os&nbsp;<b>Serviços</b>&nbsp;é
+				comentários ou sugestões que você pode fornecer sobre { AppName }, ou os&nbsp;<b>Serviços</b>&nbsp;é
 				inteiramente voluntária e nós estaremos livres para usar tais comentários,
 				comentários ou sugestões que acharmos conveniente e sem qualquer obrigação para
 				com você.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Todos os direitos, títulos e interesses
-				relativos aos fornecedores de tecnologias do app Fly Well são e continuarão
+				relativos aos fornecedores de tecnologias do app { AppName } são e continuarão
 				sendo de propriedade exclusiva de seus proprietários legais.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Boas práticas e regras de utilização dos
 				serviços</span></p>
@@ -284,7 +283,7 @@ class TermosUso extends React.Component {
 				confortáveis lendo o&nbsp;<b>Conteúdo</b>&nbsp;e participando do&nbsp;<b>Serviço</b>.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Não crie ou responda&nbsp;<b>Conteúdo</b>&nbsp;sobre
 				qualquer tipo de atividade criminosa.</span></p>
-			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Fly Well se reserva ao direito de remover
+			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>{ AppName } se reserva ao direito de remover
 				o&nbsp;<b>Conteúdo&nbsp;</b>e banir o usuário que o criou em casos de insultos,
 				material impróprio, indecente, difamatório, agressivo, intimidativo, ameaçador,
 				com discurso de ódio, discriminatório, abusivo, vulgar, obsceno, pornográfico,
@@ -299,11 +298,11 @@ class TermosUso extends React.Component {
 				direitos das informações contidas em seu&nbsp;<b>Conteúdo</b>.</span></p>
 			<p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '12.0pt', marginLeft: '0in', textAlign: 'justify', lineHeight: 'normal', background: 'white'}}><span lang="PT-BR" style={{fontSize: '15.0pt', fontFamily: 'Roboto', color: 'black', letterSpacing: '.25pt'}}>Termino destes termos</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Os&nbsp;<b>Termos</b>&nbsp;continuarão a
-				ser aplicáveis até serem encerrados pelo usuário ou pelo Fly Well como se segue.</span></p>
+				ser aplicáveis até serem encerrados pelo usuário ou pelo { AppName } como se segue.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Você pode terminar o seu contrato com Fly
 				Well a qualquer momento por qualquer ou nenhuma razão pela desativação de suas
 				contas e interrompendo seu uso dos&nbsp;<b>Serviços</b>.</span></p>
-			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Fly Well pode suspender ou encerrar suas
+			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>{ AppName } pode suspender ou encerrar suas
 				contas ou deixar de fornecer-lhe com a totalidade ou parte dos&nbsp;<b>Serviços</b>,
 				a qualquer momento, por qualquer motivo ou sem motivo, incluindo, mas não
 				limitado a, se acreditarmos: (i) você violou estes&nbsp;<b>Termos</b>, (ii)
@@ -313,10 +312,10 @@ class TermosUso extends React.Component {
 				acessar sua conta.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Isenções e limitações de responsabilidade</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Por favor, leia esta seção com atenção, uma
-				vez que limita a responsabilidade do Fly Well e seus proprietários,
+				vez que limita a responsabilidade do { AppName } e seus proprietários,
 				subsidiárias, afiliadas, empresas relacionadas, funcionários, diretores,
 				empregados, agentes, representantes, parceiros, fornecedores e licenciadores
-				(coletivamente, as "<b>Entidades do app Fly Well</b>").</span></p>
+				(coletivamente, as "<b>Entidades do app { AppName }</b>").</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>A. Os serviços estão disponíveis
 				"COMO-SÃO"</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>O seu acesso e uso dos&nbsp;<b>Serviços</b>&nbsp;ou
@@ -334,22 +333,22 @@ class TermosUso extends React.Component {
 				outras comunicações mantidos pelos&nbsp;<b>Serviços</b>; e (iv) se os serviços
 				irão atender às suas necessidades ou estará disponível de maneira ininterrupta,
 				segura ou livre de erros. Nenhuma informação, seja oral ou escrita, obtida a
-				partir das&nbsp;<b>Entidades do Fly Well</b>&nbsp;ou através dos&nbsp;<b>Serviços</b>,
+				partir das&nbsp;<b>Entidades do { AppName }</b>&nbsp;ou através dos&nbsp;<b>Serviços</b>,
 				criará qualquer garantia ou declaração não expressamente aqui feita.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>B. Links</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Os&nbsp;<b>Serviços</b>&nbsp;podem conter
 				links para sites ou recursos de terceiros. Você reconhece e concorda que
-				as&nbsp;<b>Entidades do Fly Well</b>&nbsp;não são responsáveis por: (i) a
+				as&nbsp;<b>Entidades do { AppName }</b>&nbsp;não são responsáveis por: (i) a
 				disponibilidade ou exatidão de tais sites ou recursos; ou (ii) o conteúdo,
 				produtos ou serviços presentes ou disponíveis em tais sites ou recursos. Links
 				para tais sites ou recursos não implica qualquer responsabilidade pelas&nbsp;<b>Entidades
-				  do Fly Well</b>&nbsp;de tais sites ou recursos ou o conteúdo, produtos ou
+				  do { AppName }</b>&nbsp;de tais sites ou recursos ou o conteúdo, produtos ou
 				serviços disponíveis em tais sites ou recursos. Você reconhece exclusiva
 				responsabilidade e assumie todos os riscos decorrentes da sua utilização de
 				qualquer um desses sites ou recursos.</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>C. Limitação de Responsabilidade</span></p>
 			<p className="MsoNormal" style={{marginBottom: '12.0pt', textAlign: 'justify', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>ATÉ AO LIMITE MÁXIMO PERMITIDO POR LEI,
-				AS&nbsp;<b>ENTIDADES DO Fly Well</b>&nbsp;NÃO SERÃO RESPONSÁVEIS POR QUAISQUER
+				AS&nbsp;<b>ENTIDADES DO { AppName }</b>&nbsp;NÃO SERÃO RESPONSÁVEIS POR QUAISQUER
 				DANOS, INCIDENTAIS, ESPECIAIS, CONSEQUENCIAIS OU PUNITIVOS INDIRETO, OU
 				QUALQUER PERDA DE LUCROS OU RECEITAS, INCORRIDA DIRETA OU INDIRETAMENTE, OU
 				QUALQUER PERDA DE DADOS, USO OU OUTRAS PERDAS INTANGÍVEIS, RESULTANTES DE (i)
