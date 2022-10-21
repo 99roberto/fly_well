@@ -2,7 +2,7 @@ const mapaMental = {
   home: {
     style: 'intro',
     question:
-      '<h2>Questionário A</h2></br>' +
+      '<p>Questionário A</p></br>' +
       '<p>As perguntas a seguir são fornecidas como ' +
       'um guia para o período de tempo que deve ' +
       'decorrer entre um evento médico e o voo ' +
@@ -434,7 +434,7 @@ const mapaMental = {
     type: 'html',
     style: 'fimMedico',
     question:
-      '<h2>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.</h2> ' +
+      '<p>É  recomendada avaliação médica antes de realizar a viagem aérea para orientações.</p> ' +
       'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
       'e sem complicações relacionadas às doenças. ' +
       '<ul>' +
