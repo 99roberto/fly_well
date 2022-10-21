@@ -3,16 +3,16 @@ import './index.css';
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import './index.css';
-
+import { AppName } from '../../constantes';
 class PoliticaPricacidade extends React.Component {
   render() {
     return (
       <Container>
      
      <div className="WordSection1">
-        <p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '.25in', marginLeft: '0in', lineHeight: '30.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '25.5pt', fontFamily: 'Roboto', color: 'black'}}>Termo de Privacidade -
-            Fly Well</span></p>
-        <p className="MsoNormal" style={{marginBottom: '12.0pt', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black', textTransform: 'uppercase'}}>ROBERTO LEMOS MEYER</span><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>, criou o aplicativo Fly Well.</span></p>
+        <p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '.25in', marginLeft: '0in', lineHeight: '30.0pt', background: 'white'}}>
+            <span lang="PT-BR" style={{fontSize: '25.5pt', fontFamily: 'Roboto', color: 'black'}}>Políticas de Privacidade - { AppName }</span></p>
+        <p className="MsoNormal" style={{marginBottom: '12.0pt', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black', textTransform: 'uppercase'}}>ROBERTO LEMOS MEYER</span><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>, criou o aplicativo { AppName }.</span></p>
         <p className="MsoNormal" style={{marginBottom: '12.0pt', lineHeight: '18.0pt', background: 'white'}}><b><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Acreditamos que você sempre deve saber quais dados coletamos de
               você e como os usamos, e que você deve ter um controle significativo sobre
               isso. Queremos capacitá-lo para tomar as melhores decisões sobre as informações
@@ -29,8 +29,7 @@ class PoliticaPricacidade extends React.Component {
             e nem compartilharemos suas informações com ninguém, exceto conforme descrito
             nesta Política de Privacidade.</span></p>
         <p className="MsoNormal" style={{marginBottom: '12.0pt', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Os termos usados ​​nesta Política de Privacidade têm os mesmos
-            significados que os nossos Termos e Condições, que estão acessíveis no Fly
-            Well, a menos que definido de outra forma nesta Política de Privacidade.</span></p>
+            significados que os nossos Termos e Condições, que estão acessíveis no { AppName }, a menos que definido de outra forma nesta Política de Privacidade.</span></p>
         <p className="MsoNormal" style={{marginTop: '.25in', marginRight: '0in', marginBottom: '12.0pt', marginLeft: '0in', lineHeight: 'normal', background: 'white'}}><b><span lang="PT-BR" style={{fontSize: '15.0pt', fontFamily: 'Roboto', color: 'black', letterSpacing: '.25pt'}}>Coleta
               e Uso de Informações</span></b></p>
         <p className="MsoNormal" style={{marginBottom: '12.0pt', lineHeight: '18.0pt', background: 'white'}}><span lang="PT-BR" style={{fontSize: '10.5pt', fontFamily: '"Helvetica",sans-serif', color: 'black'}}>Para uma melhor experiência, ao usar nosso Serviço, nós podemos

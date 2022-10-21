@@ -6,6 +6,7 @@ import ReactToPdf from 'react-to-pdf';
 import { AppName } from '../../constantes';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 const options = {
   orientation: 'landscape',
@@ -116,7 +117,7 @@ class Question extends React.Component {
             <ReactToPdf>
               {({ toPdf, targetRef }) => (
                 <>
-                  <div style={{ maxWidth: 750, padding: '10px' }} ref={targetRef}>
+                  <div style={{ maxWidth: 750, padding: '10px'}} ref={targetRef}>
                     <Navbar.Brand href="#">
                       {' '}
                       <img
@@ -134,13 +135,20 @@ class Question extends React.Component {
                       )}
                       {this.state.evaluation.length > 0 && (
                         <div>
-                          <h2>
-                            {'É  recomendada avaliação médica antes de realizar a viagem aérea para orientações. '}
-                          </h2>
-                          <h3>
-                            Querido médico, esta pessoa respondeu o questionário e foi identificado o seguinte fator de
-                            risco:{' '}
-                          </h3>
+                          <img src="/cabecalho.png"/>
+                          <br/> 
+                          <br/> 
+                          <p style={{textAlign: 'center'}}> Aplicativo Fly Well </p>
+                          <br/> 
+                          <br/> 
+                          <p style={{textAlign: 'center'}}> Prezado (a) Médico (a), </p>
+                          <br/> 
+                          <p style={{textAlign: 'justify'}}> Conforme a aplicação do questionário de auto consentimento, tendo em vista a verificar a aptidão de saúde de pacientes para voos comerciais,
+                            bem como estratificar riscos de emergências médicas, informamos que esta pessoa respondeu o mesmo, e que abaixo serão demonstrados a pergunta e
+                            resposta as quais foram assinaladas, para conhecimento e providências: 
+                          </p>
+                          <br/> 
+                          <br/> 
                         </div>
                       )}
                       {this.state.evaluation.map(ev => {
@@ -161,30 +169,43 @@ class Question extends React.Component {
                                 </ul>
                               </div>
                             )}
-                            <p>
-                              {ev.response.type === 'html' ? (
-                                <div dangerouslySetInnerHTML={{ __html: ev.response.question }} />
-                              ) : (
-                                <div>{ev.response.question}</div>
-                              )}
+                          <br/> 
+                          <br/> 
+                            <p style={{textAlign: 'justify'}}>
+                              Agradecemos a atenção prestada e nos colocamos à inteira disposição para qualquer eventualidade, sugestão ou dúvida. Obrigado!
+                            </p>
+                            <p style={{textAlign: 'end'}}> Porto Alegre, RS.
+                            </p>
+                            <p style={{textAlign: 'center'}}> flywell@gmail.com
+                            </p>
+                            <p style={{textAlign: 'center'}}> www.flywell.com.br 
                             </p>
                           </div>
                         );
                       })}
                     </div>
+                    <div style={{textAlign: 'center'}}> 
+                    <img style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}} src="/flywell.png"/>
+                    </div>
                   </div>
                   <div className={'acoes'}>
-                    <Row className={'acoes'}>
-                      <Col xs={12} lg="12" sm={12}>
+                    <Row style={{textAlign: 'center'}} className={'acoes'}>
+                    {this.state.evaluation.length > 0 && (
+                      <Col style={{textAlign: 'center'}} xs={12} lg="12" sm={12}>
                         <Button onClick={toPdf}>Gerar PDF</Button>
-                        <Col xs={12} lg="12" sm={12}>
+                      </Col>
+                    )}
+                      <Col style={{textAlign: 'center'}} xs={12} lg="12" sm={12}>
+                        <Link to={`/`} className="btn">Home</Link>
+                      </Col>
+                      <Col style={{textAlign: 'center'}} xs={12} lg="12" sm={12}>
                           {this.state.stackKey.length > 1 && (
                             <Button variant="secondary" onClick={() => this.back()}>
                               Voltar
                             </Button>
                           )}
                         </Col>
-                      </Col>
+
                     </Row>
                   </div>
                 </>
