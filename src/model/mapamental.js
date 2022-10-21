@@ -97,7 +97,7 @@ const mapaMental = {
       'Oxigênio, medicação administrada por outra pessoa, cadeira de rodas ou maca, por exemplo. ' +
       '</span>' +
       '</span> ' +
-      ' abordo?</p>' +
+      ' a bordo?</p>' +
       '</div>',
 
     options: [

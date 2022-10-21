@@ -117,7 +117,7 @@ class Question extends React.Component {
             <ReactToPdf>
               {({ toPdf, targetRef }) => (
                 <>
-                  <div style={{ maxWidth: 750, padding: '10px'}} ref={targetRef}>
+                  <div style={{ maxWidth: 750, padding: '10px' }} ref={targetRef}>
                     <Navbar.Brand href="#">
                       {' '}
                       <img
@@ -135,20 +135,24 @@ class Question extends React.Component {
                       )}
                       {this.state.evaluation.length > 0 && (
                         <div>
-                          <img src="https://99roberto.github.io/fly_well/cabecalho.png"/>
-                          <br/> 
-                          <br/> 
-                          <p style={{textAlign: 'center'}}> Aplicativo Fly Well </p>
-                          <br/> 
-                          <br/> 
-                          <p style={{textAlign: 'center'}}> Prezado (a) Médico (a), </p>
-                          <br/> 
-                          <p style={{textAlign: 'justify'}}> Conforme a aplicação do questionário de auto consentimento, tendo em vista a verificar a aptidão de saúde de pacientes para voos comerciais,
-                            bem como estratificar riscos de emergências médicas, informamos que esta pessoa respondeu o mesmo, e que abaixo serão demonstrados a pergunta e
-                            resposta as quais foram assinaladas, para conhecimento e providências: 
+                          <img src="https://99roberto.github.io/fly_well/cabecalho.png" />
+                          <br />
+                          <br />
+                          <p style={{ textAlign: 'center' }}> Aplicativo Fly Well </p>
+                          <br />
+                          <br />
+                          <p style={{ textAlign: 'center' }}> Prezado (a) Médico (a), </p>
+                          <br />
+                          <p style={{ textAlign: 'justify' }}>
+                            {' '}
+                            Conforme a aplicação do questionário de auto consentimento, tendo em vista a verificar a
+                            aptidão de saúde de pacientes para voos comerciais, bem como estratificar riscos de
+                            emergências médicas, informamos que esta pessoa respondeu o mesmo, e que abaixo serão
+                            demonstrados a pergunta e resposta as quais foram assinaladas, para conhecimento e
+                            providências:
                           </p>
-                          <br/> 
-                          <br/> 
+                          <br />
+                          <br />
                         </div>
                       )}
                       {this.state.evaluation.map(ev => {
@@ -169,43 +173,42 @@ class Question extends React.Component {
                                 </ul>
                               </div>
                             )}
-                          <br/> 
-                          <br/> 
-                            <p style={{textAlign: 'justify'}}>
-                              Agradecemos a atenção prestada e nos colocamos à inteira disposição para qualquer eventualidade, sugestão ou dúvida. Obrigado!
-                            </p>
-                            <p style={{textAlign: 'end'}}> Porto Alegre, RS.
-                            </p>
-                            <p style={{textAlign: 'center'}}> flywell@gmail.com
-                            </p>
-                            <p style={{textAlign: 'center'}}> www.flywell.com.br 
-                            </p>
                           </div>
                         );
                       })}
+                      <br />
+                      <br />
+                      <p style={{ textAlign: 'justify' }}>
+                        Agradecemos a atenção prestada e nos colocamos à inteira disposição para qualquer eventualidade,
+                        sugestão ou dúvida. Obrigado!
+                      </p>
+                      <p style={{ textAlign: 'end' }}> Porto Alegre, RS.</p>
+                      <p style={{ textAlign: 'center' }}> flywell@gmail.com</p>
+                      <p style={{ textAlign: 'center' }}> www.flywell.com.br</p>
                     </div>
-                    <div style={{textAlign: 'center'}}> 
-                    <img style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}} src="/flywell.png"/>
+                    <div style={{ textAlign: 'center' }}>
+                      <img style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} src="https://99roberto.github.io/fly_well/flywell.png" />
                     </div>
                   </div>
                   <div className={'acoes'}>
-                    <Row style={{textAlign: 'center'}} className={'acoes'}>
-                    {this.state.evaluation.length > 0 && (
-                      <Col style={{textAlign: 'center'}} xs={12} lg="12" sm={12}>
-                        <Button onClick={toPdf}>Gerar PDF</Button>
-                      </Col>
-                    )}
-                      <Col style={{textAlign: 'center'}} xs={12} lg="12" sm={12}>
-                        <Link to={`/`} className="btn">Home</Link>
-                      </Col>
-                      <Col style={{textAlign: 'center'}} xs={12} lg="12" sm={12}>
-                          {this.state.stackKey.length > 1 && (
-                            <Button variant="secondary" onClick={() => this.back()}>
-                              Voltar
-                            </Button>
-                          )}
+                    <Row style={{ textAlign: 'center' }} className={'acoes'}>
+                      {this.state.evaluation.length > 0 && (
+                        <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
+                          <Button onClick={toPdf}>Gerar PDF</Button>
                         </Col>
-
+                      )}
+                      <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
+                        <Link to={`/`} className="btn">
+                          Home
+                        </Link>
+                      </Col>
+                      <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
+                        {this.state.stackKey.length > 1 && (
+                          <Button variant="secondary" onClick={() => this.back()}>
+                            Voltar
+                          </Button>
+                        )}
+                      </Col>
                     </Row>
                   </div>
                 </>
