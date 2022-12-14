@@ -1,2 +1,2 @@
-export const AppName = "Fly Well";
+export const AppName = "Voe Bem";
 export const SubTitulo = "Voe Bem";

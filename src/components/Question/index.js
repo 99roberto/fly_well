@@ -6,8 +6,7 @@ import ReactToPdf from 'react-to-pdf';
 import { AppName } from '../../constantes';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom'; 
 const options = {
   orientation: 'landscape',
   unit: 'in',
@@ -138,7 +137,7 @@ class Question extends React.Component {
                           <img src="https://99roberto.github.io/fly_well/cabecalho.png" />
                           <br />
                           <br />
-                          <p style={{ textAlign: 'center' }}> Aplicativo Fly Well </p>
+                          <p style={{ textAlign: 'center' }}> Aplicativo {AppName} </p>
                           <br />
                           <br />
                           <p style={{ textAlign: 'center' }}> Prezado (a) Médico (a), </p>

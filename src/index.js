@@ -15,6 +15,8 @@ import MenuBar from './components/MenuBar';
 import BemEstar from './components/bemEstar';
 import Vacinas from './components/vacinas';
 import Linksuteis from './components/linksUteis';
+import SobreEsteApp from './components/SobreEsteApp';
+import InformacoesParaMedicos from './components/InformacoesParaMedicos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +29,8 @@ root.render(
     <Route path="question" element={<Question />} /> 
     <Route path="TermosUso" element={<TermosUso />} /> 
     <Route path="PoliticaPricacidade" element={<PoliticaPricacidade />} /> 
+    <Route path="SobreEsteApp" element={<SobreEsteApp />} /> 
+    <Route path="InformacoesParaMedicos" element={<InformacoesParaMedicos/>} /> 
 
 
     <Route path="bemEstar" element={<BemEstar />} /> 
