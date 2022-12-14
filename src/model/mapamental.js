@@ -60,13 +60,13 @@ const mapaMental = {
     style: 'inicial',
     question:
       '<div>' +
-      '<p>Você está doente ou está com doença que acredita ser ' +
-      '<span class="mtooltip">ativamente contagiosa ' +
+      '<p>Você está com alguma ' +
+      '<span class="mtooltip">doença ativamente contagiosa ' +
       '<span class="mtooltiptext">' +
       'Doença ativamento contagiosa é uma doença que se transmite pelo contato próximo pelo ar ou por contato direto' +
       '</span>' +
       '</span> ' +
-      'e transmissível pelo ar ou ' +
+      'que seja transmissível por  ' +
       '<span class="mtooltip">contato direto ou próximo' +
       '<span class="mtooltiptext">' +
       'Contato direto se define toque (aperto de mão, abraço) ' +
@@ -87,15 +87,7 @@ const mapaMental = {
     style: 'inicial',
     question:
       '<div>' +
-      '<p>Você é uma  ' +
-      '<span class="mtooltip">pessoa com deficiêcia (PCD) ' +
-      '<span class="mtooltiptext">' +
-      'Pessoas com deficiência (PCD) são aquelas que têm impedimentos de longo prazo de natureza física,' +
-      ' mental, intelectual ou sensorial, os quais, em interação com diversas barreiras, podem obstruir sua participação ' +
-      'plena e efetiva na sociedade em igualdades de condições com as demais pessoas.' +
-      '</span>' +
-      '</span> ' +
-      'que necessita da presença de um(a) acompanhante ou de ' +
+      '<p>Você é uma pessoa que necessita da presença de um(a) acompanhante ou de ' +
       '<span class="mtooltip">suporte de saúde ' +
       '<span class="mtooltiptext">' +
       'Oxigênio, medicação administrada por outra pessoa, cadeira de rodas ou maca, por exemplo. ' +
@@ -152,7 +144,7 @@ const mapaMental = {
 
   gravidez1: {
     style: 'cabecalho',
-    question: 'Você é mulher E está grávida?',
+    question: 'Você é do sexo feminino e está grávida?',
     options: [
       { label: 'Sim', goto: 'gravidez2' },
       { label: 'Não', goto: 'recemnascido1' },
@@ -169,14 +161,14 @@ const mapaMental = {
   gravidez2: {
     question: 'Qual é o risco atribuído à sua gestação?',
     options: [
-      { label: 'Alto risco/Não sei', goto: 'gravidezFimMedico' },
+      { label: 'Alto risco/Não sei', goto: 'gravidezFimMedico1' },
       { label: 'Baixo Risco ou Risco Habitual', goto: 'gravidez3' },
     ],
   },
   gravidez3: {
     question: 'Sua gestação é única ou múltipla?',
     options: [
-      { label: 'Multipla/Não sei', goto: 'gravidezFimMedico' },
+      { label: 'Multipla/Não sei', goto: 'gravidezFimMedico3' },
       { label: 'Única', goto: 'gravidez4' },
     ],
   },
@@ -184,7 +176,7 @@ const mapaMental = {
     question: 'Qual é a sua idade gestacional?',
     options: [
       { label: '< 28 semanas', goto: 'gravidez5' },
-      { label: '> 28 Semanas', goto: 'gravidezFimMedico' },
+      { label: '> 28 Semanas', goto: 'gravidezFimMedico4' },
     ],
   },
 
@@ -198,7 +190,7 @@ const mapaMental = {
       'outro',
     ],
     options: [
-      { label: 'sim', goto: 'gravidezFimMedico' },
+      { label: 'sim', goto: 'gravidezFimMedico5' },
       { label: 'Não', goto: 'recemnascido1' },
     ],
   },
@@ -207,6 +199,18 @@ const mapaMental = {
     question_type: 'evaluation',
     style: 'fimMedico',
     question: 'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.',
+    options: [
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+    ],
+  },
+
+  gravidezFimMedico1: {
+    question_type: 'evaluation',
+    type: 'html',
+    style: 'fimMedico',
+    question: '<h2>É recomendada avaliação médica antes de realizar a viagem aérea.</h2>'
+    +'<p>É necessário avaliar o risco da gestação antes de realizar a viagem. As viagens longas não devem ser realizadas por paciente com incompetência istmocervical, atividade uterina aumentada ou partos anteriores prematuros, por exemplo. Em condições que comprometem a oxigenação da placenta, deve ser avaliada a necessidade de suporte com oxigênio.</p>',
     options: [
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
@@ -222,6 +226,41 @@ const mapaMental = {
       ' A partir da 32ª semana, é exigido o preenchimento de um formulário específico fornecido pelas companhias aéreas (MEDIF).' +
       ' O formulário deve ser enviado com antecedência mínima de 72 horas do horário previsto de partida do voo.' +
       ' A partir da 38ª semana, o embarque é permitido apenas em casos de extrema necessidade com acompanhamento médico.',
+    options: [
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+    ],
+  },
+  gravidezFimMedico3: {
+    question_type: 'evaluation',
+    type: 'html',
+    style: 'fimMedico',
+    question: '<h2>É recomendada avaliação médica antes de realizar a viagem aérea.</h2>'
+    +'<p>Viagens longas não devem ser realizadas por paciente multigesta sem antes ter avaliação médica individualizada.</p>'
+    +'<p>Apesar das recomendações médicas internacionais (IATA) e nacionais (CFM) determinarem consulta médica para a realização de viagem aérea a partir das 32 semanas de gestação, algumas companhias aéreas nacionais exigem atestado médico a partir da 26a semana de gestação.</p>',
+    options: [
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+    ],
+  },
+
+  gravidezFimMedico4: {
+    question_type: 'evaluation',
+    type: 'html',
+    style: 'fimMedico',
+    question: '<h2>É recomendada avaliação médica antes de realizar a viagem aérea.</h2>'
+    +'<p>Apesar das recomendações médicas internacionais (IATA) e nacionais (CFM) determinarem consulta médica para a realização de viagem aérea a partir das 36 semanas de gestação, algumas companhias aéreas nacionais exigem atestado médico a partir da 28a semana de gestação. </p>',
+    options: [
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
+      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+    ],
+  },
+  gravidezFimMedico5: {
+    question_type: 'evaluation',
+    type: 'html',
+    style: 'fimMedico',
+    question: '<h2>É recomendada avaliação médica antes de realizar a viagem aérea.</h2>'
+    +'<p>A viagem deve ser evitada caso a gestante apresente dores ou sangramento antes do embarque.</p>',
     options: [
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },

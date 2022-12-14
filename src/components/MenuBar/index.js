@@ -21,10 +21,11 @@ function MenuBar() {
           <Nav className="me-auto"> 
             <Link to={`/`} className="btn">Home</Link>
             <Link to={`/question`} className="btn">Questionário</Link>
-            <Link to={`/TermosUso`} className="btn">Termos de uso</Link>
-            <Link to={`/PoliticaPricacidade`} className="btn">Política de Privacidade</Link>
+            {/* <Link to={`/TermosUso`} className="btn">Termos de uso</Link>
+            <Link to={`/PoliticaPricacidade`} className="btn">Política de privacidade</Link> */}
             <Link to={`/SobreEsteApp`} className="btn">Sobre este App</Link>
-            <Link to={`/InformacoesParaMedicos`} className="btn">Informacoes para Medicos</Link>
+            <Link to={`/InformacoesParaMedicos`} className="btn">Informações para médicos</Link>
+            <Link to={`/linksuteis`} className="btn">Informações úteis</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
