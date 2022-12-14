@@ -27,7 +27,7 @@ function Slide() {
               <div className="d-flex justify-content-center justify-content-lg-start">
                 <Link to={`/question`} activeClassName="active">
                   <button className="btn-get-started scrollto">
-                    <img src="https://99roberto.github.io/fly_well/av_icon.png" width="20" /> Questionário
+                    <img src="/av_icon.png" width="20" /> Questionário
                   </button>
                 </Link>
 
@@ -52,7 +52,7 @@ function Slide() {
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-              <img src="https://99roberto.github.io/fly_well/logo512.png" className="img-fluid animated" alt="" />
+              <img src="/logo512.png" className="img-fluid animated" alt="" />
             </div>
           </div>
         </div>

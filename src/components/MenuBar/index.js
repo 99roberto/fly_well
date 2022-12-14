@@ -10,7 +10,7 @@ function MenuBar() {
       <Container>
         <Navbar.Brand href="#"> <img
               alt=""
-              src="https://99roberto.github.io/fly_well/logo192.png"
+              src="/logo192.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
