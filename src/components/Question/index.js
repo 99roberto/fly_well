@@ -3,10 +3,11 @@ import './index.css';
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import ReactToPdf from 'react-to-pdf';
-import { AppName } from '../../constantes';
+import { AppName, AppDomine, AdmEmail} from '../../constantes';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom'; 
+ 
 const options = {
   orientation: 'landscape',
   unit: 'in',
@@ -130,7 +131,26 @@ class Question extends React.Component {
                     <Navbar.Brand href="#">{AppName}</Navbar.Brand>
                     <div className="question" ref={this.state.ref} style={{ margin: '10px' }}>
                       {this.state.evaluation.length == 0 && (
-                        <h2>Ausência de obrigatoriedade de consulta médica para voar. </h2>
+                        <>
+                        <h2>Resultado</h2>
+                      
+<p>Você não possui contraindicação para voar nem exigência de consulta médica antes de voar conforme recomendações da International Air Transport Association (IATA) e do Conselho Federal de Medicina (CFM).</p>
+
+<p>Este aplicativo se destina a auxiliar pessoas na tomada de decisão em procurar auxílio médico antes de realizar uma viagem aérea e educadores em disseminar conhecimento de saúde sobre saúde aeroespacial. Não tem a intenção de definir diagnóstico de saúde, emitir liberação oficial para voar ou substituir avaliação médica. </p>
+
+<p>Se você está planejando uma viagem aérea, está com sintomas ou preocupação em relação à sua saúde, procure seu profissional médico de confiança para avaliação. </p>
+
+<Row className={''}>
+<Col xs={12} lg="12" sm={12}>
+<Link to={`/InformacoesParaMedicos`} className="btn btn-link">Informações para médicos</Link>
+</Col>
+</Row>
+<Row>
+<Col xs={12} lg="12" sm={12}>
+<Link to={`/linksuteis`} className="btn btn-link">Informações úteis</Link>
+</Col>
+</Row>
+</>
                       )}
                       {this.state.evaluation.length > 0 && (
                         <div>
@@ -144,12 +164,14 @@ class Question extends React.Component {
                           <br />
                           <p style={{ textAlign: 'justify' }}>
                             {' '}
-                            Conforme a aplicação do questionário de auto consentimento, tendo em vista a verificar a
-                            aptidão de saúde de pacientes para voos comerciais, bem como estratificar riscos de
-                            emergências médicas, informamos que esta pessoa respondeu o mesmo, e que abaixo serão
-                            demonstrados a pergunta e resposta as quais foram assinaladas, para conhecimento e
-                            providências:
-                          </p>
+A partir da aplicação do questionário autoaplicado Voe Bem,{' '}
+desenvolvido na Universidade Federal de Ciências da Saúde de Porto Alegre e {' '}
+de acordo com as normativas do manual médico da International Air Transport Association (12a edição) {' '}
+e do Conselho Federal de Medicina (CFM), que se destina a auxiliar pessoas na {' '}
+tomada de decisão em procurar auxílio médico antes de realizar uma viagem aérea, {' '}
+informamos que a pessoa respondeu às seguintes perguntas que direcionam recomendação {' '}
+médica antes de voar:{' '}
+                         </p>
                           <br />
                           <br />
                         </div>
@@ -178,12 +200,12 @@ class Question extends React.Component {
                       <br />
                       <br />
                       <p style={{ textAlign: 'justify' }}>
-                        Agradecemos a atenção prestada e nos colocamos à inteira disposição para qualquer eventualidade,
-                        sugestão ou dúvida. Obrigado!
+                      Aplicativo Voe Bem<br/>
+                      Universidade Federal de Ciências da Saúde de Porto Alegre
                       </p>
                       <p style={{ textAlign: 'end' }}> Porto Alegre, RS.</p>
-                      <p style={{ textAlign: 'center' }}> flywell@gmail.com</p>
-                      <p style={{ textAlign: 'center' }}> www.flywell.com.br</p>
+                      <p style={{ textAlign: 'center' }}> {AdmEmail}</p>
+                      <p style={{ textAlign: 'center' }}> {AppDomine}</p>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <img style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} src="/flywell.png" />
@@ -272,6 +294,8 @@ class Question extends React.Component {
                   </Row>
                 </div>
               )}
+
+            
             </div>
             <div className={'acoes'}>
               <Row className={'acoes'}>
@@ -284,6 +308,22 @@ class Question extends React.Component {
                 </Col>
               </Row>
             </div>
+            <br/>
+            <br/>
+            {this.state.question.question_type == 'evaluation' && (
+                <div className={'acoes'}>
+                  <Row className={''}>
+                  <Col xs={12} lg="12" sm={12}>
+            <Link to={`/InformacoesParaMedicos`} className="btn btn-link">Informações para médicos</Link>
+            </Col>
+            </Row>
+            <Row>
+            <Col xs={12} lg="12" sm={12}>
+            <Link to={`/linksuteis`} className="btn btn-link">Informações úteis</Link>
+            </Col>
+                  </Row>
+                </div>
+              )}
           </div>
         )}
       </Container>
