@@ -121,7 +121,7 @@ class Question extends React.Component {
                       {' '}
                       <img
                         alt=""
-                        src="https://99roberto.github.io/fly_well/logo192.png"
+                        src="/logo192.png"
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
@@ -134,7 +134,7 @@ class Question extends React.Component {
                       )}
                       {this.state.evaluation.length > 0 && (
                         <div>
-                          <img src="https://99roberto.github.io/fly_well/cabecalho.png" />
+                          <img src="/cabecalho.png" />
                           <br />
                           <br />
                           <p style={{ textAlign: 'center' }}> Aplicativo {AppName} </p>
@@ -186,7 +186,7 @@ class Question extends React.Component {
                       <p style={{ textAlign: 'center' }}> www.flywell.com.br</p>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                      <img style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} src="https://99roberto.github.io/fly_well/flywell.png" />
+                      <img style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} src="/flywell.png" />
                     </div>
                   </div>
                   <div className={'acoes'}>

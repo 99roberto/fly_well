@@ -6,7 +6,7 @@ function BemEstar() {
   return (
     <>
       <Container>
-        <img src="https://99roberto.github.io/fly_well/boa-viagem.jpg"></img>
+        <img src="/boa-viagem.jpg"></img>
       </Container>
     </>
   );
