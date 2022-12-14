@@ -2,25 +2,29 @@ const mapaMental = {
   home: {
     style: 'intro',
     question:
-      '<p>Questionário A</p></br>' +
-      '<p>As perguntas a seguir são fornecidas como ' +
-      'um guia para o período de tempo que deve ' +
-      'decorrer entre um evento médico e o voo ' +
-      'pretendido. Os prazos podem ser alterados ' +
-      'após considerados por médicos. ' +
-      'Conte o dia do evento de saúde e o dia da ' +
-      'viagem para calcular o número de dias após o incidente.',
+    '<h1>Sobre o objetivo deste aplicativo e seu funcionamento: </h1>'
+    +'<p>Este aplicativo se destina a auxiliar pessoas na tomada de decisão em procurar auxílio médico antes de realizar'
+    +' uma viagem aérea e educadores em disseminar conhecimento sobre saúde aeroespacial. Não tem a intenção de definir '
+    +'diagnóstico de saúde, emitir liberação oficial para voar ou substituir avaliação médica. '
+    +'<p>O questionário tem como objetivo guiar a pessoa e profissionais médicos na melhor orientação para a recomendação '
+    +'e saúde individualizada para se realizar uma viagem aérea. Os prazos em dias sugeridos de adiamento para voar podem ser alterados de acordo com cada caso.'
+    +'<p>Ao fim do questionário, caso sejam identificadas contraindicações ou recomendações de avaliação médica antes do voo, será oferecida a opção de emissão de'
+    +' um relatório resumido em forma de carta que pode ser direcionado ao profissional médico. '
+    +'<p>O design do aplicativo e os blocos de perguntas a seguir foram agrupados conforme critério dos autores. '
+    +'As informações aqui contidas estão de acordo com a bibliografia citada no momento de sua produção e publicação (2023).'
+    +'<h2>Aviso legal: </h2>'
+    +'<p>Este aplicativo está situado em uma página da web e não está programado para identificar sua identidade, localização, ou rede. '
+    +'Para seu uso também não exigirá nenhum download de arquivo em seu dispositivo. '
+    +'Para o seu funcionamento não irá solicitar dados de identificação pessoal ou qualquer outra informação para fins de cadastro. '
+    +'Por fim, esta aplicação tampouco registrará os dados que forem imputados por você em qualquer banco de dados. '
+    +'<p>Desta forma, você poderá utilizar para fins de consulta pessoal, para outra pessoa ou até mesmo de forma educativa, '
+    +'criando e testando múltiplos cenários de acordo com sua necessidade.  ',
     checkboxs: [
-      'Estou ciente de que o questionário pode ser autoaplicado ou por um profissional da saúde',
-      'Estou ciente que nenhum dado meu será registrado',
-      'Sempre que não estiver me sentindo bem, devo considerar consultar antes de voar',
-      'É recomendável seguir todo o questionário para avaliação completa',
-      'O design do aplicativo, assim como os blocos de perguntas, foram agrupados conforme critério dos autores',
-      'Estou ciente dos Termos de Uso ',
-      'Estou ciente das Políticas de Privacidade',
+      'Estou ciente e de acordo com as informações acima.',
+      'Sempre que não estiver me sentindo bem, devo considerar consultar com um profissional médico antes de voar.',
     ],
     mandatory: true,
-    options: [{ label: 'Iniciar', goto: 'inicial1', select: true }],
+    options: [{ label: 'INICIAR O QUESTIONÁRIO', goto: 'inicial1', select: true }],
     type: 'html',
   },
 
