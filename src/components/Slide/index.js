@@ -31,15 +31,15 @@ function Slide() {
                   </button>
                 </Link>
 
-                <NavDropdown title="Saiba mais" id="navbarScrollingDropdown" className="btn-get-started scrollto">
+                <NavDropdown title="Mais" id="navbarScrollingDropdown" className="btn-get-started scrollto">
                   {/* <NavDropdown.Item>
                     <Link to={`/bemEstar`} activeClassName="active">
                       <p>Bem Estar</p>
                     </Link>
                   </NavDropdown.Item> */}
                   <NavDropdown.Item>
-                    <Link to={`/vacinas`} activeClassName="active">
-                      <p>Vacinas</p>
+                    <Link to={`/SobreEsteApp`} activeClassName="active">
+                      <p>Sobre esse App</p>
                     </Link>
                   </NavDropdown.Item>
 
@@ -48,6 +48,13 @@ function Slide() {
                       <p>Informações Úteis</p>
                     </Link>
                   </NavDropdown.Item>
+
+                  <NavDropdown.Item>
+                    <Link to={`/InformacoesParaMedicos`} activeClassName="active">
+                      <p>Informações para médicos</p>
+                    </Link>
+                  </NavDropdown.Item>
+                  
                 </NavDropdown>
               </div>
             </div>
