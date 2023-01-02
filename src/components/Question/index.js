@@ -7,12 +7,23 @@ import { AppName, AppDomine, AdmEmail} from '../../constantes';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom'; 
- 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleRight, faCircleChevronLeft, faFlagCheckered } from '@fortawesome/free-solid-svg-icons'
+
 const options = {
   orientation: 'landscape',
   unit: 'in',
   format: [4, 2],
 };
+
+const BtnGoBack = ({onClick, children})=>{
+  return (
+    <Button variant="danger" onClick={onClick}>
+                    <FontAwesomeIcon icon={faCircleChevronLeft} style={{marginRight:10}}/>
+                      {children}
+                    </Button>
+  )
+}
 class Question extends React.Component {
   constructor(props) {
     const mapaMental = getMapaMental();
@@ -96,6 +107,7 @@ class Question extends React.Component {
     this.setState({ question, stackKey, show_evaluation: false, evaluation: [], selects_responses: [] });
   }
 
+
   onMarckResponse(event) {
     console.log(event.target);
 
@@ -104,7 +116,9 @@ class Question extends React.Component {
     else selects_responses = selects_responses.filter(v => v !== event.target.value);
     this.setState({ selects_responses });
   }
-
+  
+ 
+  
   render() {
     return (
       <Container className={this.state.question.style}>
@@ -122,7 +136,7 @@ class Question extends React.Component {
                       {' '}
                       <img
                         alt=""
-                        src="/logo192.png"
+                        src="/airplane192.png"
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
@@ -176,9 +190,9 @@ médica antes de voar:{' '}
                           <br />
                         </div>
                       )}
-                      {this.state.evaluation.map(ev => {
+                      {this.state.evaluation.map((ev, i) => {
                         return (
-                          <div className="">
+                          <div className="" key={"evaluation"+i}>
                             {ev.question.type === 'html' ? (
                               <div dangerouslySetInnerHTML={{ __html: ev.question.question }} />
                             ) : (
@@ -188,8 +202,8 @@ médica antes de voar:{' '}
                             {ev.selects_responses && ev.selects_responses.length > 0 && (
                               <div className="container" style={{ marginLeft: '25%', marginRight: '25%' }}>
                                 <ul style={{ padding: 0, margin: 0, textAlign: 'left' }}>
-                                  {ev.selects_responses.map(e => {
-                                    return <li>{e}</li>;
+                                  {ev.selects_responses.map((e,i) => {
+                                    return <li key={"selects_responses"+i}>{e}</li>;
                                   })}
                                 </ul>
                               </div>
@@ -225,9 +239,9 @@ médica antes de voar:{' '}
                       </Col>
                       <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
                         {this.state.stackKey.length > 1 && (
-                          <Button variant="secondary" onClick={() => this.back()}>
+                          <BtnGoBack  onClick={() => this.back()}>
                             Voltar
-                          </Button>
+                          </BtnGoBack>
                         )}
                       </Col>
                     </Row>
@@ -243,34 +257,50 @@ médica antes de voar:{' '}
               {this.state.question.type === 'html' ? (
                 <div dangerouslySetInnerHTML={{ __html: this.state.question.question }} />
               ) : (
-                <p>{this.state.question.question}</p>
+                <h4>{this.state.question.question}</h4>
               )}
               {this.state.question.checkboxs && (
                 <ul style={{ listStyleType: 'none', padding: 0, margin: 0, textAlign: 'left' }}>
-                  {this.state.question.checkboxs.map(m => {
+                  {this.state.question.checkboxs.map((m,i) => {
                     return (
-                      <li>
+                      <li> 
+                      <div>
                         <input
                           type="checkbox"
                           name={m}
                           value={m}
+                          id={"op"+i}
                           onChange={v => this.onMarckResponse(v)}
-                          style={{ width: '30px', height: '30px' }}
+                          style={{ width: '1rem', height: '1rem' }}
                         />
-                        {m}
+                       <label  for={"op"+i}> {m}</label>
+                       </div>
                       </li>
                     );
                   })}
                 </ul>
               )}
             </div>
+            
             <div className="respostas">
               {this.state.question.options && (
                 <div className={'acoes'}>
+                
                   <Row className={''}>
+
+                    {this.state.question.question_type == 'evaluation' && (
+                        <Col xs={12} lg="12" sm={12}>
+                          {this.state.stackKey.length > 1 && (
+                            <BtnGoBack   onClick={() => this.back()}>
+                              Voltar
+                            </BtnGoBack>
+                          )}
+                        </Col>
+                    )}
+
                     {this.state.question.options.map((op, idx) => {
                       return (
-                        <Col xs={12} lg="12" sm={12}>
+                        <Col xs={12} lg="12" sm={12} key={idx}>
                           <Button
                             variant={op.variant ? op.variant : 'primary'}
                             onClick={() => this.goto(op)}
@@ -286,6 +316,12 @@ médica antes de voar:{' '}
                                 this.state.selects_responses.length != this.state.question.checkboxs.length)
                             }
                           >
+                          {op.variant=='dark' && 
+                          <FontAwesomeIcon icon={faFlagCheckered} style={{marginRight:10}}/>
+                          }
+                          {op.variant=='info' && 
+                          <FontAwesomeIcon icon={faCircleRight} style={{marginRight:10}}/>
+                          }
                             {op.label}
                           </Button>
                         </Col>
@@ -295,36 +331,22 @@ médica antes de voar:{' '}
                 </div>
               )}
 
-            
             </div>
-            <div className={'acoes'}>
+           
+            {this.state.question.question_type != 'evaluation' && (
+              <div className={'acoes'}>
               <Row className={'acoes'}>
                 <Col xs={12} lg="12" sm={12}>
-                  {this.state.stackKey.length > 1 && (
-                    <Button variant="secondary" onClick={() => this.back()}>
+                  {this.state.stackKey.length > 1 && ( 
+                    <BtnGoBack  onClick={() => this.back()}>
                       Voltar
-                    </Button>
+                    </BtnGoBack>
                   )}
                 </Col>
               </Row>
             </div>
-            <br/>
-            <br/>
-            {this.state.question.question_type == 'evaluation' && (
-                <div className={'acoes'}>
-                  <Row className={''}>
-                  <Col xs={12} lg="12" sm={12}>
-            <Link to={`/InformacoesParaMedicos`} className="btn btn-link">Informações para médicos</Link>
-            </Col>
-            </Row>
-            <Row>
-            <Col xs={12} lg="12" sm={12}>
-            <Link to={`/linksuteis`} className="btn btn-link">Informações úteis</Link>
-            </Col>
-                  </Row>
-                </div>
-              )}
-          </div>
+            )}
+        </div>
         )}
       </Container>
     );

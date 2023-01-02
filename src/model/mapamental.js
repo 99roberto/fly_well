@@ -2,16 +2,11 @@ const mapaMental = {
   home: {
     style: 'intro',
     question:
-    '<h1>Sobre o objetivo deste aplicativo e seu funcionamento: </h1>'
-    +'<p>Este aplicativo se destina a auxiliar pessoas na tomada de decisão em procurar auxílio médico antes de realizar'
-    +' uma viagem aérea e educadores em disseminar conhecimento sobre saúde aeroespacial. Não tem a intenção de definir '
-    +'diagnóstico de saúde, emitir liberação oficial para voar ou substituir avaliação médica. '
-    +'<p>O questionário tem como objetivo guiar a pessoa e profissionais médicos na melhor orientação para a recomendação '
-    +'e saúde individualizada para se realizar uma viagem aérea. Os prazos em dias sugeridos de adiamento para voar podem ser alterados de acordo com cada caso.'
-    +'<p>Ao fim do questionário, caso sejam identificadas contraindicações ou recomendações de avaliação médica antes do voo, será oferecida a opção de emissão de'
-    +' um relatório resumido em forma de carta que pode ser direcionado ao profissional médico. '
-    +'<p>O design do aplicativo e os blocos de perguntas a seguir foram agrupados conforme critério dos autores. '
-    +'As informações aqui contidas estão de acordo com a bibliografia citada no momento de sua produção e publicação (2023).'
+    '<h2>Sobre o objetivo deste aplicativo e seu funcionamento: </h2>'
+    +'<p>Este aplicativo se destina a viajantes, médicos, companhias aéreas e órgãos públicos, e tem como objetivo auxiliar pessoas na tomada de decisão em procurar auxílio médico antes de realizar uma viagem aérea e educadores em disseminar conhecimento sobre saúde aeroespacial. Não tem a intenção de definir diagnóstico de saúde, emitir liberação oficial para voar ou substituir avaliação médica.</p>'
+    +'<p>O questionário tem como objetivo guiar a pessoa e profissionais médicos na melhor orientação para a recomendação de saúde individualizada para se realizar uma viagem aérea. Os prazos em dias sugeridos de adiamento para voar podem ser alterados de acordo com cada caso.</p>'
+    +'<p>Ao fim do questionário, caso sejam identificadas contraindicações ou recomendações de avaliação médica antes do voo, será oferecida a opção de emissão de um relatório resumido em forma de carta que pode ser direcionado ao profissional médico.</p>'
+    +'<p>O design do aplicativo e os blocos de perguntas a seguir foram agrupados conforme critério dos autores. As informações aqui contidas estão de acordo com a bibliografia citada no momento de sua produção e publicação (2023).</p>'
     +'<h2>Aviso legal: </h2>'
     +'<p>Este aplicativo está situado em uma página da web e não está programado para identificar sua identidade, localização, ou rede. '
     +'Para seu uso também não exigirá nenhum download de arquivo em seu dispositivo. '
@@ -50,8 +45,8 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -60,7 +55,7 @@ const mapaMental = {
     style: 'inicial',
     question:
       '<div>' +
-      '<p>Você está com alguma ' +
+      '<h4>Você está com alguma ' +
       '<span class="mtooltip">doença ativamente contagiosa ' +
       '<span class="mtooltiptext">' +
       'Doença ativamento contagiosa é uma doença que se transmite pelo contato próximo pelo ar ou por contato direto' +
@@ -75,7 +70,7 @@ const mapaMental = {
       'sem uso de máscara ou com seu uso inadequado.' +
       '</span>' +
       '</span> ' +
-      '?</p>' +
+      '?</h4>' +
       '</div>',
     options: [
       { label: 'Sim/Não sei', goto: 'inicialFimMedico1' },
@@ -87,13 +82,13 @@ const mapaMental = {
     style: 'inicial',
     question:
       '<div>' +
-      '<p>Você é uma pessoa que necessita da presença de um(a) acompanhante ou de ' +
+      '<h4>Você é uma pessoa que necessita da presença de um(a) acompanhante ou de ' +
       '<span class="mtooltip">suporte de saúde ' +
       '<span class="mtooltiptext">' +
       'Oxigênio, medicação administrada por outra pessoa, cadeira de rodas ou maca, por exemplo. ' +
       '</span>' +
       '</span> ' +
-      ' a bordo?</p>' +
+      ' a bordo?</h4>' +
       '</div>',
 
     options: [
@@ -116,8 +111,8 @@ const mapaMental = {
     question:
       'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'gravidez1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   inicialFimMedico1: {
@@ -129,8 +124,8 @@ const mapaMental = {
       +'<p>Pessoas com infecções respiratórias contagiosas não devem viajar, pois pode ocorrer agravamento dos sintomas, complicações durante e depois do voo e risco de disseminação da doença entre os demais passageiros. </p>'
     +'<p>Recomenda-se que a pessoa nestas condições realize a viagem aérea após a melhora dos sintomas, desde que esteja sem febre e com função pulmonar adequada.</p>',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'inicial2' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   inicialFimMedico2: {
@@ -144,8 +139,8 @@ const mapaMental = {
       +'(<b>Medical Information Form ou Formulário de Informações para Passageiros com Necessidades Especiais</b>) disponibilizado pela companhia aérea deve ser preenchido pelo profissional médico. </p>'
       ,
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'inicial3' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   inicialMaisInfo: { question: 'Informações pertinentes' },
@@ -208,8 +203,8 @@ const mapaMental = {
     style: 'fimMedico',
     question: 'É recomendada avaliação médica antes de realizar a viagem aérea para orientações.',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -220,8 +215,8 @@ const mapaMental = {
     question: '<h2>É recomendada avaliação médica antes de realizar a viagem aérea.</h2>'
     +'<p>É necessário avaliar o risco da gestação antes de realizar a viagem. As viagens longas não devem ser realizadas por paciente com incompetência istmocervical, atividade uterina aumentada ou partos anteriores prematuros, por exemplo. Em condições que comprometem a oxigenação da placenta, deve ser avaliada a necessidade de suporte com oxigênio.</p>',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   gravidezFimMedico2: {
@@ -235,8 +230,8 @@ const mapaMental = {
       ' O formulário deve ser enviado com antecedência mínima de 72 horas do horário previsto de partida do voo.' +
       ' A partir da 38ª semana, o embarque é permitido apenas em casos de extrema necessidade com acompanhamento médico.',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   gravidezFimMedico3: {
@@ -247,8 +242,8 @@ const mapaMental = {
     +'<p>Viagens longas não devem ser realizadas por paciente multigesta sem antes ter avaliação médica individualizada.</p>'
     +'<p>Apesar das recomendações médicas internacionais (IATA) e nacionais (CFM) determinarem consulta médica para a realização de viagem aérea a partir das 32 semanas de gestação, algumas companhias aéreas nacionais exigem atestado médico a partir da 26a semana de gestação.</p>',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -259,8 +254,8 @@ const mapaMental = {
     question: '<h2>É recomendada avaliação médica antes de realizar a viagem aérea.</h2>'
     +'<p>Apesar das recomendações médicas internacionais (IATA) e nacionais (CFM) determinarem consulta médica para a realização de viagem aérea a partir das 36 semanas de gestação, algumas companhias aéreas nacionais exigem atestado médico a partir da 28a semana de gestação. </p>',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   gravidezFimMedico5: {
@@ -270,8 +265,8 @@ const mapaMental = {
     question: '<h2>É recomendada avaliação médica antes de realizar a viagem aérea.</h2>'
     +'<p>A viagem deve ser evitada caso a gestante apresente dores ou sangramento antes do embarque.</p>',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -311,8 +306,8 @@ const mapaMental = {
     '<p>Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida. Algumas companhias aéreas nacionais exigem declaração de responsabilidade em casos de viagem aérea a ser realizada em menos de 07 dias depois do parto. </p>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   recemnascidoFimMedico: {
@@ -324,21 +319,21 @@ const mapaMental = {
     '<p> Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida.</p>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
   oncologico1: {
     style: 'cabecalho',
     type: 'html',
-    question: 'Você está em '+
+    question: '<h4>Você está em '+
     '<span class="mtooltip"> tratamento oncológico ' +
     '<span class="mtooltiptext">' +
     'Tratamento para câncer de qualquer natureza: tratamento com medicamentos, quimioterapia, radioterapia, plano de cirugia.' +
     '</span>' +
     '</span> ' 
-    +'?',
+    +'?</h4>',
     options: [
       { label: 'Sim', goto: 'oncologicoFim' },
       { label: 'Não', goto: 'FINISHED' },
@@ -355,8 +350,8 @@ const mapaMental = {
 
     question_type: 'evaluation',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'FINISHED' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -395,8 +390,8 @@ const mapaMental = {
     +'<b>Anemia</b>: independente da causa da anemia, níveis de hemoglobina abaixo de 8,5mg/dL, associados à diminuição da pressão de oxigênio durante o voo, podem levar ao aparecimento de sintomas.</p>' ,
     question_type: 'evaluation',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares2' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -433,8 +428,8 @@ const mapaMental = {
     ,
     question_type: 'evaluation',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares3' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   cardiovasculares3: {
@@ -471,8 +466,8 @@ const mapaMental = {
       '</ul>',
     question_type: 'evaluation',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'pulmonares1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
   // 6
@@ -480,7 +475,7 @@ const mapaMental = {
     style: 'cabecalho',
     type: 'html',
 
-    question: 'Você tem diagnóstico das seguintes doenças abaixo?'
+    question: '<h4>Você tem diagnóstico das seguintes doenças abaixo?</h4>'
     +'<u>'
     +'<li>Tuberculose</li>'
     +'<li>Doença pulmonar obstrutiva crônica</li>'
@@ -511,8 +506,8 @@ const mapaMental = {
 
     question_type: 'evaluation',
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'pulmonares2' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -535,8 +530,8 @@ const mapaMental = {
       ,
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'pulmonares3' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -559,8 +554,8 @@ const mapaMental = {
       '<p>Cirurgia pulmonar e biópsia: viagens possíveis após 11 dias do procedimento com recuperação pulmonar completa, em pessoa clinicamente estável e assintomática.</p><p> Pós-pneumectomia ou lobectomia pulmonar recente: a reserva pulmonar é mínima, principalmente na associação com história de tabagismo ou doença pulmonar obstrutiva crônica (DPOC). É recomendado teste de simulação de hipoxia de altitude. </p>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -568,7 +563,6 @@ const mapaMental = {
 
   neuroPsiq1: {
     style: 'cabecalho',
-    type: 'html',
     question: 'Você tem diagnóstico das seguintes doenças abaixo?',
 
     checkboxs: [
@@ -598,8 +592,8 @@ const mapaMental = {
       +'</ul>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'neuroPsiq2' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -636,14 +630,14 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'neuroPsiq3' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
   neuroPsiq3: {
     type: 'html',
-    question: 'Você já fez algum dos procedimentos abaixo nos últimos 30 dias?<ul><li>Cirurgia craniana ou cerebral</li></ul>',
+    question: '<h4>Você já fez algum dos procedimentos abaixo nos últimos 30 dias?</h4><ul><li>Cirurgia craniana ou cerebral</li></ul>',
  
     options: [
       { label: 'Sim/Não sei', goto: 'neuroPsiqFim3', select: true },
@@ -665,8 +659,8 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'ortopedicas1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -696,8 +690,8 @@ const mapaMental = {
       '</ul>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta2' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -735,8 +729,8 @@ const mapaMental = {
       +'</ul>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'ortopedicas1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -778,8 +772,8 @@ const mapaMental = {
      + '</ul>',
 
     options: [
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },
       { label: 'Continuar', variant: 'info', goto: 'oncologico1' },
+      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
 
@@ -793,8 +787,8 @@ const mapaMental = {
 
   //     options: [
   //       { label: 'Continuar', variant:'info', goto: 'recemnascido1' },
-  //       { label: 'Terminar', variant:'dark', goto: 'FINISHED' },
   //     ],
+  //       { label: 'Terminar', variant:'dark', goto: 'FINISHED' },  
   // },
 };
 

@@ -1,12 +1,27 @@
 .question {
-  text-align: center;
+  text-align: justify;
   margin-top: 50px;
   height: 100%;
 }
+.question h2 {
+    font-size: 1.2rem;
+    margin-top: 0.8rem !important;
+    margin-bottom: 1rem !important;
+}
 
-.question .desc {
-  height: 100%;
-  font-size: 2rem;
+
+.question h4 {
+  font-size: 1rem;
+  margin-top: 0.8rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.question .desc { 
+  font-size: 1rem;
+}
+
+.question label {
+  display: inline;
 }
 .g { 
   grid-template-columns: repeat(1, 1fr);
@@ -69,4 +84,12 @@
 .acoes button.btn {
   min-width: 200px;
   margin: 5px;
+}
+
+.acoes .row div {
+  align-items: center;
+  text-align: center;
+}
+.desc   {
+  margin-bottom: 50px;
 }
