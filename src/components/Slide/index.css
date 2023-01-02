@@ -64,11 +64,11 @@ w-100 {
   transition: 0.5s;
   margin: 10px 0 0 0;
   color: #fff;
-  background: #7373d7;
+  background: #67dafc;
 }
 
 #hero .btn-get-started:hover {
-  background: #4d4d99;
+  background: #60d0e0;
 }
 
 #hero .btn-watch-video {

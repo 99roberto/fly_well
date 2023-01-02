@@ -167,8 +167,10 @@ class Question extends React.Component {
 </>
                       )}
                       {this.state.evaluation.length > 0 && (
-                        <div>
-                          <img src="/cabecalho.png" />
+                        <div style={{marginLeft:50, marginRight:50}}>
+                          <div className='cabecalho' style={{textAlign:'center', alignContent: 'center'}}>
+                            <img src="/cabecalho.png" style={{textAlign:'center', alignContent: 'center'}}/>
+                          </div>
                           <br />
                           <br />
                           <p style={{ textAlign: 'center' }}> Aplicativo {AppName} </p>
@@ -192,7 +194,7 @@ médica antes de voar:{' '}
                       )}
                       {this.state.evaluation.map((ev, i) => {
                         return (
-                          <div className="" key={"evaluation"+i}>
+                          <div className="" key={"evaluation"+i} style={{marginLeft:50, marginRight:50}}>
                             {ev.question.type === 'html' ? (
                               <div dangerouslySetInnerHTML={{ __html: ev.question.question }} />
                             ) : (
@@ -213,8 +215,8 @@ médica antes de voar:{' '}
                       })}
                       <br />
                       <br />
-                      <p style={{ textAlign: 'justify' }}>
-                      Aplicativo Voe Bem<br/>
+                      <p style={{ textAlign: 'center',  marginLeft:50, marginRight:50}}>
+                      Aplicativo  {AppName}<br/>
                       Universidade Federal de Ciências da Saúde de Porto Alegre
                       </p>
                       <p style={{ textAlign: 'end' }}> Porto Alegre, RS.</p>
