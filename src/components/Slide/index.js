@@ -29,37 +29,12 @@ function Slide() {
                   <button className="btn-get-started scrollto">
                     <img src="/av_icon.png" width="20" /> Questionário
                   </button>
-                </Link>
-
-                <NavDropdown title="Mais" id="navbarScrollingDropdown" className="btn-get-started scrollto">
-                  {/* <NavDropdown.Item>
-                    <Link to={`/bemEstar`} activeClassName="active">
-                      <p>Bem Estar</p>
-                    </Link>
-                  </NavDropdown.Item> */}
-                  <NavDropdown.Item>
-                    <Link to={`/SobreEsteApp`} activeClassName="active">
-                      <p>Sobre esse App</p>
-                    </Link>
-                  </NavDropdown.Item>
-
-                  <NavDropdown.Item>
-                    <Link to={`/linksuteis`} activeClassName="active">
-                      <p>Informações Úteis</p>
-                    </Link>
-                  </NavDropdown.Item>
-
-                  <NavDropdown.Item>
-                    <Link to={`/InformacoesParaMedicos`} activeClassName="active">
-                      <p>Informações para médicos</p>
-                    </Link>
-                  </NavDropdown.Item>
-                  
-                </NavDropdown>
+                </Link> 
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-              <img src="/logo512.png" className="img-fluid animated" alt="" />
+              <img src="/airplane.png" className="img-fluid animated" alt="" />
+              <a style={{fontSize:0.5}} href="https://www.flaticon.com/free-icons/plane" title="plane icons">Plane icons created by Freepik - Flaticon</a>
             </div>
           </div>
         </div>

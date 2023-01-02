@@ -18,6 +18,12 @@ import Linksuteis from './components/linksUteis';
 import SobreEsteApp from './components/SobreEsteApp';
 import InformacoesParaMedicos from './components/InformacoesParaMedicos';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee, faCircleChevronLeft, faFlagCheckered } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
