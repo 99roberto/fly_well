@@ -9,7 +9,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleRight, faCircleChevronLeft, faFlagCheckered } from '@fortawesome/free-solid-svg-icons'
-
+import SlideQuestionario from '../SlideQuestionario';
 const options = {
   orientation: 'landscape',
   unit: 'in',
@@ -253,6 +253,10 @@ médica antes de voar:{' '}
             </ReactToPdf>
           </>
         )}
+
+        {this.state.stackKey.length === 1 && (
+          <SlideQuestionario titulo={"Questionário"}></SlideQuestionario>
+        )}
         {this.state.question && !this.state.show_evaluation && (
           <div className="question">
             <div className="desc">
@@ -265,7 +269,7 @@ médica antes de voar:{' '}
                 <ul style={{ listStyleType: 'none', padding: 0, margin: 0, textAlign: 'left' }}>
                   {this.state.question.checkboxs.map((m,i) => {
                     return (
-                      <li> 
+                      <li key={"q_ckb"+i}> 
                       <div>
                         <input
                           type="checkbox"
