@@ -3,12 +3,13 @@ import './index.css';
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import './index.css';
+import SlideQuestionario from '../SlideQuestionario';
 import { AppName } from '../../constantes';
 class SobreEsteApp extends React.Component {
   render() {
     return (
       <Container>
-     <h1>Sobre este App</h1>
+       <SlideQuestionario titulo={"Sobre este App"}></SlideQuestionario>
 
 <h2>Sobre o objetivo deste aplicativo e seu funcionamento:</h2>
 <p>
@@ -54,7 +55,7 @@ Desta forma, você poderá utilizar para fins de consulta pessoal, para outra pe
 
 <p>Ícone do avião: <a href="https://www.flaticon.com/free-icons/plane" title="plane icons">Plane icons created by Freepik - Flaticon</a></p>
 
-<p>Imagem do médico na página Home: <a href="https://pixabay.com/pt/vectors/m%c3%a9dico-homem-desenho-animado-2027768/" title="https://pixabay.com/pt/vectors/m%c3%a9dico-homem-desenho-animado-2027768/" target="_blank" rel="noopener noreferrer" class="i0jNr selectable-text copyable-text">https://pixabay.com/images/id-6497490/</a> </p>
+<p>Imagem do médico na página Home: <a href="https://pixabay.com/images/id-6497490/" title="https://pixabay.com/images/id-6497490/" target="_blank" rel="noopener noreferrer" class="i0jNr selectable-text copyable-text">https://pixabay.com/images/id-6497490/</a> </p>
 
 <p>Imagem do avião: <a href="https://pixabay.com/images/id-4974678/" title="https://pixabay.com/images/id-4974678/" target="_blank" rel="noopener noreferrer" class="i0jNr selectable-text copyable-text">https://pixabay.com/images/id-4974678/</a></p>
 

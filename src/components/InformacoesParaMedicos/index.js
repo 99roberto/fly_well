@@ -4,11 +4,14 @@ import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import './index.css';
 import { AppName } from '../../constantes';
+import SlideQuestionario from '../SlideQuestionario';
 class InformacoesParaMedicos extends React.Component {
   render() {
     return (
       <Container>
-      <h1>Informações para médicos</h1>
+
+      <SlideQuestionario titulo={"Informações para médicos"}></SlideQuestionario>
+      
       <br></br>
       <p>
 <b>Manual médico da IATA (12a edição)</b>

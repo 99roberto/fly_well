@@ -2,12 +2,15 @@ import Carousel from 'react-bootstrap/Carousel';
 import { AppName, SubTitulo } from '../../constantes';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import SlideQuestionario from '../SlideQuestionario';
 
 function Linksuteis() {
   return (
     <>
     <Container>
-    <h1>Informações úteis</h1>
+
+    <SlideQuestionario titulo={"Informações úteis"}></SlideQuestionario>
+
     <br></br>
     <p>
     EMPRESA BRASILEIRA DE INFRAESTRUTURA AEROPORTUÁRIA. <b>Tudo o que você precisa fazer para ter uma boa viagem:</b> guia do passageiro. Brasília: Infraero, 2014. Disponível em: <a href='http://www.infraero.gov.br/images/stories/guia/2014/guiapassageiro2014_portugues.pdf'>
