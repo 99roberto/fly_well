@@ -24,7 +24,8 @@ w-100 {
   /* background: #ececed; */
   
   /* Center and scale the image nicely */
-  background-image: url("/capa_d1.jpg");
+ 
+  background-image: url("/capa_d1.jpg"); 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
