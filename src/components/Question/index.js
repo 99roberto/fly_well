@@ -125,7 +125,7 @@ class Question extends React.Component {
         {/* <div>
           <p>{JSON.stringify(this.state.stackKey)}</p>
           <p>{JSON.stringify(this.state.evaluation.map(e => e.selects_responses))}</p>
-        </div> */}
+        </div>  */}
         {this.state.show_evaluation && (
           <>
             <ReactToPdf>
@@ -205,7 +205,9 @@ médica antes de voar:{' '}
                               <div className="container" style={{ marginLeft: '25%', marginRight: '25%' }}>
                                 <ul style={{ padding: 0, margin: 0, textAlign: 'left' }}>
                                   {ev.selects_responses.map((e,i) => {
-                                    return <li key={"selects_responses"+i}>{e}</li>;
+                                    return  <li key={"selects_responses"+i}>
+                                      <p dangerouslySetInnerHTML={{ __html:e }} />
+                                    </li>;
                                   })}
                                 </ul>
                               </div>
@@ -265,21 +267,35 @@ médica antes de voar:{' '}
               ) : (
                 <h4>{this.state.question.question}</h4>
               )}
+
+              {this.state.question.question_type == 'evaluation' && this.state.stackKey[this.state.stackKey.length-1].selects_responses.map( (e,i)=>{
+                return (
+                <p dangerouslySetInnerHTML={{ __html:e }} key={{i}} />
+              )
+              }) }
               {this.state.question.checkboxs && (
                 <ul style={{ listStyleType: 'none', padding: 0, margin: 0, textAlign: 'left' }}>
                   {this.state.question.checkboxs.map((m,i) => {
+                    let msg= m;
+                    let resp = m;
+                    if(m.q){
+                      msg = m.q;
+                    }
+                    if(m.r){
+                      resp = m.r;
+                    }
                     return (
                       <li key={"q_ckb"+i}> 
                       <div>
                         <input
                           type="checkbox"
-                          name={m}
-                          value={m}
+                          name={msg}
+                          value={resp}
                           id={"op"+i}
                           onChange={v => this.onMarckResponse(v)}
                           style={{ width: '1rem', height: '1rem' }}
                         />
-                       <label  for={"op"+i}> {m}</label>
+                       <label  for={"op"+i}> {msg}</label>
                        </div>
                       </li>
                     );
