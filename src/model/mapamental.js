@@ -155,8 +155,8 @@ const mapaMental = {
   gravidez4: {
     question: 'Qual é a sua idade gestacional?',
     options: [
-      { label: '< 28 semanas', goto: 'gravidez5' },
-      { label: '> 28 Semanas', goto: 'gravidezFimMedico4' },
+      { label: '< 36 semanas', goto: 'gravidez5' },
+      { label: '> 36 Semanas', goto: 'gravidezFimMedico4' },
     ],
   },
 
@@ -229,7 +229,7 @@ const mapaMental = {
     type: 'html',
     style: 'fimMedico',
     question: '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'
-    +'<p>Apesar das recomendações médicas internacionais (IATA) e nacionais (CFM) determinarem consulta médica para a realização de viagem aérea a partir das 36 semanas de gestação, algumas companhias aéreas nacionais exigem atestado médico a partir da 28a semana de gestação. </p>',
+    +'<p>As recomendações médicas internacionais (IATA) e nacionais (CFM) determinam consulta médica com documento de liberação para a realização de viagem aérea em gestação simples de baixo risco a partir das 36 semanas de gestação.</p>',
     options: [
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
