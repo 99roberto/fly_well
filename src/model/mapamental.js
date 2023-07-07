@@ -1,3 +1,7 @@
+const TITULO_RECOMENDACAO  = '<h4>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h4> ';
+const btnSimNaoSei = {label:'Sim/Não sei'};
+const btnNao = {label:'Não'};
+
 const mapaMental = {
   home: {
     style: 'intro',
@@ -32,7 +36,7 @@ const mapaMental = {
     style: 'inicial',
     question:
       '<div>' +
-      '<h4>Você está com alguma ' +
+      '<p>Você está com alguma ' +
       '<span class="mtooltip">doença ativamente contagiosa ' +
       '<span class="mtooltiptext">' +
       'Doença ativamento contagiosa é uma doença que se transmite pelo contato próximo pelo ar ou por contato direto' +
@@ -47,11 +51,11 @@ const mapaMental = {
       'sem uso de máscara ou com seu uso inadequado.' +
       '</span>' +
       '</span> ' +
-      '?</h4>' +
+      '?</p>' +
       '</div>',
     options: [
-      { label: 'Sim/Não sei', goto: 'inicialFimMedico1' },
-      { label: 'Não', goto: 'inicial2' },
+      {...btnSimNaoSei, ...{goto: 'inicialFimMedico1' }},
+      {...btnNao, ...{goto:'inicial2' }},
     ],
   },
   inicial2: {
@@ -59,45 +63,27 @@ const mapaMental = {
     style: 'inicial',
     question:
       '<div>' +
-      '<h4>Você é uma pessoa que necessita da presença de um(a) acompanhante ou de ' +
+      '<p>Você é uma pessoa que necessita da presença de um(a) acompanhante ou de ' +
       '<span class="mtooltip">suporte de saúde ' +
       '<span class="mtooltiptext">' +
       'Oxigênio, medicação administrada por outra pessoa, cadeira de rodas ou maca, por exemplo. ' +
       '</span>' +
       '</span> ' +
-      ' a bordo?</h4>' +
+      ' a bordo?</p>' +
       '</div>',
 
     options: [
-      { label: 'Sim/Não sei', goto: 'inicialFimMedico2' },
-      { label: 'Não', goto: 'gravidez1' },
+      {...btnSimNaoSei, ...{goto:  'inicialFimMedico2' }},
+      {...btnNao, ...{goto:'gravidez1' }},
     ],
   },
-  inicial3: {
-    style: 'inicial',
-    question:
-      'Você tem alguma condição de saúde  que precise de acompanhante ou alguma necessidade especial ou que possa comprometer a dinâmica e segurança do voo?',
-    options: [
-      { label: 'Sim/Não sei', goto: 'inicialFimMedico3' },
-      { label: 'Não', goto: 'gravidez1' },
-    ],
-  },
-  inicialFimMedico3: {
-    question_type: 'evaluation',
-    style: 'fimMedico',
-    question:
-      'É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.',
-    options: [
-      { label: 'Continuar', variant: 'info', goto: 'gravidez1' },
-      { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
-    ],
-  },
+ 
   inicialFimMedico1: {
     question_type: 'evaluation',
     style: 'fimMedico',
     type: 'html',
     question:
-    '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2> ' 
+    TITULO_RECOMENDACAO 
       +'<p>Pessoas com infecções respiratórias contagiosas não devem viajar, pois pode ocorrer agravamento dos sintomas, complicações durante e depois do voo e risco de disseminação da doença entre os demais passageiros. </p>'
     +'<p>Recomenda-se que a pessoa nestas condições realize a viagem aérea após a melhora dos sintomas, desde que esteja sem febre e com função pulmonar adequada.</p>',
     options: [
@@ -110,13 +96,13 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h2>É  recomendada avaliação médica antes de realizar a viagem aérea para avaliação de saúde e das necessidades especiais.</h2>'
+      TITULO_RECOMENDACAO
       +'<p>Serviços especiais podem ser fornecidos pelas companhias aéreas, desde que avisados com antecedência suficiente. '
       +'Alguns podem ser disponíveis gratuitamente, enquanto para outros haverá um custo. Desta forma, o formulário MEDIF '
       +'(<b>Medical Information Form ou Formulário de Informações para Passageiros com Necessidades Especiais</b>) disponibilizado pela companhia aérea deve ser preenchido pelo profissional médico. </p>'
       ,
     options: [
-      { label: 'Continuar', variant: 'info', goto: 'inicial3' },
+      { label: 'Continuar', variant: 'info', goto: 'gravidez1' },
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
@@ -127,17 +113,11 @@ const mapaMental = {
     question: 'Você é do sexo feminino e está grávida?',
     options: [
       { label: 'Sim', goto: 'gravidez2' },
-      { label: 'Não', goto: 'recemnascido1' },
+      {...btnNao, ...{goto:'recemnascido1' }},
     ],
   },
-  // depreciado
-  // gravidez2: {
-  //   question: 'Você está apresentando qualquer sangramento vaginal no momento?',
-  //   options: [
-  //     { label: 'Sim', goto: 'gravidezFimMedico' },
-  //     { label: 'Não', goto: 'gravidez3' },
-  //   ],
-  // },
+ 
+
   gravidez2: {
     question: 'Qual é o risco atribuído à sua gestação?',
     options: [
@@ -171,14 +151,14 @@ const mapaMental = {
     // ],
     options: [
       { label: 'Sim', goto: 'gravidezFimMedico5'},
-      { label: 'Não', goto: 'recemnascido1' },
+      {...btnNao, ...{goto:'recemnascido1' }},
     ],
   },
 
   gravidezFimMedico: {
     question_type: 'evaluation',
     style: 'fimMedico',
-    question: 'Recomendamos avaliação médica para que você possa realizar uma viagem mais segura para orientações.',
+    question: TITULO_RECOMENDACAO,
     options: [
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
@@ -189,7 +169,7 @@ const mapaMental = {
     question_type: 'evaluation',
     type: 'html',
     style: 'fimMedico',
-    question: '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'
+    question: TITULO_RECOMENDACAO
     +'<p>É necessário avaliar o risco da gestação antes de realizar a viagem. As viagens longas não devem ser realizadas por paciente com incompetência istmocervical, atividade uterina aumentada ou partos anteriores prematuros, por exemplo. Em condições que comprometem a oxigenação da placenta, deve ser avaliada a necessidade de suporte com oxigênio.</p>',
     options: [
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
@@ -200,7 +180,7 @@ const mapaMental = {
     question_type: 'evaluation',
     style: 'fimMedico',
     question:
-      'Recomendamos avaliação médica para que você possa realizar uma viagem mais segura para orientações.' +
+      TITULO_RECOMENDACAO +
       ' A maioria das companhias aéreas exige atestado médico a partir da 28ª semana para gestações simples ' +
       ' e a partir da 26ª ou 28 ª semana para gestações múltiplas. ' +
       ' A partir da 32ª semana, é exigido o preenchimento de um formulário específico fornecido pelas companhias aéreas (MEDIF).' +
@@ -215,7 +195,7 @@ const mapaMental = {
     question_type: 'evaluation',
     type: 'html',
     style: 'fimMedico',
-    question: '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'
+    question: TITULO_RECOMENDACAO
     +'<p>Viagens longas não devem ser realizadas por paciente multigesta sem antes ter avaliação médica individualizada.</p>'
     +'<p>Apesar das recomendações médicas internacionais (IATA) e nacionais (CFM) determinarem consulta médica para a realização de viagem aérea a partir das 32 semanas de gestação, algumas companhias aéreas nacionais exigem atestado médico a partir da 26a semana de gestação.</p>',
     options: [
@@ -228,7 +208,7 @@ const mapaMental = {
     question_type: 'evaluation',
     type: 'html',
     style: 'fimMedico',
-    question: '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'
+    question: TITULO_RECOMENDACAO
     +'<p>As recomendações médicas internacionais (IATA) e nacionais (CFM) determinam consulta médica com documento de liberação para a realização de viagem aérea em gestação simples de baixo risco a partir das 36 semanas de gestação.</p>',
     options: [
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
@@ -239,7 +219,7 @@ const mapaMental = {
     question_type: 'evaluation',
     type: 'html',
     style: 'fimMedico',
-    question: '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'
+    question: TITULO_RECOMENDACAO
     +'<p>A viagem deve ser evitada caso a gestante apresente dores ou sangramento antes do embarque.</p>',
     options: [
       { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
@@ -252,21 +232,21 @@ const mapaMental = {
     question: 'Você vai viajará com uma criança  com menos de uma semana de vida?',
     options: [
       { label: 'Sim', goto: 'recemnascido2' },
-      { label: 'Não', goto: 'cardiovasculares1' },
+      {...btnNao, ...{goto:'cardiovasculares1' }},
     ],
   },
   recemnascido2: {
     question: 'A criança tem menos de dois dia (48h) de vida?',
     options: [
       { label: 'Sim', goto: 'recemnascidoFimMedico1' },
-      { label: 'Não', goto: 'recemnascido3' },
+      {...btnNao, ...{goto:'recemnascido3' }},
     ],
   },
   recemnascido3: {
     question: 'A criança está com algum problema de saúde?',
     options: [
-      { label: 'Não', goto: 'recemnascidoFimMedico' },
-      { label: 'Sim', goto: 'recemnascido4' },
+      {...btnNao, ...{goto:'recemnascido4' }},
+      { label: 'Sim', goto: 'recemnascidoFimMedico' },
     ],
   },
   recemnascido4: {
@@ -279,7 +259,7 @@ const mapaMental = {
     type: 'html',
     style: 'fimMedico',
     question:
-    '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'+
+    TITULO_RECOMENDACAO+
     '<p>Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida. Algumas companhias aéreas nacionais exigem declaração de responsabilidade em casos de viagem aérea a ser realizada em menos de 07 dias depois do parto. </p>',
 
     options: [
@@ -292,7 +272,7 @@ const mapaMental = {
     type: 'html',
     style: 'fimMedico',
     question:
-    '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'+
+    TITULO_RECOMENDACAO+
     '<p> Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida.</p>',
 
     options: [
@@ -304,16 +284,16 @@ const mapaMental = {
   oncologico1: {
     style: 'cabecalho',
     type: 'html',
-    question: '<h4>Você está em '+
+    question: '<p>Você está em '+
     '<span class="mtooltip"> tratamento oncológico ' +
     '<span class="mtooltiptext">' +
     'Tratamento para câncer de qualquer natureza: tratamento com medicamentos, quimioterapia, radioterapia, plano de cirugia.' +
     '</span>' +
     '</span> ' 
-    +'?</h4>',
+    +'?</p>',
     options: [
       { label: 'Sim', goto: 'oncologicoFim' },
-      { label: 'Não', goto: 'FINISHED' },
+      {...btnNao, ...{goto:'FINISHED' }},
     ],
   }, 
   oncologicoFim: {
@@ -321,7 +301,7 @@ const mapaMental = {
     type: 'html',
     question:
       
-    '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'+
+    TITULO_RECOMENDACAO+
     '<p>Pessoas em tratamento por quimioterapia podem voar, mas não durante a administração ativa de medicamentos citotóxicos, especialmente quando envolve tratamento endovenoso. </p>'
     +'<p>Pessoas em radioterapia precisam de avaliação médica para análise do risco individual e coletivo. </p>',
 
@@ -344,8 +324,8 @@ const mapaMental = {
       {q:'Anemia (de qualquer origem)', r:'<b>Anemia:</b> independente da causa da anemia, níveis de hemoglobina abaixo de 8,5mg/dL, associados à diminuição da pressão de oxigênio durante o voo, podem levar ao aparecimento de sintomas. Em casos de anemia aguda, principalmente por perda sanguínea, é recomendado avaliação da hemoglobina por exame de sangue 24h após o último episódio de sangramento. Em relação à anemia falciforme, considera-se esperar 10 dias após a última crise falciforme. Em necessidade de viagem antes deste período, é necessária avaliação médica. '},
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim1', select: true },
-      { label: 'Não', goto: 'cardiovasculares2' },
+      {...btnSimNaoSei, ...{goto:  'cardiovascularesFim1', select: true }},
+      {...btnNao, ...{goto:'cardiovasculares2' }},
     ],
   },
 
@@ -353,7 +333,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-    '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'
+    TITULO_RECOMENDACAO
     +'<p>É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. </p>' ,
     question_type: 'evaluation',
     options: [
@@ -373,8 +353,8 @@ const mapaMental = {
       {q:'Embolia pulmonar',r:'<b>Embolia pulmonar:</b> é necessário avaliar se a função pulmonar está estável ou necessita de controle farmacológico ou suporte de oxigênio suplementar.  '},
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim2', select: true },
-      { label: 'Não', goto: 'cardiovasculares3' },
+      {...btnSimNaoSei, ...{goto:  'cardiovascularesFim2', select: true }},
+      {...btnNao, ...{goto:'cardiovasculares3' }},
     ],
   },
 
@@ -383,7 +363,7 @@ const mapaMental = {
     type: 'html',
     question:
       
-    '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>'
+    TITULO_RECOMENDACAO
     +'<p>É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. </p>',
     question_type: 'evaluation',
     options: [
@@ -402,8 +382,8 @@ const mapaMental = {
       {q:'Terapia cardíaca de ablação',r:'<b>Terapia cardíaca de ablação:</b> viagens possíveis após 02 dias do procedimento. Risco aumentado de trombose venosa profunda se viagem realizada em menos de uma semana do procedimento.'},
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'cardiovascularesFim3', select: true },
-      { label: 'Não', goto: 'pulmonares1' },
+      {...btnSimNaoSei, ...{goto:  'cardiovascularesFim3', select: true }},
+      {...btnNao, ...{goto:'pulmonares1' }},
     ],
   },
 
@@ -411,7 +391,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<p>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura. </p>' +
+      TITULO_RECOMENDACAO +
       '<br/>' +
       'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
       'e sem complicações relacionadas ao procedimento. ',
@@ -438,15 +418,15 @@ const mapaMental = {
     ],
     
     options: [
-      { label: 'Sim/Não sei', goto: 'pulmonaresFim1', select: true },
-      { label: 'Não', goto: 'pulmonares2' },
+      {...btnSimNaoSei, ...{goto:  'pulmonaresFim1', select: true }},
+      {...btnNao, ...{goto:'pulmonares2' }},
     ],
   },
   pulmonaresFim1: {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2>',
+      TITULO_RECOMENDACAO,
 
     question_type: 'evaluation',
     options: [
@@ -458,8 +438,8 @@ const mapaMental = {
   pulmonares2: {
     question: 'Você teve o diagnóstico de pneumotórax nos últimos 30 dias?',
     options: [
-      { label: 'Sim/Não sei', goto: 'pulmonaresFim2'},
-      { label: 'Não', goto: 'pulmonares3' },
+      {...btnSimNaoSei, ...{goto:  'pulmonaresFim2'}},
+      {...btnNao, ...{goto:'pulmonares3' }},
     ],
   },
 
@@ -468,7 +448,7 @@ const mapaMental = {
     type: 'html',
     style: 'fimMedico',
     question:
-      '<p>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura. </p> ' +
+      TITULO_RECOMENDACAO +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas às doenças. </p>' +
       '<p>Pneumotórax é contraindicação absoluta para voar. De acordo com a IATA, viagens são possíveis após 14 dias de recuperação pulmonar completa após pneumotórax causado por trauma e 07 dias após recuperação pulmonar completa em pneumotórax por outras causas. A recomendação nacional orienta esperar de duas a três semanas após a drenagem de tórax e confirmar a remissão por exame de raio X.</p>' 
       ,
@@ -487,8 +467,8 @@ const mapaMental = {
       {q:'Biópsia de pulmão',r:'<b>Cirurgia pulmonar e biópsia de pulmão</b>: viagens possíveis após 11 dias do procedimento com recuperação pulmonar completa, em pessoa clinicamente estável e assintomática. Pós-pneumectomia ou lobectomia pulmonar recente: a reserva pulmonar é mínima, principalmente na associação com história de tabagismo ou doença pulmonar obstrutiva crônica (DPOC). É recomendado teste de simulação de hipoxia de altitude. '}
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'pulmonaresFim3', select: true },
-      { label: 'Não', goto: 'olhosNarizGarganta1' },
+      {...btnSimNaoSei, ...{goto:  'pulmonaresFim3', select: true }},
+      {...btnNao, ...{goto:'olhosNarizGarganta1' }},
     ],
   },
 
@@ -497,7 +477,7 @@ const mapaMental = {
     type: 'html',
     style: 'fimMedico',
     question:
-      '<p>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura. </p> ',
+      TITULO_RECOMENDACAO,
 
     options: [
       { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta1' },
@@ -518,8 +498,8 @@ const mapaMental = {
       r:'<b>Doenças de saúde mental:</b> não devem voar as pessoas cujo comportamento esteja instável, imprevisível, agressivo ou não seguro. Podem voar aqueles com doença estável e controlada com o uso de medicamentos. '},
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'neuroPsiqFim1', select: true },
-      { label: 'Não', goto: 'neuroPsiq2' },
+      {...btnSimNaoSei, ...{goto:  'neuroPsiqFim1', select: true }},
+      {...btnNao, ...{goto:'neuroPsiq2' }},
     ],
   },
 
@@ -528,7 +508,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2> ' +
+      TITULO_RECOMENDACAO +
       '<p>É necessário avaliar se as doenças estão estáveis ou precisam de controle farmacológico. </p>' ,
 
     options: [
@@ -546,8 +526,8 @@ const mapaMental = {
       {q:'Psicose aguda (perda de contato com a realidade: delírios, alucinações e pensamento desordenado)  ', r:'<b>Psicose aguda:</b> viagens possíveis após 30 dias do evento, em pessoa clinicamente estável, com indicação de acompanhante profissional de saúde conforme avaliação médica.'},
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'neuroPsiqFim2', select: true },
-      { label: 'Não', goto: 'neuroPsiq3' },
+      {...btnSimNaoSei, ...{goto:  'neuroPsiqFim2', select: true }},
+      {...btnNao, ...{goto:'neuroPsiq3' }},
     ],
   },
 
@@ -556,7 +536,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<p>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura. </p> ' +
+      TITULO_RECOMENDACAO +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ',
 
     options: [
@@ -566,13 +546,13 @@ const mapaMental = {
   },
 
   neuroPsiq3: {
-    type: 'html',
+    style: 'cabecalho',
     question: 'Você já fez algum dos procedimentos abaixo nos últimos 30 dias?',
     checkboxs: [
       {q:'Cirurgia de crânio ou cerebral', r:'<b>Cirurgia de crânio ou cerebral:</b> viagens possíveis a partir de 10 dias do procedimento, se pessoa clinicamente estável e assintomática, após avaliação médica sem evidência de ar na cavidade craniana. '}],
     options: [
-      { label: 'Sim/Não sei', goto: 'neuroPsiqFim3', select: true },
-      { label: 'Não', goto: 'ortopedicas1' },
+      {...btnSimNaoSei, ...{goto:  'neuroPsiqFim3', select: true }},
+      {...btnNao, ...{goto:'ortopedicas1' }},
     ],
   },
 
@@ -581,7 +561,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<p>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura. </p> ' +
+      TITULO_RECOMENDACAO +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática ' +
       'e sem complicações relacionadas ao procedimento. </p>',
 
@@ -603,8 +583,8 @@ const mapaMental = {
     ],
 
     options: [
-      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim1', select: true },
-      { label: 'Não', goto: 'olhosNarizGarganta2' },
+      {...btnSimNaoSei, ...{goto:  'olhosNarizGargantaFim1', select: true }},
+      {...btnNao, ...{goto:'olhosNarizGarganta2' }},
     ],
   },
 
@@ -613,7 +593,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<p>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</p> ',
+      TITULO_RECOMENDACAO,
 
     options: [
       { label: 'Continuar', variant: 'info', goto: 'olhosNarizGarganta2' },
@@ -634,8 +614,8 @@ const mapaMental = {
       {q:'Cirurgia nos olhos (Penetrante ou intraocular, catara ou de córnea)',r:'<b>Cirurgia nos olhos:</b> Cirurgia penetrante ou intraocular:  viagens são possíveis após 07 dias da cirurgia, em pessoa clinicamente estável e assintomática. Cirurgia de catarata ou de córnea: viagens são possíveis após 24 horas da cirurgia, em pessoa clinicamente estável e assintomática. '},
     ],
     options: [
-      { label: 'Sim/Não sei', goto: 'olhosNarizGargantaFim2', select: true },
-      { label: 'Não', goto: 'neuroPsiq1' },
+      {...btnSimNaoSei, ...{goto:  'olhosNarizGargantaFim2', select: true }},
+      {...btnNao, ...{goto:'neuroPsiq1' }},
     ],
   },
 
@@ -644,7 +624,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-      '<p>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura. </p> ' +
+      TITULO_RECOMENDACAO +
       '<p>É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas aos procedimentos. </p>'
      ,
 
@@ -670,8 +650,8 @@ const mapaMental = {
     ],
 
     options: [
-      { label: 'Sim/Não sei', goto: 'ortopedicasFim1', select: true },
-      { label: 'Não', goto: 'oncologico1' },
+      {...btnSimNaoSei, ...{goto:  'ortopedicasFim1', select: true }},
+      {...btnNao, ...{goto:'oncologico1' }},
     ],
   },
 
@@ -680,7 +660,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-    '<h2>Recomendamos avaliação médica para que você possa realizar uma viagem mais segura.</h2> ' +
+    TITULO_RECOMENDACAO +
     
     '<br/><p><b>As fraturas instáveis ou não tratadas são contraindicações ao voo. </b>' +
       'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas ao procedimento. </p>' ,
@@ -691,19 +671,7 @@ const mapaMental = {
     ],
   },
 
-  // ortopedicasFim2: {
-  //   style: 'fimMedico',
-  //   type: 'html',
-  //   question:
-  //     '<h2>Ausência de obrigatoriedade de consulta médica para voar. </h2> ' +
-  //     '<p>Avaliar próximo sistema. </p>' +
-  //     '</lu>',
-
-  //     options: [
-  //       { label: 'Continuar', variant:'info', goto: 'recemnascido1' },
-  //     ],
-  //       { label: 'Terminar', variant:'dark', goto: 'FINISHED' },  
-  // },
+ 
 };
 
 const getMapaMental = () => {

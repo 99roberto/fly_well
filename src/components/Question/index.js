@@ -18,7 +18,7 @@ const options = {
 
 const BtnGoBack = ({onClick, children})=>{
   return (
-    <Button variant="danger" onClick={onClick}>
+    <Button variant="danger" onClick={onClick} style={{minWidth:"300px", maxWidth:"300px"}}>
                     <FontAwesomeIcon icon={faCircleChevronLeft} style={{marginRight:10}}/>
                       {children}
                     </Button>
@@ -233,17 +233,17 @@ médica antes de voar:{' '}
                     <Row style={{ textAlign: 'center' }} className={'acoes'}>
                       {this.state.evaluation.length > 0 && (
                         <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
-                          <Button onClick={toPdf}>Gerar PDF</Button>
+                          <Button onClick={toPdf} style={{minWidth:"300px", maxWidth:"300px", marginBottom:"20px"}}>Gerar PDF</Button>
                         </Col>
                       )}
                       <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
-                        <Link to={`/`} className="btn">
+                        <Link to={`/`} className="btn btn-light" style={{minWidth:"300px", maxWidth:"300px", marginBottom:"20px"}}>
                           Home
                         </Link>
                       </Col>
                       <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
                         {this.state.stackKey.length > 1 && (
-                          <BtnGoBack  onClick={() => this.back()}>
+                          <BtnGoBack  onClick={() => this.back()} id="brn-voltar-1">
                             Voltar
                           </BtnGoBack>
                         )}
@@ -261,11 +261,11 @@ médica antes de voar:{' '}
         )}
         {this.state.question && !this.state.show_evaluation && (
           <div className="question">
-            <div className="desc">
+            <div className="desc" style={{minHeight:"300px"}}>
               {this.state.question.type === 'html' ? (
                 <div dangerouslySetInnerHTML={{ __html: this.state.question.question }} />
               ) : (
-                <h4>{this.state.question.question}</h4>
+                <p>{this.state.question.question}</p>
               )}
 
               {this.state.question.question_type == 'evaluation' && this.state.stackKey[this.state.stackKey.length-1].selects_responses.map( (e,i)=>{
@@ -306,24 +306,15 @@ médica antes de voar:{' '}
             
             <div className="respostas">
               {this.state.question.options && (
-                <div className={'acoes'}>
+                <div className={'acoes'}  >
                 
                   <Row className={''}>
-
-                    {this.state.question.question_type == 'evaluation' && (
-                        <Col xs={12} lg="12" sm={12}>
-                          {this.state.stackKey.length > 1 && (
-                            <BtnGoBack   onClick={() => this.back()}>
-                              Voltar
-                            </BtnGoBack>
-                          )}
-                        </Col>
-                    )}
 
                     {this.state.question.options.map((op, idx) => {
                       return (
                         <Col xs={12} lg="12" sm={12} key={idx}>
                           <Button
+                            style={{minWidth:"300px", maxWidth:"300px", marginBottom:"10px"}}
                             variant={op.variant ? op.variant : 'primary'}
                             onClick={() => this.goto(op)}
                             key={idx}
@@ -349,25 +340,35 @@ médica antes de voar:{' '}
                         </Col>
                       );
                     })}
+
+                    <Col xs={12} lg="12" sm={12}>
+                      {this.state.stackKey.length > 1 && (
+                        <BtnGoBack   onClick={() => this.back()} id="brn-voltar-2">
+                          Voltar
+                        </BtnGoBack>
+                      )}
+                    </Col>
+
+                 
                   </Row>
                 </div>
               )}
 
             </div>
            
-            {this.state.question.question_type != 'evaluation' && (
+            {/* {this.state.question.question_type != 'evaluation' && (
               <div className={'acoes'}>
               <Row className={'acoes'}>
                 <Col xs={12} lg="12" sm={12}>
                   {this.state.stackKey.length > 1 && ( 
-                    <BtnGoBack  onClick={() => this.back()}>
+                    <BtnGoBack  onClick={() => this.back()} id="brn-voltar-3">
                       Voltar
                     </BtnGoBack>
                   )}
                 </Col>
               </Row>
             </div>
-            )}
+            )} */}
         </div>
         )}
       </Container>
