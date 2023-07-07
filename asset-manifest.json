@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c8a9a741.css",
-    "main.js": "/static/js/main.1a917291.js",
+    "main.css": "/static/css/main.a485084e.css",
+    "main.js": "/static/js/main.fcb30fb0.js",
     "static/js/498.6170d6f9.chunk.js": "/static/js/498.6170d6f9.chunk.js",
     "static/js/703.92eef9a9.chunk.js": "/static/js/703.92eef9a9.chunk.js",
     "static/js/541.520867de.chunk.js": "/static/js/541.520867de.chunk.js",
@@ -10,15 +10,15 @@
     "static/media/slideaviao.jpg": "/static/media/slideaviao.a6aa6f58821bc20c31e7.jpg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.c8a9a741.css.map": "/static/css/main.c8a9a741.css.map",
-    "main.1a917291.js.map": "/static/js/main.1a917291.js.map",
+    "main.a485084e.css.map": "/static/css/main.a485084e.css.map",
+    "main.fcb30fb0.js.map": "/static/js/main.fcb30fb0.js.map",
     "498.6170d6f9.chunk.js.map": "/static/js/498.6170d6f9.chunk.js.map",
     "703.92eef9a9.chunk.js.map": "/static/js/703.92eef9a9.chunk.js.map",
     "541.520867de.chunk.js.map": "/static/js/541.520867de.chunk.js.map",
     "787.0f06af18.chunk.js.map": "/static/js/787.0f06af18.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8a9a741.css",
-    "static/js/main.1a917291.js"
+    "static/css/main.a485084e.css",
+    "static/js/main.fcb30fb0.js"
   ]
 }
