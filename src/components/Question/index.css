@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype");
+}
+
+
 .question {
   text-align: justify;
   margin-top: 50px;
