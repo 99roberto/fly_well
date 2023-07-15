@@ -39,7 +39,7 @@ const mapaMental = {
       '<p>Você está com alguma ' +
       '<span class="mtooltip">doença ativamente contagiosa ' +
       '<span class="mtooltiptext">' +
-      'Doença ativamento contagiosa é uma doença que se transmite pelo contato próximo pelo ar ou por contato direto' +
+      'Doença ativamente contagiosa é uma doença que se transmite pelo contato próximo pelo ar ou por contato direto' +
       '</span>' +
       '</span> ' +
       'que seja transmissível por  ' +
@@ -229,7 +229,7 @@ const mapaMental = {
 
   recemnascido1: {
     style: 'cabecalho',
-    question: 'Você vai viajará com uma criança  com menos de uma semana de vida?',
+    question: 'Você viajará com uma criança  com menos de uma semana de vida?',
     options: [
       { label: 'Sim', goto: 'recemnascido2' },
       {...btnNao, ...{goto:'cardiovasculares1' }},
@@ -287,7 +287,7 @@ const mapaMental = {
     question: '<p>Você está em '+
     '<span class="mtooltip"> tratamento oncológico ' +
     '<span class="mtooltiptext">' +
-    'Tratamento para câncer de qualquer natureza: tratamento com medicamentos, quimioterapia, radioterapia, plano de cirugia.' +
+    'Tratamento para câncer de qualquer natureza: tratamento com medicamentos, quimioterapia, radioterapia, plano de cirurgia.' +
     '</span>' +
     '</span> ' 
     +'?</p>',
@@ -407,7 +407,7 @@ const mapaMental = {
 
     checkboxs: [
       {q:'Asma', r:'<b>Asma:</b> a asma é a doença respiratória mais comum entre os viajantes, sendo incapacitante para o voo em casos graves, instáveis e de hospitalização recente. Viagens são recomendadas em pacientes estáveis, sem sintomas e sem sinais de infecção ativa. Recomenda-se transportar consigo medicamentos para manejo da crise conforme prescrição médica.'},
-      {q:'Doença pulmonar obstrutiva crônica', r:'<b>Doença pulmonar obstrutiva crôn:</b>Pessoas com doenças pulmonares crônicas podem apresentar capacidade reduzida de oxigenar o sangue, e podem piorar durante o voo. É necessária avaliação médica para confirmar estabilidade clínica ou a indicação de oxigenoterapia suplementar em casos selecionados. '},
+      {q:'Doença pulmonar obstrutiva crônica', r:'<b>Doença pulmonar obstrutiva crônica:</b>Pessoas com doenças pulmonares crônicas podem apresentar capacidade reduzida de oxigenar o sangue, e podem piorar durante o voo. É necessária avaliação médica para confirmar estabilidade clínica ou a indicação de oxigenoterapia suplementar em casos selecionados. '},
       {q:'Hipertensão pulmonar', r:'<b>Hipertensão pulmonar:</b>Pessoas com doenças pulmonares crônicas podem apresentar capacidade reduzida de oxigenar o sangue, e podem piorar durante o voo. É necessária avaliação médica para confirmar estabilidade clínica ou a indicação de oxigenoterapia suplementar em casos selecionados. '},
       {q:'Fibrose cística', r:'<b>Fibrose cística:</b>Pessoas com doenças pulmonares crônicas podem apresentar capacidade reduzida de oxigenar o sangue, e podem piorar durante o voo. É necessária avaliação médica para confirmar estabilidade clínica ou a indicação de oxigenoterapia suplementar em casos selecionados. '},
       {q:'Câncer de pulmão', r:'<b>Câncer de pulmão:</b>Pessoas com doenças pulmonares crônicas podem apresentar capacidade reduzida de oxigenar o sangue, e podem piorar durante o voo. É necessária avaliação médica para confirmar estabilidade clínica ou a indicação de oxigenoterapia suplementar em casos selecionados. '},
@@ -461,7 +461,7 @@ const mapaMental = {
 
   // <<<[#10]
   pulmonares3: {
-    question: 'Você já fez algum dos procedimentos abaixo nos últmos 15 dias?',
+    question: 'Você já fez algum dos procedimentos abaixo nos últimos 15 dias?',
     checkboxs: [
       {q:'Cirurgia pulmonar', r:'<b>Cirurgia pulmonar e biópsia de pulmão</b>: viagens possíveis após 11 dias do procedimento com recuperação pulmonar completa, em pessoa clinicamente estável e assintomática. Pós-pneumectomia ou lobectomia pulmonar recente: a reserva pulmonar é mínima, principalmente na associação com história de tabagismo ou doença pulmonar obstrutiva crônica (DPOC). É recomendado teste de simulação de hipoxia de altitude. '},
       {q:'Biópsia de pulmão',r:'<b>Cirurgia pulmonar e biópsia de pulmão</b>: viagens possíveis após 11 dias do procedimento com recuperação pulmonar completa, em pessoa clinicamente estável e assintomática. Pós-pneumectomia ou lobectomia pulmonar recente: a reserva pulmonar é mínima, principalmente na associação com história de tabagismo ou doença pulmonar obstrutiva crônica (DPOC). É recomendado teste de simulação de hipoxia de altitude. '}
@@ -518,7 +518,7 @@ const mapaMental = {
   },
 
   neuroPsiq2: {
-    question: 'Você teve algum dos diagnósticos abaixo nos últmos 30 dias?',
+    question: 'Você teve algum dos diagnósticos abaixo nos últimos 30 dias?',
 
     checkboxs: [
       {q:'Acidente isquêmico transitório (AIT) ', r:'<b>Acidente vascular cerebral (AVC):</b> viagens possíveis após 05 a14 dias, conforme gravidade do evento, avaliação médica e estabilidade clínica com necessidade ou não de acompanhante profissional de saúde. De acordo com a IATA, pessoas que tiveram AVC a menos de 02 semanas com liberação médica para voar devem receber oxigenioterapia suplementar durante o voo. '},
@@ -573,7 +573,7 @@ const mapaMental = {
 //  <<< [#11]
   olhosNarizGarganta1: {
     style: 'cabecalho',
-    question: 'Você teve algum dos diagnósticos das doenças OTORRINOLARINGOLÓGICAS E GASTROINTESTINAIS abaixo nos últimos 14 ias?',
+    question: 'Você teve algum dos diagnósticos das doenças OTORRINOLARINGOLÓGICAS E GASTROINTESTINAIS abaixo nos últimos 14 dias?',
 
     checkboxs: [
       {q:'Otite média', r:'<b>Otite média:</b> as condições de infecções ativas e cirurgias otológicas recentes são contraindicações para o voo, mas o uso de tubo de drenagem da orelha média na membrana timpânica não o é. Viagens são possíveis apenas em pessoa clinicamente estável e assintomática. '}, 

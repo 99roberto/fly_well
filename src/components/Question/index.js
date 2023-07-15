@@ -10,20 +10,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleRight, faCircleChevronLeft, faFlagCheckered } from '@fortawesome/free-solid-svg-icons'
 import SlideQuestionario from '../SlideQuestionario';
+import Pdf from './Pdf';
+import BtnGoBack from './BtnGoBack';
+
 const options = {
   orientation: 'landscape',
   unit: 'in',
   format: [4, 2],
 };
 
-const BtnGoBack = ({onClick, children})=>{
-  return (
-    <Button variant="danger" onClick={onClick} style={{minWidth:"300px", maxWidth:"300px"}}>
-                    <FontAwesomeIcon icon={faCircleChevronLeft} style={{marginRight:10}}/>
-                      {children}
-                    </Button>
-  )
-}
+
 class Question extends React.Component {
   constructor(props) {
     const mapaMental = getMapaMental();
@@ -128,131 +124,26 @@ class Question extends React.Component {
         </div>  */}
         {this.state.show_evaluation && (
           <>
-            <ReactToPdf>
-              {({ toPdf, targetRef }) => (
-                <>
-                  <div style={{ maxWidth: 750, padding: '10px' }} ref={targetRef}>
-                    <Navbar.Brand href="#">
-                      {' '}
-                      <img
-                        alt=""
-                        src="/airplane192.png"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                      />{' '}
-                    </Navbar.Brand>
-                    <Navbar.Brand href="#">{AppName}</Navbar.Brand>
-                    <div className="question" ref={this.state.ref} style={{ margin: '10px' }}>
-                      {this.state.evaluation.length == 0 && (
-                        <>
-                        <h2>Resultado</h2>
-                      
-<p>Você não possui contraindicação para voar nem exigência de consulta médica antes de voar conforme recomendações da International Air Transport Association (IATA) e do Conselho Federal de Medicina (CFM).</p>
-
-<p>Este aplicativo se destina a auxiliar pessoas na tomada de decisão em procurar auxílio médico antes de realizar uma viagem aérea e educadores em disseminar conhecimento de saúde sobre saúde aeroespacial. Não tem a intenção de definir diagnóstico de saúde, emitir liberação oficial para voar ou substituir avaliação médica. </p>
-
-<p>Se você está planejando uma viagem aérea, está com sintomas ou preocupação em relação à sua saúde, procure seu profissional médico de confiança para avaliação. </p>
-
-<Row className={''}>
-<Col xs={12} lg="12" sm={12}>
-<Link to={`/InformacoesParaMedicos`} className="btn btn-link">Informações para médicos</Link>
-</Col>
-</Row>
-<Row>
-<Col xs={12} lg="12" sm={12}>
-<Link to={`/linksuteis`} className="btn btn-link">Informações úteis</Link>
-</Col>
-</Row>
-</>
-                      )}
-                      {this.state.evaluation.length > 0 && (
-                        <div style={{marginLeft:50, marginRight:50}}>
-                          <div className='cabecalho' style={{textAlign:'center', alignContent: 'center'}}>
-                            <img src="/cabecalho.png" style={{textAlign:'center', alignContent: 'center'}}/>
-                          </div>
-                          <br />
-                          <br />
-                          <p style={{ textAlign: 'center' }}> Aplicativo {AppName} </p>
-                          <br />
-                          <br />
-                          <p style={{ textAlign: 'center' }}> Prezado (a) Médico (a), </p>
-                          <br />
-                          <p style={{ textAlign: 'justify' }}>
-                            {' '}
-A partir da aplicação do questionário autoaplicado Voe Bem,{' '}
-desenvolvido na Universidade Federal de Ciências da Saúde de Porto Alegre e {' '}
-de acordo com as normativas do manual médico da International Air Transport Association (12a edição) {' '}
-e do Conselho Federal de Medicina (CFM), que se destina a auxiliar pessoas na {' '}
-tomada de decisão em procurar auxílio médico antes de realizar uma viagem aérea, {' '}
-informamos que a pessoa respondeu às seguintes perguntas que direcionam recomendação {' '}
-médica antes de voar:{' '}
-                         </p>
-                          <br />
-                          <br />
-                        </div>
-                      )}
-                      {this.state.evaluation.map((ev, i) => {
-                        return (
-                          <div className="" key={"evaluation"+i} style={{marginLeft:50, marginRight:50}}>
-                            {ev.question.type === 'html' ? (
-                              <div dangerouslySetInnerHTML={{ __html: ev.question.question }} />
-                            ) : (
-                              <h4>{ev.question.question}</h4>
-                            )}
-                            <p>{ev.option.label}</p>
-                            {ev.selects_responses && ev.selects_responses.length > 0 && (
-                              <div className="container" style={{ marginLeft: '25%', marginRight: '25%' }}>
-                                <ul style={{ padding: 0, margin: 0, textAlign: 'left' }}>
-                                  {ev.selects_responses.map((e,i) => {
-                                    return  <li key={"selects_responses"+i}>
-                                      <p dangerouslySetInnerHTML={{ __html:e }} />
-                                    </li>;
-                                  })}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })}
-                      <br />
-                      <br />
-                      <p style={{ textAlign: 'center',  marginLeft:50, marginRight:50}}>
-                      Aplicativo  {AppName}<br/>
-                      Universidade Federal de Ciências da Saúde de Porto Alegre
-                      </p>
-                      <p style={{ textAlign: 'end' }}> Porto Alegre, RS.</p>
-                      <p style={{ textAlign: 'center' }}> {AdmEmail}</p>
-                      <p style={{ textAlign: 'center' }}> {AppDomine}</p>
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
-                      <img style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} src="/flywell.png" />
-                    </div>
-                  </div>
-                  <div className={'acoes'}>
-                    <Row style={{ textAlign: 'center' }} className={'acoes'}>
-                      {this.state.evaluation.length > 0 && (
-                        <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
-                          <Button onClick={toPdf} style={{minWidth:"300px", maxWidth:"300px", marginBottom:"20px"}}>Gerar PDF</Button>
-                        </Col>
-                      )}
-                      <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
-                        <Link to={`/`} className="btn btn-light" style={{minWidth:"300px", maxWidth:"300px", marginBottom:"20px"}}>
-                          Home
-                        </Link>
-                      </Col>
-                      <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
-                        {this.state.stackKey.length > 1 && (
-                          <BtnGoBack  onClick={() => this.back()} id="brn-voltar-1">
-                            Voltar
-                          </BtnGoBack>
-                        )}
-                      </Col>
-                    </Row>
-                  </div>
-                </>
-              )}
-            </ReactToPdf>
+          <Pdf _ref={this.state.ref} evaluation={this.state.evaluation} stackKey={this.state.stackKey} back={this.back} ></Pdf>
+          <div className={'acoes'}>
+        <Row style={{ textAlign: 'center' }} className={'acoes'}>
+        <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
+          
+        </Col>
+        <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
+          <Link to={`/`} className="btn btn-light" style={{minWidth:"300px", maxWidth:"300px", marginBottom:"20px"}}>
+            Home
+          </Link>
+        </Col>
+        <Col style={{ textAlign: 'center' }} xs={12} lg="12" sm={12}>
+          {this.state.stackKey.length > 1 && (
+            <BtnGoBack  onClick={() => this.back()} id="brn-voltar-1">
+              Voltar
+            </BtnGoBack>
+          )}
+        </Col> 
+        </Row>
+      </div>
           </>
         )}
 
