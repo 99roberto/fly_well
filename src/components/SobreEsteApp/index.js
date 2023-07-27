@@ -41,7 +41,7 @@ Desta forma, você poderá utilizar para fins de consulta pessoal, para outra pe
 </p>
 <h2>Bibliografia:</h2>
 
-<p>IATA. International Air Transport Association. Medical Manual, 12th Edition ISBN 978-92-9264-250-1 All rights reserved. Montreal—Geneva. Disponível em: <a href="https://www.medicaltourismtraining.com/wp-content/uploads/2020/09/IATA-Medical-Manual-2020.pdf" title="https://www.medicaltourismtraining.com/wp-content/uploads/2020/09/IATA-Medical-Manual-2020.pdf" target="_blank" rel="noopener noreferrer" class="i0jNr selectable-text copyable-text">https://www.medicaltourismtraining.com/wp-content/uploads/2020/09/IATA-Medical-Manual-2020.pdf</a>. Acesso em 30/11/22</p>
+<p>IATA. International Air Transport Association. Medical Manual, 12th Edition ISBN 978-92-9264-250-1 All rights reserved. Montreal—Geneva. Disponível em: https://www.medicaltourismtraining.com/wp-content/uploads/2020/09/IATA-Medical-Manual-2020.pdf. Acesso em 30/11/22</p>
 
 <p>ANAC. Agência Nacional de Aviação Civil. RESOLUÇÃO Nº 280, DE 11 DE JULHO DE 2013. Dispõe sobre os procedimentos relativos à acessibilidade de passageiros com necessidade de assistência especial ao transporte aéreo e dá outras providências. Disponível em: <a href="https://www.anac.gov.br/assuntos/legislacao/legislacao-1/resolucoes/resolucoes-2013/resolucao-no-280-de-11-07-2013" title="https://www.anac.gov.br/assuntos/legislacao/legislacao-1/resolucoes/resolucoes-2013/resolucao-no-280-de-11-07-2013" target="_blank" rel="noopener noreferrer" class="i0jNr selectable-text copyable-text">https://www.anac.gov.br/assuntos/legislacao/legislacao-1/resolucoes/resolucoes-2013/resolucao-no-280-de-11-07-2013</a>. Acesso em 30/11/22</p>
 

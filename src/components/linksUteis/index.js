@@ -24,17 +24,7 @@ CONSELHO FEDERAL DE MEDICINA; FACULDADE DE CIÊNCIAS MÉDICAS DA SANTA CASA DE S
 http://portal.cfm.org.br/images/stories/pdf/cartilha_medicina_aeroespacialfinal2.pdf
 </a>
       
-    </p>
-
-
-    <p>
-TELESSAÚDE-RS. Perguntas da Semana. <b>Gestantes podem viajar de avião? </b> Teleconsultoria respondida por: Marcos Vinícius Ambrosini Mendonça. Disponível em: <a href='https://www.ufrgs.br/telessauders/perguntas/gestantes-podem-viajar-de-aviao/'>
-https://www.ufrgs.br/telessauders/perguntas/gestantes-podem-viajar-de-aviao/
-</a>. Acesso em 30/11/22
-      
-    </p>
-
-
+    </p> 
     <p>
 <b>Dicas de acessibilidade.</b> AGÊNCIA NACIONAL DE AVIAÇÃO CIVIL (ANAC). Disponível em: <a href='https://www.gov.br/anac/pt-br/assuntos/passageiros/arquivos/dicas_anac_acessibilidade_web.pdf'>
 https://www.gov.br/anac/pt-br/assuntos/passageiros/arquivos/dicas_anac_acessibilidade_web.pdf
