@@ -14,10 +14,10 @@ const Pdf = ({evaluation, _ref, stackKey, back}) => {
     <div>
      
 
-      <PDFExport paperSize="A4" margin="2cm" ref={pdfExportComponent}>
+      <PDFExport paperSize="A4" margin="2cm" ref={pdfExportComponent} className="fontPdf">
      
-                <>
-                  <div style={{ maxWidth: 850, padding: '2px' }}  >
+                <div  className="fontPdf">
+                  <div style={{ maxWidth: 850, padding: '2px' }}  className="fontPdf">
                     <Navbar.Brand href="#">
                       {' '}
                       <img
@@ -53,7 +53,7 @@ const Pdf = ({evaluation, _ref, stackKey, back}) => {
 </>
                       )}
                       {evaluation.length > 0 && (
-                        <div style={{marginLeft:50, marginRight:50}}>
+                        <div style={{marginLeft:50, marginRight:50}}  className="fontPdf">
                           <div className='cabecalho' style={{textAlign:'center', alignContent: 'center'}}>
                             <img src="/cabecalho.png" style={{textAlign:'center', alignContent: 'center'}}/>
                           </div>
@@ -80,22 +80,14 @@ médica antes de voar:{' '}
                       )}
                       {evaluation.map((ev, i) => {
                         return (
-                          <div className="" key={"evaluation"+i} style={{marginLeft:50, marginRight:50}}>
-                            {ev.question.type === 'html' ? (
-                              <div dangerouslySetInnerHTML={{ __html: ev.question.question }} />
-                            ) : (
-                              <h4>{ev.question.question}</h4>
-                            )}
+                          <div key={"evaluation"+i} style={{marginLeft:50, marginRight:50}}  className="fontPdf">
+                          <div dangerouslySetInnerHTML={{ __html: ev.question.question }} />
                             <p>{ev.option.label}</p>
                             {ev.selects_responses && ev.selects_responses.length > 0 && (
-                              <div className="container" style={{ marginLeft: '25%', marginRight: '25%' }}>
-                                <ul style={{ padding: 0, margin: 0, textAlign: 'left' }}>
+                              <div> 
                                   {ev.selects_responses.map((e,i) => {
-                                    return  <li key={"selects_responses"+i}>
-                                      <p dangerouslySetInnerHTML={{ __html:e }} />
-                                    </li>;
-                                  })}
-                                </ul>
+                                    return    <div dangerouslySetInnerHTML={{ __html: e }} /> 
+                                  })} 
                               </div>
                             )}
                           </div>
@@ -116,7 +108,7 @@ médica antes de voar:{' '}
                     </div>
                   </div>
                 
-                </>
+                </div>
       </PDFExport>
       <div className={'acoes'}>
         <Row style={{ textAlign: 'center' }} className={'acoes'}>

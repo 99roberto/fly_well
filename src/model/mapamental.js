@@ -172,7 +172,7 @@ const mapaMental = {
     question: TITULO_RECOMENDACAO
     +'<p>É necessário avaliar o risco da gestação antes de realizar a viagem. As viagens longas não devem ser realizadas por paciente com incompetência istmocervical, atividade uterina aumentada ou partos anteriores prematuros, por exemplo. Em condições que comprometem a oxigenação da placenta, deve ser avaliada a necessidade de suporte com oxigênio.</p>',
     options: [
-      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Continuar', variant: 'info', goto: 'gravidez3' },
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
@@ -197,9 +197,9 @@ const mapaMental = {
     style: 'fimMedico',
     question: TITULO_RECOMENDACAO
     +'<p>Viagens longas não devem ser realizadas por paciente multigesta sem antes ter avaliação médica individualizada.</p>'
-    +'<p>Apesar das recomendações médicas internacionais (IATA) e nacionais (CFM) determinarem consulta médica para a realização de viagem aérea a partir das 32 semanas de gestação, algumas companhias aéreas nacionais exigem atestado médico a partir da 26a semana de gestação.</p>',
+    +'<p>As recomendações médicas internacionais (IATA) e nacionais (CFM) determinam consulta médica com documento de liberação para a realização de viagem aérea em gestação múltipla sem complicações a partir das 32 semanas de gestação.</p>',
     options: [
-      { label: 'Continuar', variant: 'info', goto: 'recemnascido1' },
+      { label: 'Continuar', variant: 'info', goto: 'gravidez4' },
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
@@ -236,7 +236,7 @@ const mapaMental = {
     ],
   },
   recemnascido2: {
-    question: 'A criança tem menos de dois dia (48h) de vida?',
+    question: 'A criança tem menos de dois dias (48h) de vida?',
     options: [
       { label: 'Sim', goto: 'recemnascidoFimMedico1' },
       {...btnNao, ...{goto:'recemnascido3' }},
@@ -245,15 +245,11 @@ const mapaMental = {
   recemnascido3: {
     question: 'A criança está com algum problema de saúde?',
     options: [
-      {...btnNao, ...{goto:'recemnascido4' }},
+      {...btnNao, ...{goto:'cardiovasculares1' }},
       { label: 'Sim', goto: 'recemnascidoFimMedico' },
     ],
   },
-  recemnascido4: {
-    question:
-      'Ausência de obrigatoriedade de consulta médica para voar. Crianças saudáveis podem voar a partir de dois dias (48h) de vida, de preferência a partir de 07 dias de vida. ',
-    options: [{ label: 'Continuar', goto: 'cardiovasculares1' }],
-  },
+  
   recemnascidoFimMedico1: {
     question_type: 'evaluation',
     type: 'html',
@@ -263,7 +259,7 @@ const mapaMental = {
     '<p>Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida. Algumas companhias aéreas nacionais exigem declaração de responsabilidade em casos de viagem aérea a ser realizada em menos de 07 dias depois do parto. </p>',
 
     options: [
-      { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
+      { label: 'Continuar', variant: 'info', goto: 'recemnascido3' },
       { label: 'Terminar', variant: 'dark', goto: 'FINISHED' },      
     ],
   },
@@ -273,7 +269,7 @@ const mapaMental = {
     style: 'fimMedico',
     question:
     TITULO_RECOMENDACAO+
-    '<p> Crianças saudáveis podem voar a partir de dois dias de vida, de preferência a partir de 07 dias de vida.</p>',
+    '<p> A presença de sintomas pode ter relação com doenças infectocontagiosas ou outras contraindicações para voar. Crianças saudáveis podem voar a partir de dois dias de vida. </p>',
 
     options: [
       { label: 'Continuar', variant: 'info', goto: 'cardiovasculares1' },
@@ -491,11 +487,11 @@ const mapaMental = {
     question: 'Você tem diagnóstico das seguintes doenças NEUROPSIQUIÁTRICAS abaixo?',
 
     checkboxs: [
-      {q:'Epilepsia ',r:'<b>Epilepsia:</b> pessoas com crises frequentes devem viajar acompanhados e estar cientes de fatores desencadeantes, tais como fadiga, hipoxia e alteração do ritmo circadiano. Recomenda-se que para voar aguardem de 24 a 48 horas após a última crise.'},
+      {q:'Epilepsia ',r:'<b>Epilepsia:</b>  pessoas com crises frequentes devem viajar acompanhadas e estar cientes de fatores desencadeantes, tais como fadiga, hipoxia e alteração do ritmo circadiano. Recomenda-se que para voar aguardem de 24 a 48 horas após a última crise.'},
       {q:'Demência ou qualquer doença que apresente déficit cognitivo (Desenvolvimento intelectual insuficiente diagnosticado por profissional de saúde) ',
       r:'<b>Demência ou qualquer doença que apresente déficit cognitivo:</b> considerar adiar a viagem até garantir estabilidade clínica se história delirante, paranoide, pessoa agressiva, desorientação, agitação psicomotora, ansiedade excessiva. '},
       {q:'Qualquer diagnóstico de doença ou condição de saúde mental (Depressão, ansiedade, transtorno de humor bipolar, por exemplo)',
-      r:'<b>Doenças de saúde mental:</b> não devem voar as pessoas cujo comportamento esteja instável, imprevisível, agressivo ou não seguro. Podem voar aqueles com doença estável e controlada com o uso de medicamentos. '},
+      r:'<b>Doenças de saúde mental:</b> não devem voar as pessoas cujo comportamento esteja instável, imprevisível, agressivo ou não seguro. Podem voar aquelas com doença estável e/ou controlada com o uso de medicamentos.'},
     ],
     options: [
       {...btnSimNaoSei, ...{goto:  'neuroPsiqFim1', select: true }},
@@ -521,8 +517,8 @@ const mapaMental = {
     question: 'Você teve algum dos diagnósticos abaixo nos últimos 30 dias?',
 
     checkboxs: [
-      {q:'Acidente isquêmico transitório (AIT) ', r:'<b>Acidente vascular cerebral (AVC):</b> viagens possíveis após 05 a14 dias, conforme gravidade do evento, avaliação médica e estabilidade clínica com necessidade ou não de acompanhante profissional de saúde. De acordo com a IATA, pessoas que tiveram AVC a menos de 02 semanas com liberação médica para voar devem receber oxigenioterapia suplementar durante o voo. '},
-      {q:'Acidente vascular cerebral (AVC)  ', r:'<b>Acidente isquêmico transitório (AIT):</b>  viagens possíveis após 02 dias do evento, com investigação da causa completa, em pessoa clinicamente estável e assintomática. '},
+      {q:'Acidente isquêmico transitório (AIT) ', r:'<b>Acidente isquêmico transitório (AIT):</b>  viagens possíveis após 02 dias do evento, com investigação da causa completa, em pessoa clinicamente estável e assintomática. '},
+      {q:'Acidente vascular cerebral (AVC)  ', r:'<b>Acidente vascular cerebral (AVC):</b> viagens possíveis após 05 a14 dias, conforme gravidade do evento, avaliação médica e estabilidade clínica com necessidade ou não de acompanhante profissional de saúde. De acordo com a IATA, pessoas que tiveram AVC a menos de 02 semanas com liberação médica para voar devem receber oxigenioterapia suplementar durante o voo. '},
       {q:'Psicose aguda (perda de contato com a realidade: delírios, alucinações e pensamento desordenado)  ', r:'<b>Psicose aguda:</b> viagens possíveis após 30 dias do evento, em pessoa clinicamente estável, com indicação de acompanhante profissional de saúde conforme avaliação médica.'},
     ],
     options: [
@@ -643,7 +639,9 @@ const mapaMental = {
       {q:'Cirurgias ortopédicas (de quadril, joelho ou tornozelo)',r:'<b>Cirurgias ortopédicas (quadril, joelho ou tornozelo):</b> a avaliação de profilaxia para Trombose Venosa Profunda (TVP) é muito importante. Se não houver profilaxia para TVP, em viagens mais longas (> 6 horas), nas primeiras 6 semanas devem ser feitas apenas se forem essenciais.  '},
       {q:'Cirurgia de coluna',r:'<b>Cirurgia de coluna:</b> recomenda-se aguardar 07 dias após a cirurgia para voar. Os passageiros devem sentar-se eretos para decolagem e pouso. Devem ser capazes de tolerar turbulências e vibrações graves inesperadas associadas ao voo. Suspensórios de suporte podem impedir o uso do colete salva-vidas no caso improvável de uma emergência.'},
       {q:'Artroscopia de articulações',r:'<b>Artroscopia de articulações:</b> viagens são permitidas se a pessoa for capaz de se mobilizar com um auxílio para caminhar e sentar-se totalmente ereto no assento para decolagem e aterrissagem. '},
-      {q:'Colocação de gesso',r:'<b>Colocação de gesso:</b> recomenda-se aguardar 48h após colocação do gesso se pessoa realizar voos maiores que duas horas. Em engessamentos feitos no período de 24 a 48 horas antes do voo, recomenda-se que sejam bivalvulados para evitar compressão, principalmente em voos longos. Quando for utilizada a tala pneumática, colocar menor quantidade de ar, para evitar uma síndrome compartimental. Por razões de segurança, algumas companhias aéreas exigem que passageiros com gesso em membro inferior acima do joelho devem viajar em maca. '},
+      {q:'Tratamento de fraturas ou colocação de gesso',r: '<p><b>As fraturas instáveis ou não tratadas são contraindicações ao voo. </b>' +
+      'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas ao procedimento. </p>'
+        +'<br/><b>Colocação de gesso:</b> recomenda-se aguardar 48h após colocação do gesso se pessoa realizar voos maiores que duas horas. Em engessamentos feitos no período de 24 a 48 horas antes do voo, recomenda-se que sejam bivalvulados para evitar compressão, principalmente em voos longos. Quando for utilizada a tala pneumática, colocar menor quantidade de ar, para evitar uma síndrome compartimental. Por razões de segurança, algumas companhias aéreas exigem que passageiros com gesso em membro inferior acima do joelho devem viajar em maca. '},
       {q:'Cirurgia plástica',r:'<b>Cirurgia plástica:</b> deve-se levar em consideração certos procedimentos, como a abdominoplastia e o risco tromboembólico, e a pressão prolongada do peso corporal em próteses ou locais operados recentemente colocados.'},
       {q:'Terapia de recompressão por descompressão de mergulho',r:'<b>Terapia de recompressão por descompressão de mergulho:</b> viagens são permitidas em pessoas assintomáticas, a partir de 72h após a última sessão de tratamento. '},
       {q:'Tratamento de queimadura com infecção generalizada', r:'<b>Tratamento de queimadura com infecção generalizada:</b> viagens são permitidas em pessoas clinicamente estáveis. '},
@@ -660,10 +658,7 @@ const mapaMental = {
     style: 'fimMedico',
     type: 'html',
     question:
-    TITULO_RECOMENDACAO +
-    
-    '<br/><p><b>As fraturas instáveis ou não tratadas são contraindicações ao voo. </b>' +
-      'É necessário avaliar se, após os procedimentos realizados, a pessoa está estável, assintomática e sem complicações relacionadas ao procedimento. </p>' ,
+    TITULO_RECOMENDACAO ,
 
     options: [
       { label: 'Continuar', variant: 'info', goto: 'oncologico1' },

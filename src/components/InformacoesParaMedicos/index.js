@@ -15,9 +15,9 @@ class InformacoesParaMedicos extends React.Component {
       <br></br>
       <p>
 <b>Manual médico da IATA (12a edição)</b>
-. International Air Transport Association. Medical Manual, 12th Edition ISBN 978-92-9264-250-1 All rights reserved. Montreal, Geneva. Disonível em: <a href="https://www.medicaltourismtraining.com/wp-content/uploads/2020/09/IATA-Medical-Manual-2020.pdf">
-https://www.medicaltourismtraining.com/wp-content/uploads/2020/09/IATA-Medical-Manual-2020.pdf</a>
-. Acesso em 30/11/22
+. International Air Transport Association. Medical Manual, 12th Edition ISBN 978-92-9264-250-1 All rights reserved. Montreal, Geneva. Disonível em: <a href="https://www.iata.org/en/publications/medical-manual/">
+https://www.iata.org/en/publications/medical-manual/</a>
+. Acesso em 24/07/22
 </p>
 <p>
 Conselho Federal de Medicina Medicina aeroespacial: 
